@@ -1,0 +1,99 @@
+/* An illuminated miniature night sky opens around the hovered book. */
+.door { -webkit-user-select: none; user-select: none; }
+.door-enchantment {
+  position: absolute; left: 50%; top: 46%; width: calc(100% + 150px);
+  aspect-ratio: 1; z-index: 1; pointer-events: none; visibility: hidden; opacity: 0;
+  transform: translate(-50%, -50%) scale(.45) rotate(-12deg);
+  transition: opacity .12s ease, transform .32s cubic-bezier(.16,.7,.24,1), visibility .12s;
+}
+.door-enchantment i { position: absolute; display: block; pointer-events: none; }
+.magic-glow {
+  inset: -18%; border-radius: 50%;
+  background: radial-gradient(ellipse, #f4c09573 0%, #67928940 30%, #1d78742e 46%, transparent 69%);
+}
+.magic-rays {
+  inset: -2%; border-radius: 50%; opacity: .65;
+  background: repeating-conic-gradient(from var(--magic-turn,0deg), transparent 0deg 27deg, #f4c09599 28deg 29deg, transparent 30deg 44deg, #67928980 44.5deg 45deg);
+  -webkit-mask-image: radial-gradient(circle, transparent 30%, #000 39%, #0008 52%, transparent 69%);
+  mask-image: radial-gradient(circle, transparent 30%, #000 39%, #0008 52%, transparent 69%);
+}
+.magic-orbit { border-radius: 50%; }
+.orbit-outer { inset: 11%; border: 1px dashed #f4c095b3; box-shadow: 0 0 15px #f4c09540, inset 0 0 18px #f4c09526; }
+.orbit-inner { inset: 24%; border: 2px solid #67928980; border-left-color: #f4c095cc; border-bottom-color: transparent; }
+.magic-star {
+  top: 12%; right: 20%; width: 24px; height: 24px; background: var(--peach);
+  clip-path: polygon(50% 0,61% 36%,100% 50%,62% 61%,50% 100%,39% 62%,0 50%,38% 37%);
+  filter: drop-shadow(0 0 7px #f4c095);
+}
+.door:is(:hover,:focus-visible):not(.opening) {
+  transform: translateY(calc(-1 * var(--lift,10px))) rotate(calc(var(--turn,2deg) * .3)) scale(1.1);
+  z-index: 12;
+  box-shadow: 0 0 0 2px var(--peach), 0 0 26px 7px #f4c09573, 0 0 65px 16px #1d787473, 7px 11px 0 #071e2280;
+}
+.door:is(:hover,:focus-visible):not(.opening) .door-enchantment {
+  visibility: visible; opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(0deg);
+}
+.door:is(:hover,:focus-visible):not(.opening) .magic-glow { animation: magic-breath 3.4s ease-in-out infinite; }
+.door:is(:hover,:focus-visible):not(.opening) .magic-rays { animation: magic-orbit-turn 22s linear infinite; }
+.door:is(:hover,:focus-visible):not(.opening) .orbit-outer { animation: magic-orbit-turn 15s linear infinite; }
+.door:is(:hover,:focus-visible):not(.opening) .orbit-inner { animation: magic-orbit-turn 9s linear infinite reverse; }
+.door:is(:hover,:focus-visible):not(.opening) .magic-star { animation: magic-star-pulse 2.6s ease-in-out infinite; }
+.door:is(:hover,:focus-visible):not(.opening) .spark {
+  background: var(--peach); filter: drop-shadow(0 0 5px #f4c095b3);
+  animation: enchanted-spark var(--hover-cycle,2300ms) cubic-bezier(.12,.55,.25,1) var(--hover-delay,0ms) infinite;
+}
+.door:is(:hover,:focus-visible):not(.opening) .spark:nth-child(3n) { background: var(--sage); }
+.door .spark.spark-flake {
+  width: var(--size); height: var(--size); clip-path: none; border-radius: 0;
+  color: var(--peach); background: transparent !important;
+}
+.door:is(:hover,:focus-visible):not(.opening) .door-shimmer {
+  animation: cover-shimmer calc(var(--hover-cycle,2300ms) * .85) ease-in-out infinite;
+  background: linear-gradient(110deg, transparent 32%, #f4c095b3 47%, #67928966 53%, transparent 65%);
+}
+/* Each of the six families has its own atmosphere and path. */
+.door[data-effect="aurora"] .magic-glow {
+  background: radial-gradient(ellipse at 30% 25%, #67928980, transparent 56%), radial-gradient(ellipse at 70% 65%, #1d787499, transparent 62%);
+}
+.door[data-effect="aurora"]:is(:hover,:focus-visible):not(.opening) .magic-glow { animation: magic-aurora 5s ease-in-out infinite alternate; }
+.door[data-effect="snow"]:is(:hover,:focus-visible):not(.opening) .spark { animation-name: enchanted-snow; }
+.door[data-effect="halo"] .orbit-outer { inset: 5%; border-style: solid; border-width: 2px; }
+.door[data-effect="halo"]:is(:hover,:focus-visible):not(.opening) .orbit-inner { animation: magic-ring-breath 3s ease-in-out infinite; }
+.door[data-effect="candle"] .magic-glow { background: radial-gradient(ellipse at 50% 65%, #f4c09599, #ee2e3126 32%, transparent 66%); }
+.door[data-effect="candle"]:is(:hover,:focus-visible):not(.opening) .magic-glow { animation-duration: 2.1s; }
+.door[data-effect="comet"]:is(:hover,:focus-visible):not(.opening) .spark { animation-name: enchanted-comet; }
+.door[data-effect="comet"]:is(:hover,:focus-visible):not(.opening) .spark:not(.spark-flake) {
+  width: calc(var(--size) * 4); height: 2px; border-radius: 50%;
+  background: linear-gradient(90deg, transparent, var(--peach));
+}
+@keyframes magic-orbit-turn { to { transform: rotate(360deg); } }
+@keyframes magic-breath { 0%,100% { opacity: .65; transform: scale(.93); } 50% { opacity: 1; transform: scale(1.12); } }
+@keyframes magic-star-pulse { 0%,100% { opacity: .65; transform: scale(.6) rotate(-12deg); } 50% { opacity: 1; transform: scale(1.25) rotate(18deg); } }
+@keyframes magic-aurora { from { transform: translate(-10px,-6px) rotate(-18deg) scale(.9,1.1); } to { transform: translate(12px,6px) rotate(18deg) scale(1.15,.95); } }
+@keyframes magic-ring-breath { 0%,100% { transform: scale(.86); opacity: .55; } 50% { transform: scale(1.18); opacity: 1; } }
+@keyframes enchanted-spark {
+  0% { opacity: 0; transform: translate(calc(var(--hover-x) * .18),calc(var(--hover-y) * .18)) scale(.15) rotate(0deg); }
+  24% { opacity: 1; }
+  65% { opacity: .95; }
+  100% { opacity: 0; transform: translate(var(--hover-x),var(--hover-y)) scale(1.1) rotate(var(--spin)); }
+}
+@keyframes enchanted-snow {
+  0% { opacity: 0; transform: translate(calc(var(--hover-x) * .8),-140px) scale(.35) rotate(-20deg); }
+  25%,65% { opacity: 1; }
+  100% { opacity: 0; transform: translate(var(--hover-x),100px) scale(1.15) rotate(var(--spin)); }
+}
+@keyframes enchanted-comet {
+  0% { opacity: 0; transform: translate(calc(var(--hover-x) * -.6),-115px) scale(.35) rotate(35deg); }
+  23%,50% { opacity: 1; }
+  100% { opacity: 0; transform: translate(var(--hover-x),var(--hover-y)) scale(1.2) rotate(35deg); }
+}
+@media (max-width: 700px) {
+  .door-enchantment { width: calc(100% + 110px); }
+  .door:is(:hover,:focus-visible):not(.opening) { transform: translateY(-7px) rotate(calc(var(--turn,2deg) * .2)) scale(1.08); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .door-enchantment, .door-enchantment *, .door .spark, .door .door-shimmer, .door .door-surface { animation: none !important; transition: none !important; }
+  .door:is(:hover,:focus-visible):not(.opening) { transform: none; box-shadow: 0 0 0 2px var(--peach), 0 0 20px #f4c09566; }
+  .door:is(:hover,:focus-visible):not(.opening) .door-enchantment { transform: translate(-50%, -50%) scale(.78); opacity: .45; }
+  .door .magic-rays, .door .magic-star, .door .spark { display: none; }
+}

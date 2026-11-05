@@ -1,0 +1,175 @@
+/* Five print inks: https://coolors.co/palette/071e22-1d7874-679289-f4c095-ee2e31 */
+:root {
+  --ink: #071e22;
+  --teal: #1d7874;
+  --sage: #679289;
+  --peach: #f4c095;
+  --red: #ee2e31;
+  --paper: var(--peach);
+  --yellow: var(--peach);
+  --blue: var(--teal);
+  --night: var(--ink);
+  --night-text: var(--peach);
+  --night-muted: var(--sage);
+}
+.print-definitions { position: absolute; overflow: hidden; pointer-events: none; }
+html, body { background: var(--ink); color: var(--peach); }
+body::after {
+  content: ''; position: fixed; inset: 0; z-index: 5; pointer-events: none;
+  background: url('assets/riso-grain.svg') repeat; opacity: .22;
+}
+.winter-landscape {
+  background: radial-gradient(ellipse at 75% 12%, #6792891c, transparent 58%),
+    linear-gradient(132deg, #071e22 5%, #1d787439 49%, #071e22 96%);
+}
+.winter-landscape::before {
+  background: radial-gradient(ellipse at 24% 33%, #1d78744d, transparent 43%),
+    radial-gradient(ellipse at 75% 67%, #67928920, transparent 41%);
+}
+.night-sky-shapes { opacity: .7; }
+.snow-horizon { background: var(--ink); }
+.snow-horizon.hill-two { background: #1d78744d; }
+.landscape-stars i, .landscape-stars i:nth-child(2n) { color: var(--peach); text-shadow: none; }
+.winter-landscape .nocturne-tree svg { opacity: .47; }
+.scene-grove .nocturne-tree svg { opacity: .66; }
+header, .calendar-section, .calendar-bottom, footer { border-color: #67928955; }
+.brand { color: var(--peach); }
+.brand-star, .footer-star { color: var(--red); }
+h1 { text-shadow: 2px 1px 0 #ee2e3138; }
+h1 em { color: var(--red); text-shadow: -2px 2px 0 #1d787480; }
+.intro::after { background: var(--red); box-shadow: 17px 15px 0 -2px var(--peach); }
+.intro p, .calendar-meta, .calendar-bottom, footer { color: #f4c095cf; }
+footer a { color: var(--peach); }
+nav { background: var(--ink); border-color: var(--sage); box-shadow: 3px 3px 0 #1d787466; }
+.lang { color: var(--peach); }
+.lang:hover { background: var(--teal); }
+.lang.active { color: var(--ink); background: var(--peach); border-color: var(--peach); box-shadow: none; }
+.lang:focus-visible { outline-color: var(--red); }
+.weather-controls {
+  background: #071e22ed; color: var(--peach); border-color: #67928966;
+  border-radius: 0; box-shadow: 2px 2px 0 #1d787466;
+}
+.weather-controls input, .ambience-toggle input { accent-color: var(--peach); }
+.switch { border-color: var(--sage); }
+.switch::before { background: var(--peach); }
+.preview-control input:checked + .switch { background: var(--red); border-color: var(--red); }
+.preview-control input:checked + .switch::before { background: var(--peach); }
+input:focus-visible + .switch { outline-color: var(--peach); }
+
+/* A roof made entirely of cut paper geometry; no cover artwork. */
+.roof {
+  height: 205px; clip-path: none; border: 0; background: none;
+  overflow: visible; filter: none;
+}
+.roof::before, .roof::after { display: none; }
+.roof-print { display: block; width: 100%; height: 100%; overflow: visible; }
+.chimney {
+  background: var(--peach); border-color: var(--ink);
+  box-shadow: inset -20px 0 var(--red); transform: skewY(-6deg);
+}
+.chimney::after {
+  content: ''; position: absolute; inset: 4px 0 0;
+  background: repeating-linear-gradient(0deg, transparent 0 13px, #071e223d 13px 15px);
+}
+.chimney i { background: var(--sage); filter: blur(4px); }
+.house::before {
+  content: ''; position: absolute; left: -6px; top: 34%; bottom: 9%;
+  width: 4px; background: var(--red); pointer-events: none;
+}
+.house::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 3;
+  background: url('assets/riso-grain.svg') repeat; opacity: .38;
+}
+.house-body {
+  background: var(--ink); border-color: var(--ink);
+  border-left: 32px solid var(--teal); border-right: 9px solid var(--peach);
+  border-bottom: 19px solid var(--ink); padding: 25px 22px 24px 15px;
+  box-shadow: inset 3px 0 0 var(--sage), 3px 0 0 #ee2e3180;
+}
+.house-body::before { background: var(--red); width: 7px; top: 6%; bottom: 37%; }
+.house-body::after { background: var(--peach); top: 38%; bottom: 5%; }
+.door { background: var(--peach); box-shadow: 3px 4px 0 #67928966; }
+.door:nth-child(8n + 3) { box-shadow: 5px 5px 0 var(--teal); }
+.door:nth-child(9n + 2) { box-shadow: 5px 4px 0 var(--red); }
+.door-surface { background: var(--peach); box-shadow: inset 0 0 0 1px #071e2266; }
+.door-surface::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 3;
+  background-image: radial-gradient(#071e2280 .55px, transparent .8px);
+  background-size: 3px 3px; opacity: .15;
+}
+.door-number, .modal-cover .door-number {
+  color: var(--ink); background: var(--peach); box-shadow: 2px 2px 0 var(--ink);
+}
+.door:nth-child(3n) .door-number { color: var(--ink); background: var(--sage); }
+.door:nth-child(3n + 2) .door-number {
+  color: var(--ink); background: var(--peach); box-shadow: 3px 2px 0 var(--red);
+}
+.door:hover, .door:focus-visible {
+  box-shadow: 0 0 0 2px var(--peach), 5px 7px 0 var(--red);
+}
+.door:focus-visible { outline-color: var(--sage); }
+.door-light, .door.opening .door-light {
+  background: radial-gradient(ellipse, var(--peach), var(--sage) 65%, var(--teal));
+}
+.door.opening .door-light { box-shadow: 0 0 45px 18px #f4c09599; }
+.door .spark, .door[data-effect="snow"] .spark { background: var(--peach); filter: none; }
+.door[data-effect="comet"] .spark { background: linear-gradient(90deg, transparent, var(--peach)); }
+.door .door-shimmer, .door[data-effect="aurora"] .door-shimmer {
+  background: linear-gradient(110deg, transparent 35%, #f4c09580 48%, transparent 60%);
+}
+.door[data-effect="halo"] .door-shimmer { background: radial-gradient(ellipse, transparent 28%, #f4c09575 35%, transparent 43%); }
+.door[data-effect="aurora"].opening .door-light,
+.door[data-effect="snow"].opening .door-light,
+.door[data-effect="candle"].opening .door-light { background: radial-gradient(ellipse, var(--peach), var(--sage), var(--teal)); }
+.ground {
+  background: var(--ink); border-top-color: var(--sage); box-shadow: 0 4px 0 #1d787480;
+}
+.star-one { color: var(--red); }
+.star-two { color: var(--peach); }
+.abstract-book-character { filter: drop-shadow(2px 1px 0 #ee2e3159); }
+.abstract-book-character .walk-leg > path:first-child { stroke: var(--sage); }
+.book-character .song-notes { fill: var(--peach); }
+
+/* The celebration uses the same five inks as the printed landscape. */
+.festive-field, .festive-opening[data-effect="candle"] .festive-field {
+  background: radial-gradient(ellipse at var(--origin-x) var(--origin-y), #f4c09549, transparent 60%);
+}
+.festive-beam { background: linear-gradient(0deg, #f4c09590, transparent 80%); }
+.festive-ring { border-color: var(--peach); box-shadow: 0 0 20px #f4c09580; }
+.festive-opening[data-effect="aurora"] .festive-ring { border-color: var(--sage); }
+.festive-compass {
+  background: repeating-conic-gradient(from 0deg, transparent 0deg 38deg, #f4c0957a 40deg 44deg, transparent 46deg 90deg);
+}
+.festive-star, .festive-star:nth-of-type(4n), .festive-star.drawn-flake { color: var(--peach); filter: drop-shadow(0 0 4px #f4c09566); }
+.festive-star:nth-of-type(7n) { color: var(--red); }
+#book-modal {
+  --ink: #071e22; color: var(--ink); background: var(--peach);
+  border-color: var(--ink); border-left-color: var(--red); border-top-color: var(--teal);
+  box-shadow: 6px 6px 0 var(--teal), 10px 10px 0 #ee2e3180;
+}
+#book-modal::backdrop { background: #071e22d9; animation-name: print-dusk; }
+#book-modal a { color: var(--ink); }
+#book-modal .door-number { color: var(--ink); background: var(--peach); }
+#book-modal .dialog-garland { color: var(--teal); }
+.dialog-garland i { background: linear-gradient(90deg, transparent, var(--teal), transparent); }
+.dialog-dust i { background: var(--red); }
+.modal-cover, .modal-art .modal-cover { box-shadow: 5px 6px 0 #071e224d; }
+.modal-cover .cover-image { background: var(--peach); }
+.modal-grid::after { background: none; }
+.modal-nav { border-color: #071e2266; }
+@keyframes print-dusk {
+  from { background: #071e2210; backdrop-filter: blur(0); }
+  to { background: #071e22d9; backdrop-filter: blur(5px); }
+}
+@media (max-width: 700px) {
+  .intro::after { box-shadow: 7px 9px 0 -1px var(--peach); }
+  .roof { height: 135px; }
+  .chimney { box-shadow: inset -12px 0 var(--red); }
+  .house-body {
+    border-left-width: 18px; border-right-width: 5px; border-bottom-width: 13px;
+    padding: 15px 11px 17px 8px;
+  }
+  .house-body::before { width: 3px; left: 2px; }
+  .house::before { width: 3px; left: -4px; }
+  .weather-controls { background: #071e22ed; }
+}

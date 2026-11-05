@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Muokkaa luukkuja · Oi jouluyö</title>
+  <link rel="stylesheet" href="editor.css">
+  <script src="door-content.js?v=20261105-1" defer></script>
+  <script src="editor.js?v=20261105-1" defer></script>
+</head>
+<body>
+<main>
+  <a class="back" href="./">← Joulukalenteriin</a>
+  <p class="eyebrow">Oi jouluyö / O helga natt</p>
+  <h1>Muokkaa luukkua</h1>
+  <p>Valitse luukku ja täytä kentät. Kopioi sisältö lopuksi GitHubiin ja tallenna se painamalla <strong>Commit changes</strong>.</p>
+
+  <label class="picker">Luukku <select id="day"></select></label>
+  <p id="load-status" role="status"></p>
+  <form id="editor" hidden>
+    <div id="languages" class="languages"></div>
+    <fieldset>
+      <legend>Kuva ja musiikki</legend>
+      <label>Tekijä <input name="tekija"></label>
+      <label>Kuvan osoite tai tiedostopolku
+        <input name="kuva" placeholder="assets/luukut/kuva.webp">
+      </label>
+      <label>Valitse kuva koneelta esikatseluun
+        <input type="file" id="image-file" accept="image/*" aria-describedby="image-help">
+      </label>
+      <p class="hint" id="image-help">Kun valitset kuvan, polku täyttyy automaattisesti. Lataa sama tiedosto GitHubin kuvakansioon tai liitä kenttään kuvan HTTPS-osoite.</p>
+      <p><a id="upload-image" target="_blank" rel="noopener noreferrer">Lataa kuva GitHubiin ↗</a></p>
+      <img id="image-preview" alt="Valitun kuvan esikatselu" hidden>
+      <label>YouTube-videon osoite tai tunniste
+        <input name="youtube" placeholder="https://youtu.be/…" inputmode="url">
+      </label>
+      <label>Apple Music -linkki
+        <input name="appleMusic" placeholder="https://music.apple.com/…" inputmode="url">
+      </label>
+      <p class="hint">Kuva ja musiikkilinkit ovat valinnaisia. Tyhjä kuva käyttää luukun omaa kuvitusta.</p>
+    </fieldset>
+
+    <fieldset>
+      <legend>Tallenna GitHubiin</legend>
+      <p>Kopioi tiedosto. Avaa sen jälkeen luukku GitHubissa, korvaa editorin koko sisältö ja tallenna muutos.</p>
+      <div class="actions">
+        <button type="button" id="copy-file">Kopioi sisältö</button>
+        <a id="edit-file" target="_blank" rel="noopener noreferrer">Muokkaa GitHubissa ↗</a>
+      </div>
+      <p id="save-status" role="status"></p>
+      <label>Luukun tiedosto <textarea id="output" rows="9" readonly spellcheck="false"></textarea></label>
+      <div class="actions secondary">
+        <button type="button" id="download-file">Lataa JSON-tiedosto</button>
+        <a id="preview-link" target="_blank" rel="noopener noreferrer">Esikatsele GitHubiin tallennettua luukkua ↗</a>
+      </div>
+    </fieldset>
+  </form>
+</main>
+</body>
+</html>

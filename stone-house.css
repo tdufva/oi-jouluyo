@@ -1,0 +1,159 @@
+/* A masonry townhouse: a stepped Deco gable, a Jugend rose window and quiet stone joints. */
+.house { --stone-edge: #f4c095; }
+.roof.stone-gable { height: 205px; }
+.house::before {
+  left: -5px; top: 31%; bottom: 3%; width: 5px;
+  background: #071e22; box-shadow: -2px 0 0 #67928980;
+}
+.house-body {
+  background: #679289 url('assets/stonework.svg') repeat;
+  background-size: 184px 88px;
+  border: 8px solid #071e22; border-top: 0;
+  border-left: 22px solid #f4c095; border-right: 14px solid #1d7874;
+  border-bottom: 19px solid #071e22;
+  padding: 29px 23px 24px 21px;
+  box-shadow: inset 0 2px 0 #f4c095, inset 0 -6px 0 #f4c09599, 3px 0 0 #67928980;
+}
+.house-body::before {
+  top: 0; bottom: 0; left: -20px; width: 18px;
+  background: url('assets/jugend-pilaster.svg') repeat-y left top / 18px 198px;
+  border-right: 1px solid #071e2273;
+}
+.house-body::after {
+  top: 0; bottom: 0; right: -12px; width: 10px;
+  background: repeating-linear-gradient(90deg, #679289 0 2px, #1d7874 2px 4px, #071e2259 4px 5px);
+  border-left: 1px solid #071e2273;
+}
+.doors { gap: 19px 15px; }
+.house .door {
+  background: #071e22;
+  outline: 1px solid #071e22a6; outline-offset: 3px;
+  box-shadow: 0 -3px 0 #f4c095cc, 3px 5px 0 #071e2273;
+}
+.house .door-surface {
+  border: 2px solid #071e22; border-radius: 9px 9px 1px 1px;
+  box-shadow: inset 0 0 0 1px #f4c09559;
+}
+.house .door:focus-visible { outline: 3px solid #f4c095; outline-offset: 4px; }
+.chimney {
+  background: #679289 url('assets/stonework.svg') repeat;
+  background-size: 130px 62px;
+  width: 52px; border-top: 8px solid #f4c095;
+  box-shadow: inset -11px 0 0 #071e2259, 0 -3px 0 #071e22;
+  transform: none;
+}
+.chimney::after { background: none; }
+.ground {
+  height: 15px; border-top: 3px solid #071e22;
+  background: repeating-linear-gradient(90deg, #679289 0 85px, #071e22 85px 87px);
+  box-shadow: inset 0 2px 0 #f4c09599, 0 4px 0 #071e22;
+}
+@media (max-width: 700px) {
+  .roof.stone-gable { height: 142px; }
+  .house-body {
+    background-size: 128px 61px;
+    border-left-width: 14px; border-right-width: 9px; border-bottom-width: 14px;
+    padding: 22px 13px 20px 11px;
+  }
+  .house-body::before { left: -13px; width: 12px; background-size: 12px 132px; }
+  .house-body::after { right: -8px; width: 6px; }
+  .doors { gap: 16px 11px; }
+  .house .door { outline-offset: 2px; box-shadow: 0 -2px 0 #f4c095cc, 2px 4px 0 #071e2273; }
+  .house .door-surface { border-width: 1.5px; border-radius: 6px 6px 1px 1px; }
+  .chimney { width: 32px; border-top-width: 5px; box-shadow: inset -7px 0 0 #071e2259, 0 -2px 0 #071e22; }
+  .ground { height: 12px; }
+}
+
+/* Old Jugend curves and a carved entry, composed with asymmetric Bauhaus blocks. */
+.house { max-width: 800px; }
+.roof.stone-gable.old-jugend-gable { height: 260px; }
+.house-body {
+  padding: 30px 22px 0 22px;
+  border-left-width: 24px; border-right-width: 14px; border-bottom-width: 17px;
+  box-shadow: inset 0 3px 0 #f4c095, inset 0 -5px 0 #071e223d, 4px 0 0 #67928980;
+}
+.house-body::before { left: -23px; width: 21px; background-size: 21px 231px; }
+.doors { grid-auto-flow: row; gap: 23px 17px; }
+.house .door:not(.door-entrance) .door-surface { border-radius: 18% 18% 1px 1px / 12% 12% 1px 1px; }
+.door-bay { grid-column: 1 / 3; grid-row: 5; }
+.door-bay::before { padding-top: 67%; }
+.bay-rail {
+  position: absolute; left: -6px; right: -6px; bottom: -6px; height: 15px;
+  border: 2px solid #071e22; background: repeating-linear-gradient(90deg, #1d7874 0 9px, #071e22 9px 11px, #f4c09599 11px 14px);
+  box-shadow: 0 3px 0 #f4c095; z-index: 4; pointer-events: none;
+}
+.facade-relief {
+  grid-column: 5 / 7; grid-row: 5;
+  background: url('assets/jugend-relief.svg') center / 100% 100% no-repeat;
+  margin: 7px 2px 12px; pointer-events: none;
+}
+.house .door-entrance {
+  grid-column: 3 / 5; grid-row: 4 / 6;
+  align-self: stretch; min-width: 0; min-height: 0; margin: -5px -3px -17px;
+  background: transparent; border: 0; outline: none; box-shadow: none;
+  transform: none !important; perspective: 1000px; z-index: 3;
+}
+.door-entrance::before { display: none; }
+.entrance-architecture { position: absolute; inset: 0; display: block; pointer-events: none; }
+.entrance-stoneframe {
+  position: absolute; inset: 0; display: block;
+  background: url('assets/jugend-portal.svg') center / 100% 100% no-repeat;
+  filter: drop-shadow(2px 0 0 #071e2259);
+}
+.entrance-fanlight {
+  position: absolute; left: 18%; right: 18%; top: 9%; height: 26%;
+  background: url('assets/jugend-fanlight.svg') center / 100% 100% no-repeat;
+}
+.house .door-entrance .entrance-surface {
+  left: 18%; right: 18%; top: 35%; bottom: 1px;
+  background: transparent; overflow: visible; border: 0; border-radius: 0;
+  box-shadow: none; transform: none !important; filter: none; animation: none;
+}
+.entrance-surface::after { display: none; }
+.door-leaf {
+  position: absolute; top: 0; bottom: 0; width: 50%; display: block;
+  -webkit-backface-visibility: hidden; backface-visibility: hidden;
+  transition: transform 1.05s cubic-bezier(.18,.7,.22,1), filter .4s;
+}
+.door-leaf-left { left: 0; transform-origin: 0 50%; background: url('assets/jugend-entry-left.svg') center / 100% 100% no-repeat; }
+.door-leaf-right { right: 0; transform-origin: 100% 50%; background: url('assets/jugend-entry-right.svg') center / 100% 100% no-repeat; }
+.house .door-entrance .entrance-number {
+  top: 1%; left: 50%; transform: translateX(-50%); width: 36px; height: 36px;
+  min-width: 0; border: 2px solid #071e22; border-radius: 50%;
+  color: #071e22; background: #f4c095; box-shadow: 0 2px 0 #1d7874;
+  font-size: 20px; z-index: 5;
+}
+.entrance-threshold {
+  position: absolute; left: 14%; right: 14%; bottom: 0; height: 5px;
+  background: #f4c095; border-top: 2px solid #071e22; z-index: 5;
+}
+.door-entrance > .door-light { left: 18%; right: 18%; top: 12%; bottom: 0; border-radius: 48% 48% 0 0 / 22% 22% 0 0; }
+.house .door-entrance:is(:hover,:focus-visible):not(.opening) {
+  outline: none; box-shadow: none; z-index: 12;
+}
+.door-entrance:is(:hover,:focus-visible) .entrance-stoneframe { filter: drop-shadow(0 0 10px #f4c095a6); }
+.door-entrance:is(:hover,:focus-visible) .door-leaf { filter: brightness(1.12); }
+.door-entrance.opening .door-leaf-left { transform: rotateY(-106deg); }
+.door-entrance.opening .door-leaf-right { transform: rotateY(106deg); }
+.door-entrance.opening .entrance-surface { transform: none !important; }
+.door-entrance.opening .door-light { box-shadow: 0 0 55px 20px #f4c09599; }
+@media (max-width: 700px) {
+  .roof.stone-gable.old-jugend-gable { height: 168px; }
+  .house-body { padding: 23px 11px 0 10px; border-left-width: 15px; border-right-width: 9px; border-bottom-width: 13px; }
+  .house-body::before { left: -14px; width: 13px; background-size: 13px 143px; }
+  .doors { gap: 18px 11px; }
+  .door-bay { grid-column: 1; grid-row: 7; }
+  .door-bay::before { padding-top: 147.058824%; }
+  .facade-relief { grid-column: 4; grid-row: 7; margin: 4px 0 0; }
+  .house .door-entrance { grid-column: 2 / 4; grid-row: 6 / 8; margin: -2px -3px -13px; }
+  .house .door-entrance .entrance-number { width: 27px; height: 27px; font-size: 15px; border-width: 1.5px; }
+  .bay-rail { height: 10px; left: -2px; right: -2px; bottom: -3px; border-width: 1px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .door-entrance .door-leaf { transition: none !important; }
+  .door-entrance.opening .door-leaf-left, .door-entrance.opening .door-leaf-right { transform: none; }
+}
+/* Keep the glazed fanlight above the light that shines through the doorway. */
+.entrance-architecture { z-index: 2; }
+.house .door-entrance { left: -5px; }
+@media (max-width: 700px) { .house .door-entrance { left: -2.5px; } }

@@ -1,0 +1,83 @@
+/* Continuous, restrained motion. Changing the activity only interpolates the pose. */
+.stage-performers .abstract-book-character {
+  animation: elegant-stroll 42s ease-in-out -10s infinite !important;
+  transform-origin: 50% 100%; opacity: .94; filter: none;
+}
+.stage-performers .performer-mariah.abstract-book-character { animation-duration: 49s !important; animation-delay: -26s !important; }
+.stage-performers .abstract-book-character .performer-body {
+  animation: none !important; transform: translate(0,0) rotate(0deg);
+  transition: transform 3.2s cubic-bezier(.35,0,.2,1);
+}
+.stage-performers .abstract-book-character .character-breath {
+  transform-origin: 100px 245px;
+  animation: elegant-breath 12s ease-in-out -3s infinite;
+}
+.stage-performers .performer-mariah .character-breath { animation-duration: 15s; animation-delay: -8s; }
+.stage-performers .abstract-book-character .singer-head {
+  animation: none !important; transform: rotate(0deg); transition: transform 3.2s ease-in-out;
+}
+.stage-performers .abstract-book-character .singer-hand,
+.stage-performers .abstract-book-character .baton-arm,
+.stage-performers .abstract-book-character .conductor-baton {
+  animation: elegant-gesture 11s ease-in-out -3s infinite !important;
+}
+.stage-performers .abstract-book-character .book-cover,
+.stage-performers .abstract-book-character .page-wing,
+.stage-performers .abstract-book-character .paper-hair,
+.stage-performers .abstract-book-character .diva-arm { animation: none !important; }
+.stage-performers .abstract-book-character .ribbon-tail { animation: elegant-ribbon 14s ease-in-out -4s infinite; }
+.stage-performers .abstract-book-character .walk-leg {
+  animation: elegant-step 3.8s ease-in-out infinite !important;
+  animation-play-state: paused !important; transition: opacity 2.8s;
+}
+.stage-performers .abstract-book-character .leg-right { animation-delay: -1.9s !important; }
+.stage-performers .abstract-book-character .character-eyes { animation: book-blink 10s ease-in-out -3s infinite; }
+.stage-performers .abstract-book-character .book-brow { animation: none; }
+.stage-performers .abstract-book-character .singing-mouth { animation: none !important; transform: scaleY(.18); }
+.stage-performers .abstract-book-character .reading-book,
+.stage-performers .abstract-book-character .character-chair,
+.stage-performers .abstract-book-character .seated-legs,
+.stage-performers .abstract-book-character .thought-marks { opacity: 0; transition: opacity 2.8s; animation: none !important; }
+.stage-performers .abstract-book-character .song-notes { display: block; opacity: 0; animation: none !important; transition: opacity 2s; }
+.stage-performers .abstract-book-character[data-activity="walking"] .walk-leg { animation-play-state: running !important; }
+.stage-performers .abstract-book-character[data-activity="thinking"] .singer-head { transform: rotate(-3deg); }
+.stage-performers .abstract-book-character[data-activity="thinking"] .thought-marks { opacity: .85; }
+.stage-performers .abstract-book-character[data-activity="reading"] .performer-body { transform: translate(-1px,3px) rotate(2deg); }
+.stage-performers .abstract-book-character[data-activity="reading"] .singer-head { transform: translate(0,4px) rotate(5deg); }
+.stage-performers .abstract-book-character[data-activity="reading"] .reading-book { opacity: 1; }
+.stage-performers .abstract-book-character[data-activity="seated"] .performer-body { transform: translateY(23px) rotate(-3deg); }
+.stage-performers .abstract-book-character[data-activity="seated"] .character-chair,
+.stage-performers .abstract-book-character[data-activity="seated"] .seated-legs { opacity: 1; }
+.stage-performers .abstract-book-character[data-activity="seated"] .walk-leg { opacity: 0; }
+.stage-performers .abstract-book-character[data-activity="singing"] .singing-mouth { animation: elegant-syllables 5.5s ease-in-out infinite !important; }
+.stage-performers .abstract-book-character[data-activity="singing"] .song-notes { opacity: .7; animation: elegant-notes 8s ease-in-out infinite !important; }
+@keyframes elegant-stroll { 0%,100% { transform: translateX(0); } 25% { transform: translateX(7px); } 75% { transform: translateX(-6px); } }
+@keyframes elegant-breath { 0%,100% { transform: rotate(-.45deg); } 50% { transform: rotate(.6deg); } }
+@keyframes elegant-gesture { 0%,100% { transform: rotate(-1.5deg); } 50% { transform: rotate(2deg); } }
+@keyframes elegant-ribbon { 0%,100% { transform: rotate(-2deg); } 50% { transform: rotate(2deg); } }
+@keyframes elegant-step { 0%,100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+@keyframes elegant-syllables { 0%,100% { transform: scale(.8,.3); } 35% { transform: scale(.85,.85); } 70% { transform: scale(.8,.5); } }
+@keyframes elegant-notes { 0%,100% { transform: translate(0,0); opacity: .3; } 50% { transform: translate(3px,-8px); opacity: .75; } }
+/* A tree is now one cached SVG image instead of dozens of live SVG nodes. */
+.geometric-tree img { display: block; width: 100%; height: auto; }
+.winter-landscape .nocturne-tree img { opacity: .47; }
+.scene-grove .nocturne-tree img { opacity: .66; }
+.scene-paused .winter-landscape *,
+.scene-paused #stage-performers .abstract-book-character,
+.scene-paused #stage-performers .abstract-book-character *,
+.scene-paused .scene-grove *,
+#stage-performers[data-in-view="false"] .abstract-book-character,
+#stage-performers[data-in-view="false"] .abstract-book-character *,
+.scene-grove[data-in-view="false"] .book-tree { animation-play-state: paused !important; }
+/* Core feedback begins in the first frame; artwork is already colored and decoded. */
+.modal-cover .cover-image { object-fit: cover; }
+.door-surface { transition: transform .32s cubic-bezier(.2,.65,.2,1),filter .2s; }
+.door-leaf { transition-duration: .42s; }
+#book-modal.revealing .modal-grid { animation: quick-page-arrives .22s ease-out both; }
+@keyframes quick-page-arrives { from { opacity: .85; transform: translateY(5px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  #stage-performers .abstract-book-character,
+  #stage-performers .abstract-book-character * { animation: none !important; transition: none !important; }
+  #book-modal.revealing .modal-grid { animation: none; }
+  .door-surface,.door-leaf { transition: none; }
+}

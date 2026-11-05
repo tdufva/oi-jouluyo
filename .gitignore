@@ -1,0 +1,15 @@
+.DS_Store
+__pycache__/
+.openai/
+.env
+.env.*
+/*.png
+/assets/covers/
+/assets/portraits/
+/assets/fonts/tonight-christmas.otf
+/assets/fonts/Tonight-Christmas-Readme.txt
+/scripts/prepare-cover-assets.py
+/covers.js
+/design-study.html
+/performance-benchmark.html
+/assets/fonts/SOURCES.md
