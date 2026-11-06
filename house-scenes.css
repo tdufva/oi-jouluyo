@@ -1,0 +1,123 @@
+/* Brief, silent details that stay out of the door controls. */
+.house-surprise { position: absolute; pointer-events: none; }
+
+.surprise-koira {
+  --dog-width: clamp(54px, 7.4vw, 85px);
+  left: max(-64px, -6vw);
+  right: max(-64px, -6vw);
+  bottom: -5px;
+  height: calc(var(--dog-width) * .74);
+  overflow: hidden;
+  z-index: 6;
+}
+.dog-crossing {
+  position: absolute;
+  inset: 0;
+  animation: dog-crossing var(--scene-duration) linear both;
+}
+.dog-figure { position: absolute; left: 0; bottom: 0; width: var(--dog-width); height: auto; }
+.dog-leg {
+  transform-box: fill-box;
+  transform-origin: center top;
+  animation: dog-step .68s ease-in-out infinite alternate;
+}
+.dog-leg-far { animation-delay: -.68s; }
+.dog-tail, .dog-scarf {
+  transform-box: fill-box;
+  transform-origin: right center;
+  animation: dog-tail .8s ease-in-out infinite alternate;
+}
+.dog-scarf { animation-duration: 1.15s; }
+@keyframes dog-crossing {
+  0% { transform: translateX(calc(-1 * var(--dog-width))); }
+  45% { transform: translateX(45%); }
+  54% { transform: translateX(49%); }
+  100% { transform: translateX(100%); }
+}
+@keyframes dog-step { from { transform: skewX(-14deg); } to { transform: skewX(14deg); } }
+@keyframes dog-tail { from { transform: rotate(-11deg); } to { transform: rotate(9deg); } }
+
+.surprise-tonttu {
+  left: 38.38%;
+  top: 49.23%;
+  width: 10.6%;
+  height: 30%;
+  transform: translate(-50%, -50%);
+  clip-path: ellipse(50% 50%);
+  z-index: 5;
+}
+.elf-window {
+  width: 100%;
+  height: 100%;
+  background: #071e22;
+  animation: elf-window var(--scene-duration) ease-in-out both;
+}
+.elf-peek {
+  position: absolute;
+  left: 12%;
+  bottom: -13%;
+  width: 76%;
+  height: 105%;
+  animation: elf-peek var(--scene-duration) ease-in-out both;
+}
+@keyframes elf-window {
+  0%, 100% { opacity: 0; }
+  10%, 90% { opacity: .95; }
+}
+@keyframes elf-peek {
+  0%, 7%, 100% { transform: translateY(94%); }
+  24%, 41% { transform: translateY(2%) rotate(-6deg); }
+  62%, 74% { transform: translateY(9%) rotate(5deg); }
+}
+
+.surprise-lyhty { inset: 0; }
+.fanlight-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 70% 70% 12% 12%;
+  background: radial-gradient(ellipse at 50% 78%, #ffe0a5, #f4c09542 56%, transparent 72%);
+  animation: fanlight-glow var(--scene-duration) ease-in-out both;
+}
+@keyframes fanlight-glow {
+  0%, 100% { opacity: 0; transform: scale(.92); }
+  24%, 76% { opacity: .8; transform: scale(1); }
+  48% { opacity: .55; transform: scale(.97); }
+}
+
+.surprise-lintu {
+  left: 89%;
+  top: 39.8%;
+  width: clamp(29px, 5vw, 55px);
+  transform: translate(-50%, -98%);
+  z-index: 5;
+}
+.roof-robin {
+  display: block;
+  width: 100%;
+  animation: roof-robin var(--scene-duration) ease-in-out both;
+}
+.robin-wing {
+  transform-box: fill-box;
+  transform-origin: right bottom;
+  animation: robin-wing var(--scene-duration) ease-in-out both;
+}
+@keyframes roof-robin {
+  0% { opacity: 0; transform: translate(-155%, -115%) rotate(14deg); }
+  14% { opacity: 1; transform: translate(-72%, -55%) rotate(8deg); }
+  27%, 72% { opacity: 1; transform: translate(0, 0); }
+  83% { opacity: 1; transform: translate(55%, -45%) rotate(-9deg); }
+  100% { opacity: 0; transform: translate(116%, -165%) rotate(-17deg); }
+}
+@keyframes robin-wing {
+  0%, 17%, 81%, 94% { transform: rotate(13deg); }
+  10%, 23%, 76%, 88%, 100% { transform: rotate(-36deg); }
+  31%, 71% { transform: rotate(32deg) scale(.78); }
+}
+
+@media (max-width: 700px) {
+  .surprise-koira { left: -10px; right: -10px; bottom: -3px; }
+  .surprise-lintu { left: 87%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .house-surprise { display: none; }
+}

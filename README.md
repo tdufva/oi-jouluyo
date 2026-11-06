@@ -14,6 +14,12 @@ Kaksikielinen kirjallinen joulukalenteri, jossa jugendtalon 24 luukkua avautuvat
 
 Voit muokata myös suoraan `luukut/01.json`–`luukut/24.json`-tiedostoja. Erota tekstin kappaleet tyhjällä rivillä. Muokkauslomakkeen esikatselulinkki avaa GitHubiin tallennetun version.
 
+## Talon pienet yllätykset
+
+Koiran kävely, tontun kurkistus, oven valo ja katolla vieraileva lintu vaihtuvat päivän ja kuuden tunnin aikajakson mukaan. Aikataulu käyttää Suomen aikaa. Kohtaus alkaa, kun sen kohta talosta on hetken näkyvissä. Samalla vierailulla kohtauksia on muutaman minuutin välein.
+
+Yksittäistä kohtausta voi kokeilla lisäämällä kalenterin osoitteeseen `?kohtaus=koira`, `?kohtaus=tonttu`, `?kohtaus=lintu` tai `?kohtaus=lyhty`.
+
 ## Paikallinen esikatselu
 
 ```sh
