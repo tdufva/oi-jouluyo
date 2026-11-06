@@ -16,9 +16,9 @@ Voit muokata myös suoraan `luukut/01.json`–`luukut/24.json`-tiedostoja. Erota
 
 ## Talon pienet yllätykset
 
-Koiran kävely, tontun kurkistus, oven valo ja katolla vieraileva lintu vaihtuvat päivän ja kuuden tunnin aikajakson mukaan. Aikataulu käyttää Suomen aikaa. Kohtaus alkaa, kun sen kohta talosta on hetken näkyvissä. Samalla vierailulla kohtauksia on muutaman minuutin välein.
+Kahdeksan kohtausta vaihtuu päivän ja kuuden tunnin aikajakson mukaan. Aikataulu käyttää Suomen aikaa. Kohtaus alkaa, kun sen kohta talosta on hetken näkyvissä. Samalla vierailulla kohtauksia on muutaman minuutin välein. Lumipyry tarvitsee lumisateen päälle ja määrän nollaa suuremmaksi.
 
-Yksittäistä kohtausta voi kokeilla lisäämällä kalenterin osoitteeseen `?kohtaus=koira`, `?kohtaus=tonttu`, `?kohtaus=lintu` tai `?kohtaus=lyhty`.
+Yksittäistä kohtausta voi kokeilla lisäämällä kalenterin osoitteeseen `?kohtaus=koira`, `?kohtaus=tonttu`, `?kohtaus=lintu`, `?kohtaus=lyhty`, `?kohtaus=lumipyry`, `?kohtaus=poro`, `?kohtaus=tahti` tai `?kohtaus=tietajat`.
 
 ## Paikallinen esikatselu
 
