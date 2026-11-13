@@ -12,23 +12,25 @@ function makeBookPerformer(who) {
       <path d="m55 68 61-11-4 115-63 20z" fill="url(#riso-dots)" opacity=".38"/>
       <path d="m56 151 48-15-1 14-47 16zm-1 22 35-12v7l-35 11z" fill="#f4c095"/>
       <path d="m66 174-6 37 11-7 8 5-2-39z" fill="#ee2e31" stroke="#071e22" stroke-width="1.5"/>
-      <g class="book-react book-shutter">
+      <g class="book-react book-shutter"><g class="book-choreography book-inset">
         <path d="M54 131a28 28 0 0 1 56 0z" fill="#071e22"/>
         <path d="M57 130a25 25 0 0 1 50 0z" fill="#f4c095"/>
         <path d="m82 105 22 24H82z" fill="#ee2e31"/>
         <path d="M69 131h31m-26 5h20" stroke="#679289" stroke-width="1.6"/>
-      </g>
+      </g></g>
     </g>
-    <g class="book-react book-index">
+    <g class="book-react book-index"><g class="book-choreography book-tab">
       <path d="M24 92h18v68H24z" fill="#ee2e31" stroke="#071e22" stroke-width="2"/>
       <path d="M28 99h4v55h-4z" fill="#f4c095"/>
-    </g>
-    <g class="book-choreography book-balance">
-      <circle cx="93" cy="48" r="27" fill="none" stroke="#679289" stroke-width="1.4" stroke-dasharray="12 4 2 6"/>
-      <path d="M93 25a23 23 0 0 1 0 46V25Z" fill="#ee2e31" stroke="#071e22" stroke-width="2"/>
-      <path d="M93 25a23 23 0 0 0 0 46V25Z" fill="#f4c095" stroke="#071e22" stroke-width="2"/>
-      <circle cx="93" cy="48" r="6" fill="#071e22"/><circle cx="93" cy="48" r="2.3" fill="#f4c095"/>
-      <path d="M110 30h18m-6-6v12" stroke="#f4c095" stroke-width="1.5"/>
+    </g></g>
+    <g class="book-choreography book-prism" stroke-linejoin="round">
+      <path d="M62 51 85 23l34 10-23 28z" fill="#ee2e31" transform="translate(3 2)"/>
+      <path d="m59 46 27-25 32 10-23 26z" fill="#f4c095" stroke="#071e22" stroke-width="2"/>
+      <path d="m59 46 36 11 23-26-2 16-24 22-29-9z" fill="#1d7874" stroke="#071e22" stroke-width="2"/>
+      <path d="m68 43 18-17 9 4-19 17zm29 15 15-15-1 5-15 14z" fill="#ee2e31"/>
+      <path d="m65 61 25 8-5 7-25-8z" fill="#679289" stroke="#071e22" stroke-width="1.5"/>
+      <path d="m121 25 5-8 7 5-5 8zM57 33l-9-3 4-6 9 3z" fill="#f4c095"/>
+      <path d="M106 20l10-8m13 42 9-9m-89 3 6 3" fill="none" stroke="#679289" stroke-width="1.5"/>
     </g>` : `
     <path d="M30 221h113m-96 5h77" fill="none" stroke="#679289" stroke-width="1.5"/>
     <path d="M48 215h78l13 6H32z" fill="#071e22" stroke="#679289" stroke-width="2"/>
@@ -37,18 +39,18 @@ function makeBookPerformer(who) {
     <g class="book-choreography book-fan">
       <path d="M22 135a66 66 0 0 1 132-3" fill="none" stroke="#679289" stroke-width="1.4" stroke-dasharray="10 5 2 6"/>
       <path d="m83 164-65-27 4-53 27 13 39 50z" fill="#071e22"/>
-      <g class="book-react book-fan-left">
+      <g class="book-react book-fan-left"><g class="book-choreography book-leaf-left">
         <path d="m85 157-66-23 5-56 33 11 34 57z" fill="#f4c095" stroke="#071e22" stroke-width="2.4"/>
         <path d="m84 153-57-23 2-42 27 10 31 47z" fill="#ee2e31"/>
         <path d="m31 108 33 13m-32-5 39 16m-40-7 42 17" fill="none" stroke="#f4c095" stroke-width="1.8"/>
         <path d="m85 150-56-21 1-40 26 10z" fill="url(#riso-dots)" opacity=".3"/>
-      </g>
-      <g class="book-react book-fan-right">
+      </g></g>
+      <g class="book-react book-fan-right"><g class="book-choreography book-leaf-right">
         <path d="m87 158 42-15 25-66-34 12-35 49z" fill="#ee2e31" transform="translate(2 2)" opacity=".72"/>
         <path d="m86 158 45-15 21-68-36 11-33 56z" fill="#f4c095" stroke="#071e22" stroke-width="2.4"/>
         <path d="m88 151 35-12 18-53-23 8-33 50z" fill="#1d7874"/>
         <path d="m126 99-18 33m24-33-18 30m23-31-18 28" fill="none" stroke="#f4c095" stroke-width="1.8"/>
-      </g>
+      </g></g>
       <path d="M85 150 68 85 92 65l19 24-20 64z" fill="#ee2e31" stroke="#071e22" stroke-width="2.2"/>
       <path d="m84 138 9-58 7 12-13 53z" fill="#f4c095"/>
       <circle cx="87" cy="151" r="12" fill="#071e22" stroke="#f4c095" stroke-width="2"/><circle cx="87" cy="151" r="3.4" fill="#ee2e31"/>
@@ -119,6 +121,47 @@ function initRoseWindow(button) {
   document.addEventListener('visibilitychange', reset);
   document.addEventListener('calendar-language', localize);
   localize();
+}
+
+function scheduleBookChoreography(stage, motion, backgroundPaused) {
+  const wide = window.matchMedia('(min-width: 1200px)');
+  const dancers = [
+    { figure: stage.querySelector('.book-figure-jussi'), phrases: ['steps', 'turn', 'fold'] },
+    { figure: stage.querySelector('.book-figure-mariah'), phrases: ['wave', 'spiral', 'flutter'] },
+  ];
+  for (const dancer of dancers) dancer.last = Math.floor(Math.random() * dancer.phrases.length);
+  let timer;
+  const canDance = () => wide.matches && !motion.matches && !backgroundPaused() && stage.dataset.inView !== 'false';
+
+  function startPhrase() {
+    let longest = 0;
+    for (const dancer of dancers) {
+      const { figure, phrases } = dancer;
+      dancer.last = (dancer.last + 1 + Math.floor(Math.random() * (phrases.length - 1))) % phrases.length;
+      const duration = 4900 + Math.round(Math.random() * 2300);
+      figure.style.setProperty('--book-phrase-duration', `${duration}ms`);
+      figure.dataset.phrase = phrases[dancer.last];
+      longest = Math.max(longest, duration);
+    }
+    timer = setTimeout(() => {
+      for (const { figure } of dancers) delete figure.dataset.phrase;
+      timer = setTimeout(startPhrase, 900 + Math.random() * 1500);
+    }, longest);
+  }
+
+  function sync() {
+    if (canDance()) {
+      if (!timer) startPhrase();
+      return;
+    }
+    clearTimeout(timer);
+    timer = undefined;
+    for (const { figure } of dancers) delete figure.dataset.phrase;
+  }
+
+  wide.addEventListener('change', sync);
+  motion.addEventListener('change', sync);
+  return sync;
 }
 
 function initBookPerformers(stage, motion) {

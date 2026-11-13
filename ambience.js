@@ -36,11 +36,13 @@
   initBookPerformers(stage,motion);
   initRoseWindow(element('rose-window'));
   const backgroundPaused=()=>document.hidden||modal.open;
+  const syncChoreography=scheduleBookChoreography(stage,motion,backgroundPaused);
   if('IntersectionObserver' in window){
     stage.dataset.inView='false';
     const visibility=new IntersectionObserver(entries=>{
       for(const entry of entries){
         entry.target.dataset.inView=String(entry.isIntersecting);
+        if(entry.target===stage)syncChoreography();
       }
     },{rootMargin:'80px 0px'});
     visibility.observe(stage);visibility.observe(grove);
@@ -92,7 +94,7 @@
   }
   function syncScene(){
     document.documentElement.classList.toggle('scene-paused',backgroundPaused());
-    syncSnow();
+    syncSnow();syncChoreography();
   }
   element('snow-enabled').onchange=event=>{settings.snow=event.target.checked;syncSnow();saveSettings();};
   element('snow-amount').oninput=event=>{

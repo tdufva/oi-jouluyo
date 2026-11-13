@@ -19,11 +19,40 @@
 .book-figure-mariah { right: var(--book-edge); }
 .book-figure:focus-visible { outline: 2px solid #f4c095; outline-offset: 2px; border-radius: 4px; }
 .book-figure-print { display: block; width: 100%; height: auto; overflow: visible; pointer-events: none; }
-.book-choreography { transform-box: view-box; }
-.book-tower { transform-origin: 78px 196px; animation: book-slide 8.4s cubic-bezier(.55,0,.27,1) -1s infinite; }
-.book-balance { transform-origin: 93px 48px; animation: book-index-roll 8.4s cubic-bezier(.55,0,.27,1) -1s infinite; }
-.book-fan { transform-origin: 87px 151px; animation: book-fan-sweep 10.6s ease-in-out -2.5s infinite; }
-.book-orbit { transform-origin: 89px 151px; animation: book-orbit-sweep 10.6s ease-in-out -2.5s infinite; }
+.book-choreography {
+  transform-box: view-box;
+  animation: var(--book-track, none) var(--book-phrase-duration, 6s) cubic-bezier(.45,0,.23,1);
+}
+.book-tower { transform-origin: 78px 196px; }
+.book-prism { transform-origin: 91px 46px; }
+.book-tab { transform-origin: 33px 150px; }
+.book-inset { transform-origin: 82px 130px; }
+.book-fan, .book-leaf-left, .book-leaf-right { transform-origin: 87px 151px; }
+.book-orbit { transform-origin: 89px 151px; }
+.book-figure[data-phrase="steps"] .book-tower { --book-track: book-steps; }
+.book-figure[data-phrase="steps"] .book-prism { --book-track: book-counterstep; }
+.book-figure[data-phrase="steps"] .book-tab { --book-track: book-slide-tab; }
+.book-figure[data-phrase="turn"] .book-tower { --book-track: book-pivot; }
+.book-figure[data-phrase="turn"] .book-prism { --book-track: book-prism-turn; }
+.book-figure[data-phrase="turn"] .book-inset { --book-track: book-aperture; }
+.book-figure[data-phrase="fold"] .book-tower { --book-track: book-fold; }
+.book-figure[data-phrase="fold"] .book-prism { --book-track: book-prism-fold; }
+.book-figure[data-phrase="fold"] .book-tab { --book-track: book-slide-tab; }
+.book-figure[data-phrase="fold"] .book-inset { --book-track: book-aperture; }
+.book-figure[data-phrase="wave"] .book-fan { --book-track: book-wave-fan; }
+.book-figure[data-phrase="wave"] .book-orbit { --book-track: book-orbit-arc; }
+.book-figure[data-phrase="spiral"] .book-fan { --book-track: book-spiral-fan; }
+.book-figure[data-phrase="spiral"] .book-orbit { --book-track: book-orbit-turn; }
+.book-figure[data-phrase="flutter"] .book-fan { --book-track: book-flutter-fan; }
+.book-figure[data-phrase="flutter"] .book-orbit { --book-track: book-orbit-arc; }
+.book-figure[data-phrase="wave"] .book-leaf-left,
+.book-figure[data-phrase="spiral"] .book-leaf-right,
+.book-figure[data-phrase="flutter"] .book-leaf-left { --book-track: book-leaf-open; }
+.book-figure[data-phrase="wave"] .book-leaf-right,
+.book-figure[data-phrase="spiral"] .book-leaf-left,
+.book-figure[data-phrase="flutter"] .book-leaf-right { --book-track: book-leaf-answer; }
+/* Inner groups select their own motion instead of inheriting the parent's track. */
+.book-tab, .book-inset, .book-leaf-left, .book-leaf-right { --book-track: none; }
 .book-react { transform-box: view-box; transition: transform .42s cubic-bezier(.18,.8,.27,1); }
 .book-shutter { transform-origin: 82px 130px; }
 .book-fan-left, .book-fan-right { transform-origin: 87px 151px; }
@@ -37,29 +66,86 @@
 .book-figure-mariah[data-force="full"] .book-fan-right { transform: rotate(22deg); }
 .book-figure-mariah[data-reaction="rain"] .book-fan-left { transform: rotate(12deg); }
 .book-figure-mariah[data-reaction="rain"] .book-fan-right { transform: rotate(-13deg); }
-@keyframes book-slide {
-  0%, 13%, 100% { transform: translate(0, 0) rotate(-3deg); }
-  28%, 41% { transform: translate(10px, -11px) rotate(8deg); }
-  57%, 70% { transform: translate(-7px, -7px) rotate(-9deg); }
-  83% { transform: translate(0, -1px) rotate(2deg); }
+@keyframes book-steps {
+  18% { transform: translate(-13px, -4px) rotate(-8deg); }
+  40%, 47% { transform: translate(10px, -12px) rotate(9deg); }
+  67% { transform: translate(15px, -2px) rotate(-5deg); }
+  83% { transform: translate(-4px, -5px) rotate(4deg); }
 }
-@keyframes book-index-roll {
-  0%, 13% { transform: translate(-12px, 7px) rotate(0); }
-  28%, 41% { transform: translate(14px, -10px) rotate(108deg); }
-  57%, 70% { transform: translate(-10px, -4px) rotate(226deg); }
-  91%, 100% { transform: translate(-12px, 7px) rotate(360deg); }
+@keyframes book-counterstep {
+  23% { transform: translate(14px, -10px) rotate(26deg); }
+  43% { transform: translate(-14px, -15px) rotate(-36deg); }
+  62% { transform: translate(-5px, -22px) rotate(-70deg); }
+  80% { transform: translate(8px, -5px) rotate(14deg); }
 }
-@keyframes book-fan-sweep {
-  0%, 100% { transform: rotate(-12deg) scaleX(.9); }
-  24% { transform: rotate(14deg) scaleX(1.04); }
-  48% { transform: rotate(3deg) scaleX(.72); }
-  75% { transform: rotate(-16deg) scaleX(1.08); }
+@keyframes book-pivot {
+  19% { transform: rotate(-16deg) translate(-6px, -2px); }
+  43% { transform: rotate(12deg) scaleX(.7) translate(5px, -16px); }
+  60% { transform: rotate(17deg) translate(8px, -7px); }
+  82% { transform: rotate(-7deg); }
 }
-@keyframes book-orbit-sweep {
-  0%, 100% { transform: rotate(15deg); }
-  33% { transform: rotate(-19deg); }
-  58% { transform: rotate(12deg) translateY(-9px); }
-  78% { transform: rotate(22deg) translateY(-5px); }
+@keyframes book-prism-turn {
+  22% { transform: translate(-12px, -10px) rotate(-45deg); }
+  49% { transform: translate(5px, -24px) rotate(-177deg); }
+  72% { transform: translate(16px, -7px) rotate(-305deg); }
+  100% { transform: rotate(-360deg); }
+}
+@keyframes book-fold {
+  22% { transform: translate(-8px, -3px) skewY(-12deg); }
+  48%, 56% { transform: translate(9px, -6px) scale(.71, .91) skewY(12deg); }
+  77% { transform: translate(-3px, -12px) scale(1.06, 1.03) rotate(-6deg); }
+}
+@keyframes book-prism-fold {
+  24% { transform: translate(-7px, -7px) rotate(23deg); }
+  50%, 58% { transform: translate(12px, 5px) rotate(71deg) scaleX(.42); }
+  79% { transform: translate(-7px, -12px) rotate(-29deg); }
+}
+@keyframes book-slide-tab {
+  25% { transform: translate(-10px, -8px) rotate(-11deg); }
+  51% { transform: translate(4px, -18px) rotate(5deg); }
+  78% { transform: translate(-5px, 6px); }
+}
+@keyframes book-aperture {
+  24% { transform: rotate(-22deg) scaleY(.6); }
+  55%, 62% { transform: translateY(-7px) rotate(28deg); }
+  79% { transform: rotate(-10deg) scaleY(1.16); }
+}
+@keyframes book-wave-fan {
+  22% { transform: rotate(-18deg) scaleX(.8); }
+  51% { transform: rotate(16deg) scaleX(1.1); }
+  73% { transform: rotate(-10deg) scaleX(.89); }
+}
+@keyframes book-spiral-fan {
+  25% { transform: translateY(-9px) rotate(-23deg) scaleX(.75); }
+  51%, 57% { transform: translateY(-18px) rotate(21deg) scaleX(.57); }
+  80% { transform: translateY(-4px) rotate(12deg) scaleX(1.08); }
+}
+@keyframes book-flutter-fan {
+  20% { transform: rotate(11deg) scaleX(.7); }
+  39% { transform: rotate(-12deg) scaleX(1.06); }
+  56% { transform: rotate(8deg) scaleX(.79); }
+  76% { transform: translateY(-10px) rotate(-11deg) scaleX(1.07); }
+}
+@keyframes book-orbit-arc {
+  28% { transform: translateY(-7px) rotate(24deg); }
+  58% { transform: translateY(-12px) rotate(-25deg); }
+  76% { transform: rotate(10deg); }
+}
+@keyframes book-orbit-turn {
+  22% { transform: rotate(-20deg) scale(.94); }
+  51% { transform: translateY(-11px) rotate(28deg) scale(1.07); }
+  78% { transform: translate(-6px, 6px) rotate(-18deg) scale(.93); }
+}
+@keyframes book-leaf-open {
+  17% { transform: rotate(-17deg); }
+  38%, 45% { transform: rotate(-22deg); }
+  62% { transform: rotate(15deg) scaleX(.81); }
+  82% { transform: rotate(-8deg); }
+}
+@keyframes book-leaf-answer {
+  28% { transform: rotate(14deg); }
+  50% { transform: rotate(-13deg) scaleX(.82); }
+  72%, 79% { transform: rotate(20deg); }
 }
 .book-reaction { position: absolute; left: 52%; top: 31%; pointer-events: none; }
 .book-figure-jussi .book-reaction { left: 56%; top: 32%; }
