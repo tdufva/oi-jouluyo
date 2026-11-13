@@ -101,6 +101,66 @@
   100% { transform: translate(-50%, -50%) scale(3.6); opacity: 0; }
 }
 
+.book-assistive {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+#stage-performers[data-duet="left"] .book-figure-jussi .book-reaction::before,
+#stage-performers[data-duet="right"] .book-figure-mariah .book-reaction::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -29px;
+  width: 12px;
+  height: 12px;
+  background: #f4c095;
+  clip-path: polygon(50% 0, 63% 37%, 100% 50%, 63% 63%, 50% 100%, 37% 63%, 0 50%, 37% 37%);
+  transform: translateX(-50%);
+  animation: book-duet-signal 1.65s ease-in-out infinite alternate;
+}
+@keyframes book-duet-signal { from { opacity: .4; } to { opacity: 1; } }
+.book-constellation {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  animation: book-constellation-linger var(--constellation-duration) linear both;
+}
+.book-constellation polyline { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.book-constellation-branch {
+  stroke: #f4c095;
+  stroke-width: 1.5;
+  stroke-dasharray: 2 6;
+  animation: book-constellation-light .55s ease-out .8s both;
+}
+.book-constellation-trace, .book-constellation-line {
+  stroke-dasharray: 1;
+  animation: book-constellation-draw 1.25s ease-out both;
+}
+.book-constellation-trace { stroke: #071e22; stroke-width: 5; opacity: .84; }
+.book-constellation-line { stroke: #f4c095; stroke-width: 2; }
+.book-constellation-star {
+  fill: #f4c095;
+  stroke: #071e22;
+  stroke-width: 1.4;
+  animation: book-constellation-light .55s ease-out var(--star-in) both;
+}
+.book-constellation-center { fill: #fff0da; }
+@keyframes book-constellation-linger {
+  0%, 100% { opacity: 0; }
+  12%, 76% { opacity: 1; }
+}
+@keyframes book-constellation-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes book-constellation-light { from { opacity: 0; } to { opacity: 1; } }
+
 /* A tree is now one cached SVG image instead of dozens of live SVG nodes. */
 .geometric-tree img { display: block; width: 100%; height: auto; }
 .winter-landscape .nocturne-tree img { opacity: .47; }
@@ -110,6 +170,7 @@
 .scene-paused .scene-grove *,
 #stage-performers[data-in-view="false"] .book-choreography,
 .scene-grove[data-in-view="false"] .book-tree { animation-play-state: paused !important; }
+.scene-paused .book-constellation { visibility: hidden; }
 /* Core feedback begins in the first frame; artwork is already colored and decoded. */
 .modal-cover .cover-image { object-fit: cover; }
 .door-surface { transition: transform .32s cubic-bezier(.2,.65,.2,1),filter .2s; }
@@ -118,7 +179,13 @@
 @keyframes quick-page-arrives { from { opacity: .85; transform: translateY(5px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) {
   #stage-performers .book-choreography,
-  #stage-performers .book-reaction-mark { animation: none; }
+  #stage-performers .book-reaction-mark,
+  #stage-performers .book-reaction::before,
+  .book-constellation,
+  .book-constellation-branch,
+  .book-constellation-trace,
+  .book-constellation-line,
+  .book-constellation-star { animation: none; }
   #stage-performers .book-reaction-piece { display: none; }
   #stage-performers .book-react { transform: none; transition: none; }
   #book-modal.revealing .modal-grid { animation: none; }

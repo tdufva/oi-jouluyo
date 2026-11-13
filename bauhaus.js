@@ -68,6 +68,40 @@ function makeBookPerformer(who) {
   </button>`;
 }
 
+function drawBookConstellation(stage, from, to, duration) {
+  const stageBounds = stage.getBoundingClientRect();
+  const origin = button => {
+    const bounds = button.querySelector('.book-reaction').getBoundingClientRect();
+    return { x: bounds.left - stageBounds.left, y: bounds.top - stageBounds.top };
+  };
+  const start = origin(from);
+  const end = origin(to);
+  const points = [[0, 0], [.12, 42], [.26, 101], [.37, 62], [.5, 142], [.64, 92], [.75, 118], [.89, 45], [1, 0]]
+    .map(([fraction, rise]) => [
+      Math.round(start.x + (end.x - start.x) * fraction),
+      Math.round(start.y + (end.y - start.y) * fraction - rise),
+    ]);
+  const stars = points.map(([x, y], index) => {
+    const accent = index === 4;
+    const size = accent ? 19 : index % 2 ? 5 : 8;
+    return `<g transform="translate(${x} ${y})">
+      <g class="book-constellation-star${accent ? ' book-constellation-center' : ''}" style="--star-in:${index * 135}ms">
+        ${accent ? '<circle r="29" fill="none" stroke="#679289" stroke-width="1" stroke-dasharray="3 5"/><circle r="23" fill="none" stroke="#ee2e31" stroke-width="1.5"/>' : ''}
+        <path d="M0 ${-size} ${size / 4} ${-size / 4} ${size} 0 ${size / 4} ${size / 4} 0 ${size} ${-size / 4} ${size / 4} ${-size} 0 ${-size / 4} ${-size / 4}Z"/>
+      </g>
+    </g>`;
+  }).join('');
+  const mainLine = points.map(point => point.join(',')).join(' ');
+  const branch = [points[2], points[4], points[6]].map(point => point.join(',')).join(' ');
+  stage.insertAdjacentHTML('afterbegin', `<svg class="book-constellation" viewBox="0 0 ${stageBounds.width} ${stageBounds.height}" aria-hidden="true" style="--constellation-duration:${duration}ms">
+    <polyline class="book-constellation-branch" points="${branch}"/>
+    <polyline class="book-constellation-trace" points="${mainLine}" pathLength="1"/>
+    <polyline class="book-constellation-line" points="${mainLine}" pathLength="1"/>
+    ${stars}
+  </svg>`);
+  return stage.firstElementChild;
+}
+
 function initBookPerformers(stage, motion) {
   const sparks = {
     star: '<path d="M12 0 15 9 24 12 15 15 12 24 9 15 0 12 9 9Z" fill="currentColor"/>',
@@ -93,7 +127,41 @@ function initBookPerformers(stage, motion) {
     { who: 'jussi', name: 'Jussi Björling', glints: ['stars', 'pages'], shows: ['stars', 'pages', 'echoes'] },
     { who: 'mariah', name: 'Mariah Carey', glints: ['orbit', 'prisms'], shows: ['orbit', 'prisms', 'rain'] },
   ];
-  stage.innerHTML = figures.map(({ who }) => makeBookPerformer(who)).join('');
+  stage.innerHTML = figures.map(({ who }) => makeBookPerformer(who)).join('') +
+    '<span id="book-duet-status" class="book-assistive" role="status"></span>';
+  const status = stage.querySelector('#book-duet-status');
+  const duetWindow = 8000;
+  const duetDuration = 4400;
+  let previousFigure;
+  let duetTimer;
+  let constellation;
+
+  function resetDuet() {
+    clearTimeout(duetTimer);
+    previousFigure = undefined;
+    constellation?.remove();
+    constellation = undefined;
+    delete stage.dataset.duet;
+    status.textContent = '';
+  }
+
+  function activateDuet(button) {
+    const first = previousFigure;
+    resetDuet();
+    if (first && first !== button) {
+      constellation = drawBookConstellation(stage, first, button, duetDuration);
+      stage.dataset.duet = 'together';
+      status.textContent = document.documentElement.lang === 'sv' ? 'En stjärnbild tändes mellan bokfigurerna.' : 'Kirjahahmojen väliin syttyi tähtikuvio.';
+      duetTimer = setTimeout(resetDuet, duetDuration);
+      return;
+    }
+    previousFigure = button;
+    stage.dataset.duet = button.classList.contains('book-figure-jussi') ? 'left' : 'right';
+    duetTimer = setTimeout(resetDuet, duetWindow);
+  }
+
+  window.addEventListener('resize', resetDuet);
+  document.addEventListener('visibilitychange', resetDuet);
 
   for (const { who, name, glints, shows } of figures) {
     const button = stage.querySelector('.book-figure-' + who);
@@ -147,7 +215,10 @@ function initBookPerformers(stage, motion) {
     button.addEventListener('focus', () => {
       if (button.matches(':focus-visible')) peek();
     });
-    button.addEventListener('click', () => react(shows[show++ % shows.length], true));
+    button.addEventListener('click', () => {
+      react(shows[show++ % shows.length], true);
+      activateDuet(button);
+    });
     document.addEventListener('calendar-language', localize);
     localize();
   }
