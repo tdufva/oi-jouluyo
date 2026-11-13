@@ -1,32 +1,156 @@
-/* Book characters built from primary-color planes, circles and folded pages. */
 function makeBookPerformer(who) {
-  const jussi=who==='jussi';
-  const notes=`<g class="song-notes" fill="#f4c095"><path d="M175 58v-17l10-3v15m-10-12v5l10-3" stroke="#071e22" stroke-width="2" fill="none"/><ellipse cx="171" cy="59" rx="5" ry="3"/><ellipse cx="181" cy="54" rx="5" ry="3"/><path d="M164 27v-14l8 4v5l-8-4" stroke="#071e22" stroke-width="2" fill="none"/><ellipse cx="160" cy="28" rx="5" ry="3"/></g>`;
-  const body=jussi?`
-    <g class="walk-leg leg-left"><path d="M70 240L61 280" stroke="#071e22" stroke-width="9"/><path d="M61 276L36 292H72V279Z" fill="#ee2e31"/></g>
-    <g class="walk-leg leg-right"><path d="M133 240L143 281" stroke="#071e22" stroke-width="9"/><path d="M143 280A18 18 0 0 1 164 297H130V281Z" fill="#071e22"/></g>
-    <path d="M37 137L16 163V203" fill="none" stroke="#071e22" stroke-width="7"/><circle cx="16" cy="207" r="8" fill="#f4c095"/>
-    <path class="baton-arm" d="M155 133L182 159L187 111" fill="none" stroke="#071e22" stroke-width="7"/><g class="conductor-baton"><circle cx="187" cy="110" r="9" fill="#f4c095"/><path d="M187 104L196 70" stroke="#ee2e31" stroke-width="4"/></g>
-    <path d="M35 58L145 44L165 61V240L52 253L31 237Z" fill="#071e22"/>
-    <path d="M47 65L157 54V233L47 245Z" fill="#f4c095"/>
-    <path d="M151 67V224M146 69V226M141 70V226" stroke="#071e22" stroke-width="1.6"/>
-    <g class="book-cover"><path d="M25 57L143 39V119L151 117L143 162V233L31 247L35 159L25 160Z" fill="#1d7874"/><path d="M31 52L53 49V244L31 247Z" fill="#f4c095"/><path d="M36 63V229M42 62V228" stroke="#071e22" stroke-width="2"/>
-    <g class="singer-head abstract-mask"><path d="M66 78A30 30 0 0 1 96 48V109H66Z" fill="#f4c095"/><path d="M108 54L145 105L104 124Z" fill="#ee2e31"/><circle cx="119" cy="47" r="13" fill="#f4c095"/><path class="book-brow" d="M65 87L92 83M112 92L136 99" stroke="#071e22" stroke-width="5"/><g class="character-eyes"><rect x="70" y="94" width="19" height="5" fill="#071e22"/><circle cx="120" cy="105" r="6" fill="#071e22"/></g><path d="M92 103L83 119L103 116Z" fill="#f4c095"/><ellipse class="singing-mouth" cx="105" cy="132" rx="10" ry="11" fill="#071e22"/></g>
-    <path d="M66 151L94 167L120 145V178L94 167L66 185Z" fill="#f4c095"/>
-    <path d="M68 190H130V221H68Z" fill="#f4c095"/><path d="M69 191A30 30 0 0 1 129 191" fill="#f4c095"/><path d="M98 175V222" stroke="#071e22" stroke-width="3"/><path d="M79 202H118M79 210H118" stroke="#071e22" stroke-width="2"/>
-    <path class="ribbon-tail" d="M58 239V268L67 259L76 267V236Z" fill="#ee2e31"/></g>`:`
-    <g class="walk-leg leg-left"><path d="M77 238L63 281" stroke="#071e22" stroke-width="7"/><path d="M64 276L43 293H70L79 280M46 292V300" fill="#ee2e31" stroke="#ee2e31" stroke-width="3"/></g>
-    <g class="walk-leg leg-right"><path d="M128 237L144 280" stroke="#071e22" stroke-width="7"/><path d="M144 277L166 291L163 299H131L132 281Z" fill="#1d7874"/></g>
-    <path class="diva-arm" d="M47 142L18 132L9 99" stroke="#071e22" stroke-width="6" fill="none"/><circle cx="9" cy="97" r="8" fill="#f4c095"/>
-    <g class="page-wing wing-left"><path d="M98 83L20 48L12 223L99 251Z" fill="#071e22"/><path d="M94 85L27 61L20 214L97 239Z" fill="#ee2e31"/><path d="M90 91L38 71L31 211L97 233Z" fill="#f4c095"/><path d="M84 99L49 80L42 208L96 229Z" fill="#f4c095"/>
-    <path d="M48 127L82 145L47 161Z" fill="#1d7874"/><path d="M46 178H85V215H44Z" fill="#ee2e31"/><path d="M46 179A20 20 0 0 1 85 179Z" fill="#ee2e31"/><path d="M53 113L80 126M50 119L80 133" stroke="#071e22" stroke-width="2"/></g>
-    <g class="page-wing wing-right"><path d="M101 82L166 35L188 222L100 253Z" fill="#071e22"/><path d="M103 88L159 48L178 215L104 242Z" fill="#ee2e31"/><path d="M110 98L149 65L168 207L108 235Z" fill="#f4c095"/><path d="M117 117L153 91L163 181L114 211Z" fill="#1d7874"/>
-    <circle cx="140" cy="151" r="24" fill="#f4c095"/><path d="M140 127V175A24 24 0 0 1 140 127Z" fill="#ee2e31"/><path d="M119 222L154 204" stroke="#071e22" stroke-width="3"/></g>
-    <path d="M97 89L105 84L109 249L100 257Z" fill="#071e22"/>
-    <g class="singer-head abstract-mask"><g class="paper-hair"><path d="M57 34L87 11L103 49L77 80Z" fill="#f4c095"/><path d="M112 23A39 39 0 0 1 151 62H112Z" fill="#1d7874"/><circle cx="135" cy="36" r="12" fill="#f4c095"/></g><path d="M79 41L109 53L93 101L64 81Z" fill="#ee2e31"/><path d="M109 53A27 27 0 0 1 109 107Z" fill="#f4c095"/><g class="character-eyes" fill="none" stroke="#071e22" stroke-width="3"><circle cx="117" cy="67" r="8"/><path d="M69 63L89 69"/></g><path d="M101 74L112 91H94Z" fill="#f4c095"/><ellipse class="singing-mouth" cx="87" cy="97" rx="10" ry="6" fill="#071e22"/><path d="M65 83L74 96L61 107L52 94Z" fill="#1d7874"/></g>
-    <path class="ribbon-tail" d="M96 244L80 279L99 266L116 282L108 241Z" fill="#ee2e31"/>
-    <g class="singer-hand"><path d="M160 143L181 127L175 91" fill="none" stroke="#071e22" stroke-width="6"/><circle cx="175" cy="91" r="8" fill="#f4c095"/><path d="M172 87L158 68" stroke="#071e22" stroke-width="5"/><circle cx="154" cy="62" r="10" fill="#071e22"/><path d="M147 60L158 54" stroke="#f4c095" stroke-width="3"/></g>`;
-  return `<div class="performer performer-${who} book-character bold-book-character abstract-book-character" data-performer="${who}" role="img" aria-label="${jussi?'Jussi Björling · oopperakirja':'Mariah Carey · avautuva juhlakirja'}"><svg viewBox="0 0 200 320" aria-hidden="true"><path d="M26 306H177" stroke="#071e22" stroke-width="2" opacity=".3"/><g class="character-chair"><path d="M42 264H149M50 264L45 306M140 264L155 306M147 264V211" stroke="#679289" stroke-width="4" fill="none"/><path d="M42 256H149V264H42Z" fill="#1d7874"/></g><g class="performer-body"><g class="character-breath">${body}<path class="book-print-grain" d="M28 58L144 41L165 221L100 250L28 233Z" fill="url(#riso-dots)" opacity=".18"/><g class="reading-book"><path d="M44 170L99 186L151 163V210L100 232L44 214Z" fill="#f4c095" stroke="#071e22" stroke-width="3"/><path d="M99 186L100 232M53 181L87 191M53 188L87 198M111 188L139 177M111 196L139 185" stroke="#071e22" stroke-width="2" fill="none"/><path d="M99 186L93 239L101 232L107 235L104 184Z" fill="#ee2e31"/></g></g></g><g class="seated-legs"><path d="M79 263L123 272L142 300M114 265L88 282L112 300" stroke="#679289" stroke-width="7" fill="none"/><path d="M133 294H157V304H133M103 294H127V304H103" fill="#ee2e31"/></g><g class="thought-marks" fill="none" stroke="#f4c095" stroke-width="1.5"><circle cx="160" cy="70" r="3"/><circle cx="174" cy="48" r="6"/><path d="M164 16L183 11L193 29L173 35Z"/><path d="M174 19L183 26M183 17L176 28"/></g>${notes}</svg></div>`;
+  const jussi = who === 'jussi';
+  const art = jussi ? `
+    <path d="M28 221h112m-97 5h75" fill="none" stroke="#679289" stroke-width="1.5"/>
+    <path d="M49 215h69l15 6H34z" fill="#071e22" stroke="#679289" stroke-width="2"/>
+    <g class="book-choreography book-tower">
+      <path d="M35 71l78-14 19 11-5 114-76 22-18-9z" fill="#ee2e31" opacity=".55" transform="translate(3 2)"/>
+      <path d="m38 69 78-15 17 13-5 118-80 21-14-14z" fill="#f4c095" stroke="#071e22" stroke-width="2.5"/>
+      <path d="m42 72 74-15-4 115-74 24-9-13z" fill="#1d7874" stroke="#071e22" stroke-width="2.5"/>
+      <path d="m42 72 14-3-7 123-11 4-9-13z" fill="#679289"/>
+      <path d="m49 74-8 110m10-104-7 98m72-99 8-3m-9 8 9-3m-9 8 9-3m-12 80 10-3m-10 8 10-3" fill="none" stroke="#071e22" stroke-width="1.5"/>
+      <path d="m55 68 61-11-4 115-63 20z" fill="url(#riso-dots)" opacity=".38"/>
+      <path d="m56 151 48-15-1 14-47 16zm-1 22 35-12v7l-35 11z" fill="#f4c095"/>
+      <path d="m66 174-6 37 11-7 8 5-2-39z" fill="#ee2e31" stroke="#071e22" stroke-width="1.5"/>
+      <g class="book-react book-shutter">
+        <path d="M54 131a28 28 0 0 1 56 0z" fill="#071e22"/>
+        <path d="M57 130a25 25 0 0 1 50 0z" fill="#f4c095"/>
+        <path d="m82 105 22 24H82z" fill="#ee2e31"/>
+        <path d="M69 131h31m-26 5h20" stroke="#679289" stroke-width="1.6"/>
+      </g>
+    </g>
+    <g class="book-react book-index">
+      <path d="M24 92h18v68H24z" fill="#ee2e31" stroke="#071e22" stroke-width="2"/>
+      <path d="M28 99h4v55h-4z" fill="#f4c095"/>
+    </g>
+    <g class="book-choreography book-balance">
+      <circle cx="93" cy="48" r="27" fill="none" stroke="#679289" stroke-width="1.4" stroke-dasharray="12 4 2 6"/>
+      <path d="M93 25a23 23 0 0 1 0 46V25Z" fill="#ee2e31" stroke="#071e22" stroke-width="2"/>
+      <path d="M93 25a23 23 0 0 0 0 46V25Z" fill="#f4c095" stroke="#071e22" stroke-width="2"/>
+      <circle cx="93" cy="48" r="6" fill="#071e22"/><circle cx="93" cy="48" r="2.3" fill="#f4c095"/>
+      <path d="M110 30h18m-6-6v12" stroke="#f4c095" stroke-width="1.5"/>
+    </g>` : `
+    <path d="M30 221h113m-96 5h77" fill="none" stroke="#679289" stroke-width="1.5"/>
+    <path d="M48 215h78l13 6H32z" fill="#071e22" stroke="#679289" stroke-width="2"/>
+    <path d="M91 127 54 214h74z" fill="#1d7874" stroke="#071e22" stroke-width="2.5"/>
+    <path d="m87 165-10 49h17l3-53z" fill="#f4c095"/>
+    <g class="book-choreography book-fan">
+      <path d="M22 135a66 66 0 0 1 132-3" fill="none" stroke="#679289" stroke-width="1.4" stroke-dasharray="10 5 2 6"/>
+      <path d="m83 164-65-27 4-53 27 13 39 50z" fill="#071e22"/>
+      <g class="book-react book-fan-left">
+        <path d="m85 157-66-23 5-56 33 11 34 57z" fill="#f4c095" stroke="#071e22" stroke-width="2.4"/>
+        <path d="m84 153-57-23 2-42 27 10 31 47z" fill="#ee2e31"/>
+        <path d="m31 108 33 13m-32-5 39 16m-40-7 42 17" fill="none" stroke="#f4c095" stroke-width="1.8"/>
+        <path d="m85 150-56-21 1-40 26 10z" fill="url(#riso-dots)" opacity=".3"/>
+      </g>
+      <g class="book-react book-fan-right">
+        <path d="m87 158 42-15 25-66-34 12-35 49z" fill="#ee2e31" transform="translate(2 2)" opacity=".72"/>
+        <path d="m86 158 45-15 21-68-36 11-33 56z" fill="#f4c095" stroke="#071e22" stroke-width="2.4"/>
+        <path d="m88 151 35-12 18-53-23 8-33 50z" fill="#1d7874"/>
+        <path d="m126 99-18 33m24-33-18 30m23-31-18 28" fill="none" stroke="#f4c095" stroke-width="1.8"/>
+      </g>
+      <path d="M85 150 68 85 92 65l19 24-20 64z" fill="#ee2e31" stroke="#071e22" stroke-width="2.2"/>
+      <path d="m84 138 9-58 7 12-13 53z" fill="#f4c095"/>
+      <circle cx="87" cy="151" r="12" fill="#071e22" stroke="#f4c095" stroke-width="2"/><circle cx="87" cy="151" r="3.4" fill="#ee2e31"/>
+      <path d="m87 158 13 34 10-17 8 3-21-25z" fill="#ee2e31" stroke="#071e22" stroke-width="1.5"/>
+    </g>
+    <g class="book-choreography book-orbit">
+      <circle cx="89" cy="49" r="26" fill="none" stroke="#f4c095" stroke-width="1.4"/>
+      <path d="M89 23a26 26 0 0 1 0 52V23Z" fill="#1d7874"/>
+      <path d="M89 31a18 18 0 0 0 0 36V31Z" fill="#ee2e31"/>
+      <path d="M89 34a15 15 0 0 1 0 30V34Z" fill="#f4c095"/>
+      <circle cx="114" cy="43" r="6" fill="#ee2e31" stroke="#071e22" stroke-width="1.5"/>
+      <path d="m68 21 8 2-4 7-8-1z" fill="#f4c095"/>
+    </g>`;
+  return `<button type="button" class="book-figure book-figure-${who}">
+    <svg class="book-figure-print" viewBox="0 0 170 235" aria-hidden="true">${art}</svg>
+    <span class="book-reaction" aria-hidden="true"></span>
+  </button>`;
+}
+
+function initBookPerformers(stage, motion) {
+  const sparks = {
+    star: '<path d="M12 0 15 9 24 12 15 15 12 24 9 15 0 12 9 9Z" fill="currentColor"/>',
+    diamond: '<path d="m12 1 9 11-9 11L3 12Z" fill="currentColor"/>',
+    page: '<path d="m2 4 10 3 10-4-2 16-8 3-9-4z" fill="currentColor"/><path d="M12 7v15M5 10l4 1m6 0 4-2m-4 5 3-1" fill="none" stroke="#071e22" stroke-width="1.4"/>',
+    ring: '<circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/>',
+    dot: '<circle cx="12" cy="12" r="5" fill="currentColor"/>',
+    prism: '<path d="M3 21 11 2l11 19Z" fill="currentColor"/><path d="M11 2v19H3Z" fill="#071e22" opacity=".48"/>',
+  };
+  const recipes = {
+    stars: { shapes: ['star', 'diamond', 'dot'], spread: 112, lift: 28, turn: .23, symbol: 'star' },
+    pages: { shapes: ['page', 'page', 'diamond'], spread: 72, lift: 116, turn: -.4, symbol: 'page' },
+    echoes: { shapes: ['ring', 'dot', 'ring'], spread: 107, lift: 15, turn: .16, symbol: 'ring' },
+    orbit: { shapes: ['dot', 'star', 'ring'], spread: 102, lift: 19, turn: 1.35, symbol: 'ring' },
+    prisms: { shapes: ['prism', 'diamond', 'prism'], spread: 84, lift: 57, turn: -.8, symbol: 'prism' },
+    rain: { shapes: ['star', 'star', 'diamond'], spread: 88, lift: -62, turn: .58, symbol: 'star' },
+  };
+  const palettes = {
+    jussi: ['#f4c095', '#fff0da', '#8cb4a9', '#ee2e31'],
+    mariah: ['#fff0da', '#ee2e31', '#f4c095', '#8cb4a9'],
+  };
+  const figures = [
+    { who: 'jussi', name: 'Jussi Björling', glints: ['stars', 'pages'], shows: ['stars', 'pages', 'echoes'] },
+    { who: 'mariah', name: 'Mariah Carey', glints: ['orbit', 'prisms'], shows: ['orbit', 'prisms', 'rain'] },
+  ];
+  stage.innerHTML = figures.map(({ who }) => makeBookPerformer(who)).join('');
+
+  for (const { who, name, glints, shows } of figures) {
+    const button = stage.querySelector('.book-figure-' + who);
+    const layer = button.querySelector('.book-reaction');
+    let glint = 0;
+    let show = 0;
+    let cleanup;
+    function react(mode, full) {
+      clearTimeout(cleanup);
+      const recipe = recipes[mode];
+      const still = motion.matches;
+      const count = full ? 19 : 9;
+      const scale = full ? 1 : .52;
+      const colors = palettes[who];
+      const symbol = `<svg class="book-reaction-mark" viewBox="0 0 24 24">${sparks[recipe.symbol]}</svg>`;
+      const pieces = still ? '' : Array.from({ length: count }, (_, index) => {
+        const phase = index / count * Math.PI * 2 + show * .36;
+        const distance = (0.56 + Math.random() * .42) * scale;
+        const x = Math.cos(phase) * recipe.spread * distance;
+        const y = Math.sin(phase) * recipe.spread * distance * .8 - recipe.lift * scale;
+        const midX = Math.cos(phase - recipe.turn) * recipe.spread * distance * .63;
+        const midY = Math.sin(phase - recipe.turn) * recipe.spread * distance * .54 - (mode === 'rain' ? 66 : recipe.lift * .74) * scale;
+        const shape = recipe.shapes[index % recipe.shapes.length];
+        const size = (shape === 'ring' ? 20 : 10) + Math.round(Math.random() * (full ? 18 : 9));
+        const color = colors[index % colors.length];
+        const delay = index * (mode === 'rain' ? 28 : 11);
+        const duration = (full ? 980 : 750) + Math.round(Math.random() * 245);
+        const spin = (index % 2 ? 1 : -1) * (mode === 'pages' ? 175 : 94);
+        return `<svg class="book-reaction-piece" viewBox="0 0 24 24" style="--dx:${x.toFixed(1)}px;--dy:${y.toFixed(1)}px;--mx:${midX.toFixed(1)}px;--my:${midY.toFixed(1)}px;--spin:${spin}deg;--size:${size}px;--ink:${color};--delay:${delay}ms;--duration:${duration}ms">${sparks[shape]}</svg>`;
+      }).join('');
+      layer.innerHTML = symbol + pieces;
+      button.dataset.reaction = mode;
+      button.dataset.force = full ? 'full' : 'glint';
+      cleanup = setTimeout(() => {
+        layer.replaceChildren();
+        delete button.dataset.reaction;
+        delete button.dataset.force;
+      }, still ? 850 : 1850);
+    }
+    function peek() {
+      if (button.dataset.force === 'full') return;
+      react(glints[glint++ % glints.length], false);
+    }
+    function localize() {
+      const action = document.documentElement.lang === 'sv' ? 'Visa en överraskning' : 'Näytä yllätys';
+      button.setAttribute('aria-label', `${name}. ${action}.`);
+    }
+    button.addEventListener('pointerenter', event => {
+      if (event.pointerType !== 'touch') peek();
+    });
+    button.addEventListener('focus', () => {
+      if (button.matches(':focus-visible')) peek();
+    });
+    button.addEventListener('click', () => react(shows[show++ % shows.length], true));
+    document.addEventListener('calendar-language', localize);
+    localize();
+  }
 }
 
 function makeBauhausTree(seed,x,width,bottom,depth){
@@ -105,11 +229,6 @@ function drawKleeSnowflake(ctx,flake){
     for(let j=0;j<4;j++){ctx.save();ctx.rotate(j*Math.PI/2);line([[0,0],[.03,-.95]]);line([[-.33,-.5],[.03,-.75],[.3,-.55]]);ctx.restore();}
   }
   ctx.restore();
-}
-
-function characterActivityFor(who, phase) {
-  const activities=who==='jussi'?['thinking','walking','singing','reading','seated']:['reading','singing','seated','thinking','walking'];
-  return activities[phase%activities.length];
 }
 
 // Draw the pencil strokes once. Animation only rotates and composites these small bitmaps.

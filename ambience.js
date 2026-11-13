@@ -31,47 +31,19 @@
   const tree=makeBauhausTree;
   element('winter-landscape').innerHTML='<svg class="night-sky-shapes" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M0 0H440L0 710Z" fill="#1d7874" opacity=".24"/><path d="M1170 0H1600V1000H1425L1050 350Z" fill="#679289" opacity=".17"/><circle cx="1280" cy="190" r="145" fill="#f4c095" opacity=".09"/><circle cx="1280" cy="190" r="166" fill="none" stroke="#679289" stroke-width=".9" opacity=".22"/><path d="M1280 45V335A145 145 0 0 0 1280 45" fill="#071e22" opacity=".7"/><path d="M960 64L1450 610M78 720L616 168" stroke="#f4c095" opacity=".2" stroke-width="1"/><circle cx="256" cy="315" r="85" stroke="#679289" fill="none" opacity=".12"/></svg>'+Array.from({length:17},(_,i)=>tree(i+1,-4+i*6.8,60+(i*43)%150,2+(i*13)%21,.13+(i%5)*.045)).join('')+`<div class="landscape-stars">${Array.from({length:10},(_,i)=>`<i style="--star-x:${[5,93,12,86,3,97,18,81,31,70][i]}%;--star-y:${[14,22,45,52,77,82,7,91,30,68][i]}%;--star-size:${18+(i*13)%53}px;--star-delay:-${i*2}s">${i%2?'✳':'✦'}</i>`).join('')}</div><div class="snow-horizon"></div><div class="snow-horizon hill-two"></div>`;
   document.querySelector('.scene-grove').innerHTML=Array.from({length:9},(_,i)=>tree(i+30,3+i*11.5,55+(i*29)%90,1+(i*7)%14,.7)).join('');
-  // The pose changes slowly; the continuous breathing/stroll animations never restart with a pose.
   const stage=element('stage-performers'),grove=document.querySelector('.scene-grove');
-  const wide=window.matchMedia('(min-width:1200px)');
   const modal=element('book-modal');
-  stage.innerHTML=makeBookPerformer('jussi')+makeBookPerformer('mariah');
-  stage.classList.add('duet');
-  stage.dataset.inView='false';
-  const characters=Array.from(stage.querySelectorAll('.book-character'));
-  let activityPhase=0,activityTimer=0,stageInView=false;
-  const activityWords={fi:{singing:'laulaa',thinking:'miettii',walking:'kävelee',reading:'lukee',seated:'istuu'},sv:{singing:'sjunger',thinking:'funderar',walking:'går',reading:'läser',seated:'sitter'}};
+  initBookPerformers(stage,motion);
   const backgroundPaused=()=>document.hidden||modal.open;
-  function updateCharacterActivities(){
-    const locale=document.documentElement.lang==='sv'?'sv':'fi';
-    for(const character of characters){
-      const who=character.dataset.performer,activity=characterActivityFor(who,activityPhase);
-      if(character.dataset.activity!==activity){
-        character.dataset.activity=activity;
-        character.classList.toggle('lead',activity==='singing');
-      }
-      character.setAttribute('aria-label',`${who==='jussi'?'Jussi Björling':'Mariah Carey'} · ${activityWords[locale][activity]}`);
-    }
-  }
-  function scheduleActivity(){
-    clearTimeout(activityTimer);activityTimer=0;
-    if(stageInView&&wide.matches&&!motion.matches&&!backgroundPaused()){
-      activityTimer=setTimeout(()=>{activityPhase++;updateCharacterActivities();scheduleActivity();},14000);
-    }
-  }
-  function syncPerformers(){stage.hidden=motion.matches;updateCharacterActivities();scheduleActivity();}
-  syncPerformers();
-  document.addEventListener('calendar-language',syncPerformers);
-  wide.addEventListener('change',scheduleActivity);
   if('IntersectionObserver' in window){
+    stage.dataset.inView='false';
     const visibility=new IntersectionObserver(entries=>{
       for(const entry of entries){
         entry.target.dataset.inView=String(entry.isIntersecting);
-        if(entry.target===stage){stageInView=entry.isIntersecting;scheduleActivity();}
       }
     },{rootMargin:'80px 0px'});
     visibility.observe(stage);visibility.observe(grove);
-  }else{stageInView=true;stage.dataset.inView='true';scheduleActivity();}
+  }
 
   const canvas=element('snow-canvas'),ctx=canvas.getContext('2d',{alpha:true,desynchronized:true});
   let width=0,height=0,flakes=[],frame=0,lastTime=0,resizeFrame=0,sprites=[],spriteScale=0;
@@ -119,7 +91,7 @@
   }
   function syncScene(){
     document.documentElement.classList.toggle('scene-paused',backgroundPaused());
-    syncSnow();scheduleActivity();
+    syncSnow();
   }
   element('snow-enabled').onchange=event=>{settings.snow=event.target.checked;syncSnow();saveSettings();};
   element('snow-amount').oninput=event=>{
@@ -136,6 +108,5 @@
   resize();syncScene();
   motion.addEventListener('change',event=>{
     if(event.matches){settings.snow=false;element('snow-enabled').checked=false;syncSnow();}
-    syncPerformers();
   });
 })();

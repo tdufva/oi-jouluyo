@@ -1,73 +1,114 @@
-/* Continuous, restrained motion. Changing the activity only interpolates the pose. */
-.stage-performers .abstract-book-character {
-  animation: elegant-stroll 42s ease-in-out -10s infinite !important;
-  transform-origin: 50% 100%; opacity: .94; filter: none;
+/* Two movable print sculptures at the sides of the house. */
+#stage-performers { clip-path: inset(-155px 0 -38px); }
+.book-figure {
+  --book-edge: clamp(3px, 1.55vw, 24px);
+  position: absolute;
+  bottom: -3px;
+  width: clamp(138px, 12vw, 176px);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #f4c095;
+  font: inherit;
+  overflow: visible;
+  pointer-events: auto;
+  cursor: pointer;
+  touch-action: manipulation;
 }
-.stage-performers .performer-mariah.abstract-book-character { animation-duration: 49s !important; animation-delay: -26s !important; }
-.stage-performers .abstract-book-character .performer-body {
-  animation: none !important; transform: translate(0,0) rotate(0deg);
-  transition: transform 3.2s cubic-bezier(.35,0,.2,1);
+.book-figure-jussi { left: var(--book-edge); }
+.book-figure-mariah { right: var(--book-edge); }
+.book-figure:focus-visible { outline: 2px solid #f4c095; outline-offset: 2px; border-radius: 4px; }
+.book-figure-print { display: block; width: 100%; height: auto; overflow: visible; pointer-events: none; }
+.book-choreography { transform-box: view-box; }
+.book-tower { transform-origin: 78px 196px; animation: book-slide 8.4s cubic-bezier(.55,0,.27,1) -1s infinite; }
+.book-balance { transform-origin: 93px 48px; animation: book-index-roll 8.4s cubic-bezier(.55,0,.27,1) -1s infinite; }
+.book-fan { transform-origin: 87px 151px; animation: book-fan-sweep 10.6s ease-in-out -2.5s infinite; }
+.book-orbit { transform-origin: 89px 151px; animation: book-orbit-sweep 10.6s ease-in-out -2.5s infinite; }
+.book-react { transform-box: view-box; transition: transform .42s cubic-bezier(.18,.8,.27,1); }
+.book-shutter { transform-origin: 82px 130px; }
+.book-fan-left, .book-fan-right { transform-origin: 87px 151px; }
+.book-figure-jussi[data-reaction] .book-index { transform: translate(-8px, -14px); }
+.book-figure-jussi[data-reaction] .book-shutter { transform: translateY(-8px) rotate(-12deg); }
+.book-figure-jussi[data-reaction="pages"] .book-index { transform: translate(-12px, -28px); }
+.book-figure-jussi[data-reaction="echoes"] .book-shutter { transform: translateY(-11px) rotate(38deg); }
+.book-figure-mariah[data-reaction] .book-fan-left { transform: rotate(-14deg); }
+.book-figure-mariah[data-reaction] .book-fan-right { transform: rotate(15deg); }
+.book-figure-mariah[data-force="full"] .book-fan-left { transform: rotate(-24deg); }
+.book-figure-mariah[data-force="full"] .book-fan-right { transform: rotate(22deg); }
+.book-figure-mariah[data-reaction="rain"] .book-fan-left { transform: rotate(12deg); }
+.book-figure-mariah[data-reaction="rain"] .book-fan-right { transform: rotate(-13deg); }
+@keyframes book-slide {
+  0%, 13%, 100% { transform: translate(0, 0) rotate(-3deg); }
+  28%, 41% { transform: translate(10px, -11px) rotate(8deg); }
+  57%, 70% { transform: translate(-7px, -7px) rotate(-9deg); }
+  83% { transform: translate(0, -1px) rotate(2deg); }
 }
-.stage-performers .abstract-book-character .character-breath {
-  transform-origin: 100px 245px;
-  animation: elegant-breath 12s ease-in-out -3s infinite;
+@keyframes book-index-roll {
+  0%, 13% { transform: translate(-12px, 7px) rotate(0); }
+  28%, 41% { transform: translate(14px, -10px) rotate(108deg); }
+  57%, 70% { transform: translate(-10px, -4px) rotate(226deg); }
+  91%, 100% { transform: translate(-12px, 7px) rotate(360deg); }
 }
-.stage-performers .performer-mariah .character-breath { animation-duration: 15s; animation-delay: -8s; }
-.stage-performers .abstract-book-character .singer-head {
-  animation: none !important; transform: rotate(0deg); transition: transform 3.2s ease-in-out;
+@keyframes book-fan-sweep {
+  0%, 100% { transform: rotate(-12deg) scaleX(.9); }
+  24% { transform: rotate(14deg) scaleX(1.04); }
+  48% { transform: rotate(3deg) scaleX(.72); }
+  75% { transform: rotate(-16deg) scaleX(1.08); }
 }
-.stage-performers .abstract-book-character .singer-hand,
-.stage-performers .abstract-book-character .baton-arm,
-.stage-performers .abstract-book-character .conductor-baton {
-  animation: elegant-gesture 11s ease-in-out -3s infinite !important;
+@keyframes book-orbit-sweep {
+  0%, 100% { transform: rotate(15deg); }
+  33% { transform: rotate(-19deg); }
+  58% { transform: rotate(12deg) translateY(-9px); }
+  78% { transform: rotate(22deg) translateY(-5px); }
 }
-.stage-performers .abstract-book-character .book-cover,
-.stage-performers .abstract-book-character .page-wing,
-.stage-performers .abstract-book-character .paper-hair,
-.stage-performers .abstract-book-character .diva-arm { animation: none !important; }
-.stage-performers .abstract-book-character .ribbon-tail { animation: elegant-ribbon 14s ease-in-out -4s infinite; }
-.stage-performers .abstract-book-character .walk-leg {
-  animation: elegant-step 3.8s ease-in-out infinite !important;
-  animation-play-state: paused !important; transition: opacity 2.8s;
+.book-reaction { position: absolute; left: 52%; top: 31%; pointer-events: none; }
+.book-figure-jussi .book-reaction { left: 56%; top: 32%; }
+.book-reaction-piece, .book-reaction-mark {
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: visible;
 }
-.stage-performers .abstract-book-character .leg-right { animation-delay: -1.9s !important; }
-.stage-performers .abstract-book-character .character-eyes { animation: book-blink 10s ease-in-out -3s infinite; }
-.stage-performers .abstract-book-character .book-brow { animation: none; }
-.stage-performers .abstract-book-character .singing-mouth { animation: none !important; transform: scaleY(.18); }
-.stage-performers .abstract-book-character .reading-book,
-.stage-performers .abstract-book-character .character-chair,
-.stage-performers .abstract-book-character .seated-legs,
-.stage-performers .abstract-book-character .thought-marks { opacity: 0; transition: opacity 2.8s; animation: none !important; }
-.stage-performers .abstract-book-character .song-notes { display: block; opacity: 0; animation: none !important; transition: opacity 2s; }
-.stage-performers .abstract-book-character[data-activity="walking"] .walk-leg { animation-play-state: running !important; }
-.stage-performers .abstract-book-character[data-activity="thinking"] .singer-head { transform: rotate(-3deg); }
-.stage-performers .abstract-book-character[data-activity="thinking"] .thought-marks { opacity: .85; }
-.stage-performers .abstract-book-character[data-activity="reading"] .performer-body { transform: translate(-1px,3px) rotate(2deg); }
-.stage-performers .abstract-book-character[data-activity="reading"] .singer-head { transform: translate(0,4px) rotate(5deg); }
-.stage-performers .abstract-book-character[data-activity="reading"] .reading-book { opacity: 1; }
-.stage-performers .abstract-book-character[data-activity="seated"] .performer-body { transform: translateY(23px) rotate(-3deg); }
-.stage-performers .abstract-book-character[data-activity="seated"] .character-chair,
-.stage-performers .abstract-book-character[data-activity="seated"] .seated-legs { opacity: 1; }
-.stage-performers .abstract-book-character[data-activity="seated"] .walk-leg { opacity: 0; }
-.stage-performers .abstract-book-character[data-activity="singing"] .singing-mouth { animation: elegant-syllables 5.5s ease-in-out infinite !important; }
-.stage-performers .abstract-book-character[data-activity="singing"] .song-notes { opacity: .7; animation: elegant-notes 8s ease-in-out infinite !important; }
-@keyframes elegant-stroll { 0%,100% { transform: translateX(0); } 25% { transform: translateX(7px); } 75% { transform: translateX(-6px); } }
-@keyframes elegant-breath { 0%,100% { transform: rotate(-.45deg); } 50% { transform: rotate(.6deg); } }
-@keyframes elegant-gesture { 0%,100% { transform: rotate(-1.5deg); } 50% { transform: rotate(2deg); } }
-@keyframes elegant-ribbon { 0%,100% { transform: rotate(-2deg); } 50% { transform: rotate(2deg); } }
-@keyframes elegant-step { 0%,100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
-@keyframes elegant-syllables { 0%,100% { transform: scale(.8,.3); } 35% { transform: scale(.85,.85); } 70% { transform: scale(.8,.5); } }
-@keyframes elegant-notes { 0%,100% { transform: translate(0,0); opacity: .3; } 50% { transform: translate(3px,-8px); opacity: .75; } }
+.book-reaction-piece {
+  width: var(--size);
+  height: var(--size);
+  color: var(--ink);
+  animation: book-scatter var(--duration) cubic-bezier(.2,.64,.37,1) var(--delay) both;
+}
+.book-reaction-mark {
+  width: 26px;
+  height: 26px;
+  transform: translate(-50%, -85%);
+  color: #fff0da;
+  animation: book-stamp .7s ease-out both;
+}
+.book-figure[data-force="full"] .book-reaction-mark { width: 42px; height: 42px; animation-duration: 1.15s; }
+.book-figure[data-reaction="echoes"] .book-reaction-mark,
+.book-figure[data-reaction="orbit"] .book-reaction-mark { animation-name: book-wave; }
+@keyframes book-scatter {
+  0% { transform: translate(-50%, -50%) scale(.22); opacity: 0; }
+  16% { opacity: 1; }
+  48% { transform: translate(calc(var(--mx) - 50%), calc(var(--my) - 50%)) rotate(calc(var(--spin) * .45)); opacity: .9; }
+  100% { transform: translate(calc(var(--dx) - 50%), calc(var(--dy) - 50%)) rotate(var(--spin)) scale(.38); opacity: 0; }
+}
+@keyframes book-stamp {
+  0% { transform: translate(-50%, -85%) scale(.35) rotate(-13deg); opacity: .72; }
+  22% { transform: translate(-50%, -85%) scale(1.12) rotate(7deg); opacity: 1; }
+  100% { transform: translate(-50%, -165%) scale(.68) rotate(-10deg); opacity: 0; }
+}
+@keyframes book-wave {
+  0% { transform: translate(-50%, -50%) scale(.3); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(3.6); opacity: 0; }
+}
+
 /* A tree is now one cached SVG image instead of dozens of live SVG nodes. */
 .geometric-tree img { display: block; width: 100%; height: auto; }
 .winter-landscape .nocturne-tree img { opacity: .47; }
 .scene-grove .nocturne-tree img { opacity: .66; }
 .scene-paused .winter-landscape *,
-.scene-paused #stage-performers .abstract-book-character,
-.scene-paused #stage-performers .abstract-book-character *,
+.scene-paused #stage-performers .book-choreography,
 .scene-paused .scene-grove *,
-#stage-performers[data-in-view="false"] .abstract-book-character,
-#stage-performers[data-in-view="false"] .abstract-book-character *,
+#stage-performers[data-in-view="false"] .book-choreography,
 .scene-grove[data-in-view="false"] .book-tree { animation-play-state: paused !important; }
 /* Core feedback begins in the first frame; artwork is already colored and decoded. */
 .modal-cover .cover-image { object-fit: cover; }
@@ -76,8 +117,10 @@
 #book-modal.revealing .modal-grid { animation: quick-page-arrives .22s ease-out both; }
 @keyframes quick-page-arrives { from { opacity: .85; transform: translateY(5px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) {
-  #stage-performers .abstract-book-character,
-  #stage-performers .abstract-book-character * { animation: none !important; transition: none !important; }
+  #stage-performers .book-choreography,
+  #stage-performers .book-reaction-mark { animation: none; }
+  #stage-performers .book-reaction-piece { display: none; }
+  #stage-performers .book-react { transform: none; transition: none; }
   #book-modal.revealing .modal-grid { animation: none; }
   .door-surface,.door-leaf { transition: none; }
 }
