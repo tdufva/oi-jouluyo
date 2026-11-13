@@ -21,6 +21,20 @@ const copy = {
     play: 'Toista YouTube-video',
     watch: 'Avaa YouTubessa ↗',
     music: 'Kuuntele Apple Musicissa ↗',
+    share: 'Jaa linkki',
+    shareApp: 'Jaa sovelluksessa…',
+    shareCopy: 'Kopioi linkki',
+    shareEmail: 'Sähköposti',
+    shareLinkLabel: 'Luukun osoite',
+    shareCopied: 'Luukun linkki kopioitu.',
+    shareManual: 'Voit kopioida valitun tekstin.',
+    shareUnavailable: 'Valitse alta toinen jakotapa.',
+    storyDownload: 'Lataa tarinakuva',
+    storyImage: 'Luukun tarinakuva',
+    storySave: 'Voit myös tallentaa kuvan pitämällä sitä painettuna.',
+    storyEvent: 'Kopioi tapahtumateksti',
+    storyEventCopied: 'Tapahtumateksti ja linkki kopioitu.',
+    storyHelp: 'Lisää kuva Instagram-tarinaan ja liitä luukun osoite Linkki-tarraan. Voit käyttää tapahtumatekstiä julkaisussa ja lisätä siihen muistutuksen, jos toiminto on tililläsi käytössä.',
   },
   sv: {
     heading: '24 böcker.<br><em>En helig natt.</em>',
@@ -44,10 +58,26 @@ const copy = {
     play: 'Spela YouTube-videon',
     watch: 'Öppna på YouTube ↗',
     music: 'Lyssna på Apple Music ↗',
+    share: 'Dela länk',
+    shareApp: 'Dela i en app…',
+    shareCopy: 'Kopiera länk',
+    shareEmail: 'E-post',
+    shareLinkLabel: 'Luckans adress',
+    shareCopied: 'Länken till luckan har kopierats.',
+    shareManual: 'Du kan kopiera den markerade texten.',
+    shareUnavailable: 'Välj ett annat delningssätt nedan.',
+    storyDownload: 'Ladda ner en storybild',
+    storyImage: 'Luckans storybild',
+    storySave: 'Du kan också spara bilden genom att hålla fingret på den.',
+    storyEvent: 'Kopiera evenemangstext',
+    storyEventCopied: 'Evenemangstexten och länken har kopierats.',
+    storyHelp: 'Lägg till bilden i en Instagram-story och klistra in luckans adress i länkdekalen. Du kan använda evenemangstexten i ett inlägg och lägga till en påminnelse om funktionen finns på ditt konto.',
   },
 };
 let lang='fi', current=1;const $=id=>document.getElementById(id);let opened=[];try{lang=localStorage.getItem('on-lang')==='sv'?'sv':'fi';opened=JSON.parse(localStorage.getItem('on-opened-2026')||'[]');if(!Array.isArray(opened))opened=[];}catch{}
 const query = new URLSearchParams(location.search);
+const linkedLanguage = query.get('lang');
+if (linkedLanguage === 'fi' || linkedLanguage === 'sv') lang = linkedLanguage;
 const editorPreview = query.get('esikatselu') === '1';
 $('preview-control').hidden = !editorPreview && !['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
 $('preview').checked = editorPreview;
@@ -178,6 +208,107 @@ function openDoor(day, button) {
     }
   }, 360);
 }
+function makeDoorStory(day, title, art) {
+  const canvas = document.createElement('canvas');
+  canvas.width = 1080;
+  canvas.height = 1920;
+  const ink = canvas.getContext('2d');
+  ink.fillStyle = '#071e22';
+  ink.fillRect(0, 0, 1080, 1920);
+  ink.fillStyle = '#1d7874';
+  ink.fillRect(84, 108, 912, 1704);
+  ink.fillStyle = '#071e22';
+  ink.fillRect(108, 132, 864, 1656);
+  ink.fillStyle = '#ee2e31';
+  ink.fillRect(108, 132, 864, 13);
+  ink.fillStyle = '#f4c095';
+  ink.textAlign = 'center';
+  ink.font = 'bold 48px monospace';
+  ink.fillText(lang === 'sv' ? 'O HELGA NATT' : 'OI JOULUYÖ', 540, 335, 720);
+  ink.font = '40px monospace';
+  ink.fillText(`${day}. ${copy[lang].day}`, 540, 417, 720);
+  if (art?.complete && art.naturalWidth) {
+    ink.drawImage(art, 339, 508, 402, 528);
+  } else {
+    ink.font = '164px Georgia';
+    ink.fillText('✦', 540, 825);
+  }
+  ink.font = 'bold 82px Georgia';
+  const words = title.split(/\s+/);
+  const lines = [];
+  let line = '';
+  for (const word of words) {
+    const candidate = line ? `${line} ${word}` : word;
+    if (line && ink.measureText(candidate).width > 730) {
+      lines.push(line);
+      line = word;
+    } else {
+      line = candidate;
+    }
+  }
+  lines.push(line);
+  const shown = lines.length > 4 ? [...lines.slice(0, 3), `${lines[3]}…`] : lines;
+  shown.forEach((text, index) => ink.fillText(text, 540, 1180 + index * 91, 730));
+  ink.fillStyle = '#ee2e31';
+  ink.fillRect(474, 1610, 132, 8);
+  return canvas.toDataURL('image/png');
+}
+
+function bindDoorSharing(day, title) {
+  const t = copy[lang];
+  const calendarTitle = lang === 'sv' ? 'O helga natt' : 'Oi jouluyö';
+  const link = new URL('https://tdufva.github.io/oi-jouluyo/');
+  link.searchParams.set('luukku', day);
+  link.searchParams.set('lang', lang);
+  const url = link.href;
+  const subject = `${t.door} ${day} – ${title}`;
+  const message = `${subject}\n${url}`;
+  const event = `${calendarTitle} · ${subject}\n${day}. ${t.day}\n\n${url}`;
+  const shareData = { title: subject, url };
+  const linkField = $('door-share-url');
+  const status = $('door-share-status');
+  const shareApp = $('door-share-app');
+  linkField.value = url;
+  $('door-share-email').href = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message.replace('\n', '\r\n'))}`;
+  $('door-share-whatsapp').href = `https://wa.me/?text=${encodeURIComponent(message)}`;
+  $('door-share-facebook').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+  shareApp.hidden = !navigator.share || (navigator.canShare && !navigator.canShare(shareData));
+  shareApp.onclick = async () => {
+    try {
+      await navigator.share(shareData);
+    } catch (error) {
+      if (error.name !== 'AbortError') status.textContent = t.shareUnavailable;
+    }
+  };
+  async function copyShareText(value, success, fallback) {
+    try {
+      await navigator.clipboard.writeText(value);
+      status.textContent = success;
+    } catch {
+      fallback.hidden = false;
+      fallback.value = value;
+      fallback.focus();
+      fallback.select();
+      status.textContent = t.shareManual;
+    }
+  }
+  $('door-share-copy').onclick = () => copyShareText(url, t.shareCopied, linkField);
+  $('door-share-event').onclick = () => copyShareText(event, t.storyEventCopied, $('door-share-event-text'));
+  const story = $('door-share-story');
+  const preview = $('door-share-story-preview');
+  const art = new Image();
+  const instagram = story.closest('details');
+  instagram.addEventListener('toggle', () => {
+    if (instagram.open && !art.hasAttribute('src')) art.src = `assets/door-art/${doorContent.number(day)}.svg`;
+  });
+  story.onclick = () => {
+    story.href = makeDoorStory(day, title, art);
+    story.download = `${lang === 'sv' ? 'lucka' : 'luukku'}-${doorContent.number(day)}.png`;
+    preview.querySelector('img').src = story.href;
+    preview.hidden = false;
+  };
+}
+
 function renderDoorEntry(day, entry) {
   const t = copy[lang];
   const chosen = entry[lang];
@@ -214,6 +345,33 @@ function renderDoorEntry(day, entry) {
       <div id="video-player" class="video-player"><button id="play-video" type="button">${t.play}</button></div>
       <a href="https://www.youtube.com/watch?v=${video}" target="_blank" rel="noopener noreferrer">${t.watch}</a>
     </section>` : ''}
+    <details class="door-share">
+      <summary>${t.share}</summary>
+      <div class="door-share-panel">
+        <input id="door-share-url" type="url" readonly aria-label="${t.shareLinkLabel}">
+        <div class="door-share-actions">
+          <button type="button" id="door-share-copy">${t.shareCopy}</button>
+          <button type="button" id="door-share-app" hidden>${t.shareApp}</button>
+          <a id="door-share-email">${t.shareEmail}</a>
+          <a id="door-share-whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a id="door-share-facebook" target="_blank" rel="noopener noreferrer">Facebook</a>
+        </div>
+        <p id="door-share-status" role="status"></p>
+        <details class="door-share-instagram">
+          <summary>Instagram</summary>
+          <p>${t.storyHelp}</p>
+          <div class="door-share-actions">
+            <a id="door-share-story" href="#" download>${t.storyDownload}</a>
+            <button type="button" id="door-share-event">${t.storyEvent}</button>
+          </div>
+          <textarea id="door-share-event-text" rows="4" aria-label="${t.storyEvent}" readonly hidden></textarea>
+          <div id="door-share-story-preview" hidden>
+            <p>${t.storySave}</p>
+            <img alt="${t.storyImage}" width="180" height="320">
+          </div>
+        </details>
+      </div>
+    </details>
     <div class="modal-nav">
       <button id="prev" ${day === 1 ? 'disabled' : ''}>${t.previous}</button>
       <span>${day} / ${doorContent.total}</span>
@@ -221,6 +379,7 @@ function renderDoorEntry(day, entry) {
     </div>`;
   $('prev').onclick = () => show(day - 1);
   $('next').onclick = () => show(day + 1);
+  bindDoorSharing(day, title);
   const play = $('play-video');
   if (play) play.onclick = () => {
     const frame = document.createElement('iframe');

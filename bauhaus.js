@@ -68,38 +68,57 @@ function makeBookPerformer(who) {
   </button>`;
 }
 
-function drawBookConstellation(stage, from, to, duration) {
-  const stageBounds = stage.getBoundingClientRect();
-  const origin = button => {
-    const bounds = button.querySelector('.book-reaction').getBoundingClientRect();
-    return { x: bounds.left - stageBounds.left, y: bounds.top - stageBounds.top };
-  };
-  const start = origin(from);
-  const end = origin(to);
-  const points = [[0, 0], [.12, 42], [.26, 101], [.37, 62], [.5, 142], [.64, 92], [.75, 118], [.89, 45], [1, 0]]
-    .map(([fraction, rise]) => [
-      Math.round(start.x + (end.x - start.x) * fraction),
-      Math.round(start.y + (end.y - start.y) * fraction - rise),
-    ]);
+function drawBookConstellation(stage, points, duration, starScale = 1) {
+  const { width, height } = stage.getBoundingClientRect();
   const stars = points.map(([x, y], index) => {
     const accent = index === 4;
-    const size = accent ? 19 : index % 2 ? 5 : 8;
+    const size = (accent ? 19 : index % 2 ? 5 : 8) * starScale;
+    const halo = accent ? `<circle r="${29 * starScale}" fill="none" stroke="#679289" stroke-width="1" stroke-dasharray="3 5"/><circle r="${23 * starScale}" fill="none" stroke="#ee2e31" stroke-width="1.5"/>` : '';
     return `<g transform="translate(${x} ${y})">
       <g class="book-constellation-star${accent ? ' book-constellation-center' : ''}" style="--star-in:${index * 135}ms">
-        ${accent ? '<circle r="29" fill="none" stroke="#679289" stroke-width="1" stroke-dasharray="3 5"/><circle r="23" fill="none" stroke="#ee2e31" stroke-width="1.5"/>' : ''}
+        ${halo}
         <path d="M0 ${-size} ${size / 4} ${-size / 4} ${size} 0 ${size / 4} ${size / 4} 0 ${size} ${-size / 4} ${size / 4} ${-size} 0 ${-size / 4} ${-size / 4}Z"/>
       </g>
     </g>`;
   }).join('');
   const mainLine = points.map(point => point.join(',')).join(' ');
   const branch = [points[2], points[4], points[6]].map(point => point.join(',')).join(' ');
-  stage.insertAdjacentHTML('afterbegin', `<svg class="book-constellation" viewBox="0 0 ${stageBounds.width} ${stageBounds.height}" aria-hidden="true" style="--constellation-duration:${duration}ms">
+  stage.insertAdjacentHTML('afterbegin', `<svg class="book-constellation" viewBox="0 0 ${width} ${height}" aria-hidden="true" style="--constellation-duration:${duration}ms">
     <polyline class="book-constellation-branch" points="${branch}"/>
     <polyline class="book-constellation-trace" points="${mainLine}" pathLength="1"/>
     <polyline class="book-constellation-line" points="${mainLine}" pathLength="1"/>
     ${stars}
   </svg>`);
   return stage.firstElementChild;
+}
+
+function initRoseWindow(button) {
+  const roof = button.parentElement;
+  const status = roof.querySelector('#rose-window-status');
+  const duration = 4400;
+  let constellation;
+  let timer;
+  function reset() {
+    clearTimeout(timer);
+    constellation?.remove();
+    status.textContent = '';
+  }
+  function localize() {
+    button.setAttribute('aria-label', document.documentElement.lang === 'sv' ? 'Tänd stjärnbilden i rosettfönstret' : 'Sytytä ruusuikkunan tähtikuvio');
+  }
+  button.addEventListener('click', () => {
+    reset();
+    const { width, height } = roof.getBoundingClientRect();
+    const points = [[284 / 740, 128 / 260], [.23, .76], [.12, 1.04], [.31, 1.17], [.51, .9], [.65, 1.16], [.85, 1.04], [.91, .74], [.73, .57]]
+      .map(([x, y]) => [Math.round(width * x), Math.round(height * y)]);
+    constellation = drawBookConstellation(roof, points, duration, .72);
+    status.textContent = document.documentElement.lang === 'sv' ? 'En stjärnbild tändes på husets fasad.' : 'Talon julkisivulla syttyi tähtikuvio.';
+    timer = setTimeout(reset, duration);
+  });
+  window.addEventListener('resize', reset);
+  document.addEventListener('visibilitychange', reset);
+  document.addEventListener('calendar-language', localize);
+  localize();
 }
 
 function initBookPerformers(stage, motion) {
@@ -149,7 +168,19 @@ function initBookPerformers(stage, motion) {
     const first = previousFigure;
     resetDuet();
     if (first && first !== button) {
-      constellation = drawBookConstellation(stage, first, button, duetDuration);
+      const stageBounds = stage.getBoundingClientRect();
+      const origin = figure => {
+        const bounds = figure.querySelector('.book-reaction').getBoundingClientRect();
+        return { x: bounds.left - stageBounds.left, y: bounds.top - stageBounds.top };
+      };
+      const start = origin(first);
+      const end = origin(button);
+      const points = [[0, 0], [.12, 42], [.26, 101], [.37, 62], [.5, 142], [.64, 92], [.75, 118], [.89, 45], [1, 0]]
+        .map(([fraction, rise]) => [
+          Math.round(start.x + (end.x - start.x) * fraction),
+          Math.round(start.y + (end.y - start.y) * fraction - rise),
+        ]);
+      constellation = drawBookConstellation(stage, points, duetDuration);
       stage.dataset.duet = 'together';
       status.textContent = document.documentElement.lang === 'sv' ? 'En stjärnbild tändes mellan bokfigurerna.' : 'Kirjahahmojen väliin syttyi tähtikuvio.';
       duetTimer = setTimeout(resetDuet, duetDuration);

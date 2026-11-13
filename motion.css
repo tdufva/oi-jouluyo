@@ -154,6 +154,43 @@
   animation: book-constellation-light .55s ease-out var(--star-in) both;
 }
 .book-constellation-center { fill: #fff0da; }
+.rose-window { display: none; }
+.roof > .book-constellation { z-index: 6; }
+@media (max-width: 1199px) {
+  .rose-window {
+    display: block;
+    position: absolute;
+    top: 49.23%;
+    left: 38.38%;
+    width: 13.8%;
+    height: 39.2%;
+    min-width: 44px;
+    min-height: 44px;
+    transform: translate(-50%, -50%);
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: #f4c095;
+    cursor: pointer;
+    touch-action: manipulation;
+    z-index: 7;
+  }
+  .rose-window:focus-visible { outline: 2px solid #fff0da; outline-offset: 2px; }
+  .rose-window span {
+    position: absolute;
+    right: -5px;
+    bottom: 1px;
+    display: grid;
+    width: 18px;
+    height: 18px;
+    place-items: center;
+    border: 1px solid #f4c095;
+    border-radius: 50%;
+    background: #071e22;
+    font: 13px/1 sans-serif;
+  }
+}
 @keyframes book-constellation-linger {
   0%, 100% { opacity: 0; }
   12%, 76% { opacity: 1; }

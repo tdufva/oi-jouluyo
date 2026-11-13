@@ -25,3 +25,49 @@
   cursor: pointer;
 }
 .door-video a { display: inline-block; margin-top: .6rem; font-size: .85rem; }
+.door-share { margin-top: 1.3rem; }
+.door-share summary {
+  width: fit-content;
+  padding: .62em .9em;
+  border: 1px solid currentColor;
+  font-weight: 700;
+  cursor: pointer;
+}
+.door-share-panel {
+  display: grid;
+  gap: .65rem;
+  padding: .75rem 0 .25rem;
+}
+.door-share-panel input, .door-share-panel textarea {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  padding: .65em;
+  background: #fff0da;
+  border: 1px solid #071e22;
+  color: #071e22;
+  font: inherit;
+  font-size: .85rem;
+}
+.door-share-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem; }
+.door-share-actions button, #book-modal .door-share-actions a {
+  display: inline-block;
+  padding: .6em .75em;
+  border: 1px solid #071e22;
+  color: #071e22;
+  background: transparent;
+  font: inherit;
+  font-size: .85rem;
+  line-height: 1.3;
+  text-decoration: none;
+  cursor: pointer;
+}
+.door-share-actions button:hover, #book-modal .door-share-actions a:hover {
+  color: #fff0da;
+  background: #071e22;
+}
+.door-share-actions button[hidden], #door-share-status:empty { display: none; }
+#door-share-status, .door-share-instagram p { margin: 0; font-size: .85rem; }
+.door-share-instagram p { margin: .65rem 0; }
+.door-share-instagram textarea { margin-top: .65rem; }
+#door-share-story-preview img { display: block; max-width: 100%; height: auto; }
