@@ -6,7 +6,7 @@
   background: #071e22; box-shadow: -2px 0 0 #67928980;
 }
 .house-body {
-  background: #679289 url('assets/stonework.svg') repeat;
+  background: #385952 url('assets/stonework.svg?v=20261114-2') repeat;
   background-size: 184px 88px;
   border: 8px solid #071e22; border-top: 0;
   border-left: 22px solid #f4c095; border-right: 14px solid #1d7874;
@@ -36,7 +36,7 @@
 }
 .house .door:focus-visible { outline: 3px solid #f4c095; outline-offset: 4px; }
 .chimney {
-  background: #679289 url('assets/stonework.svg') repeat;
+  background: #385952 url('assets/stonework.svg?v=20261114-2') repeat;
   background-size: 130px 62px;
   width: 52px; border-top: 8px solid #f4c095;
   box-shadow: inset -11px 0 0 #071e2259, 0 -3px 0 #071e22;

@@ -84,6 +84,8 @@
     frame=requestAnimationFrame(draw);
   }
   function syncSnow(){
+    element('snow-amount').style.setProperty('--snow-progress', `${settings.amount}%`);
+    element('snow-speed').style.setProperty('--snow-progress', `${(settings.speed - 1) * 25}%`);
     element('snow-amount-value').value=settings.amount+' %';
     element('snow-speed-value').value=settings.speed+' / 5';
     element('snow-amount').disabled=!settings.snow;

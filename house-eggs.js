@@ -37,21 +37,16 @@ function initHouseEggs() {
     { button: document.getElementById('snow-tracks'), art: 'tracks', label: ['Tassunjäljet lumessa', 'Tassavtryck i snön'], message: ['Lumeen ilmestyi tassunjälkiä.', 'Tassavtryck dök upp i snön.'] },
   ];
   const lang = () => document.documentElement.lang === 'sv' ? 1 : 0;
-  const windowScenes = ['constellation', 'candles', 'baubles'];
-  const windowMessages = [
-    ['Talon julkisivulla syttyi tähtikuvio.', 'En stjärnbild tändes på husets fasad.'],
-    ['Ikkunassa syttyi kolme joulukynttilää.', 'Tre julljus tändes i fönstret.'],
-    ['Joulukoristeet heilahtivat ikkunassa.', 'Julgranskulor svängde i fönstret.'],
-  ];
-  const sos = '...---...';
+  const windowScenes = ['stars', 'candles', 'baubles'];
+  const starShape = '<path d="M0-9 2.5-2.5 9 0 2.5 2.5 0 9-2.5 2.5-9 0-2.5-2.5Z"/>';
   let roseScene = 0;
   let winterScene = 0;
   let scene;
   let sceneTimer;
   let rescueActive = false;
-  let entered = '';
-  let lastSignal = -Infinity;
-  let lastWindowScene = -Infinity;
+  let tapWindow;
+  let taps = 0;
+  let lastTap = -Infinity;
   let boundWinterWindow;
 
   function clearScene() {
@@ -61,42 +56,50 @@ function initHouseEggs() {
     rescueActive = false;
   }
 
-  function showArt(parent, name, duration) {
+  function showArt(parent, name, duration, art = holidayArt[name]) {
     clearScene();
     scene = document.createElement('span');
     scene.className = `holiday-egg egg-${name}`;
     scene.setAttribute('aria-hidden', 'true');
-    scene.innerHTML = holidayArt[name];
+    scene.innerHTML = art;
     parent.append(scene);
     sceneTimer = setTimeout(clearScene, duration);
   }
 
-  function playWindowScene(button) {
-    const index = (button === windowButton ? roseScene++ : winterScene++) % windowScenes.length;
-    const name = windowScenes[index];
-    if (name === 'constellation') {
-      clearScene();
-      if (button === windowButton) {
-        const { width, height } = roof.getBoundingClientRect();
-        const points = [[284 / 740, 128 / 260], [.23, .76], [.12, 1.04], [.31, 1.17], [.51, .9], [.65, 1.16], [.85, 1.04], [.91, .74], [.73, .57]]
-          .map(([x, y]) => [Math.round(width * x), Math.round(height * y)]);
-        scene = drawBookConstellation(roof, points, 4400, .72);
-      } else {
-        const facade = button.closest('.house-body');
-        const { left, top, width } = facade.getBoundingClientRect();
-        const windowBounds = button.getBoundingClientRect();
-        const windowX = windowBounds.left + windowBounds.width / 2 - left;
-        const windowY = windowBounds.top + windowBounds.height / 2 - top;
-        const rise = Math.min(180, width * .48);
-        const points = [[windowX / width, 0], [.79, .48], [.69, .28], [.63, .81], [.51, 1], [.36, .71], [.29, 1.07], [.18, .52], [.1, .85]]
-          .map(([x, y]) => [Math.round(x * width), Math.round(windowY - y * rise)]);
-        scene = drawBookConstellation(facade, points, 4400, .72);
-      }
-      sceneTimer = setTimeout(clearScene, 4400);
-    } else {
-      showArt(button === windowButton ? roof : button, name, 3800);
+  function playWindowStars(button, isRose) {
+    if (isRose) {
+      const radius = 46;
+      const rays = Array.from({ length: 8 }, (_, index) => {
+        const angle = index * 45;
+        return `<g transform="rotate(${angle} 62 62)"><path d="M62 29V20" stroke="currentColor" stroke-width="1.2"/><g transform="translate(62 ${62 - radius})"><g class="rose-ray" style="--star-delay:${index * 75}ms">${starShape}</g></g></g>`;
+      }).join('');
+      showArt(roof, 'rose-stars', 3700, `<svg viewBox="0 0 124 124"><circle cx="62" cy="62" r="40" fill="none" stroke="#ee2e31" stroke-width="1.6" stroke-dasharray="2 4"/><g class="rose-crown">${rays}</g><g transform="translate(62 62) scale(2.05)"><g class="rose-ray">${starShape}</g></g></svg>`);
+      status.textContent = ['Ruusuikkunan ympärille syttyi tähtikehä.', 'En krans av stjärnor tändes runt rosettfönstret.'][lang()];
+      return;
     }
-    status.textContent = windowMessages[index][lang()];
+    const facade = button.closest('.house-body');
+    const { left, top, width, height } = facade.getBoundingClientRect();
+    const windowBounds = button.getBoundingClientRect();
+    const x = Math.round(windowBounds.left + windowBounds.width / 2 - left);
+    const y = Math.round(windowBounds.top + windowBounds.height / 2 - top);
+    const spread = Math.min(1, width / 510);
+    const stars = [[0, -6, 1.55], [-27, -18, .8], [-51, -38, 1.25], [18, -57, .7], [-83, -71, 1.1], [-139, -88, .7], [-107, -112, 1], [-184, -135, 1.35], [-153, -159, .66]]
+      .map(([dx, dy, scale], index) => `<g transform="translate(${Math.round(x + dx * spread)} ${Math.round(y + dy * spread)}) scale(${scale})"><g class="winter-star" style="--star-delay:${index * 120}ms">${starShape}</g></g>`).join('');
+    showArt(facade, 'winter-stars', 4200, `<svg viewBox="0 0 ${width} ${height}">${stars}</svg>`);
+    status.textContent = ['Jouluikkunasta leijui tähtisade.', 'Ett stjärnregn steg från julfönstret.'][lang()];
+  }
+
+  function playWindowScene(button) {
+    const isRose = button === windowButton;
+    const name = windowScenes[(isRose ? roseScene++ : winterScene++) % windowScenes.length];
+    if (name === 'stars') {
+      playWindowStars(button, isRose);
+      return;
+    }
+    showArt(isRose ? roof : button, name, 3800);
+    status.textContent = (name === 'candles'
+      ? ['Ikkunassa syttyi kolme joulukynttilää.', 'Tre julljus tändes i fönstret.']
+      : ['Joulukoristeet heilahtivat ikkunassa.', 'Julgranskulor svängde i fönstret.'])[lang()];
   }
 
   function launchRescue() {
@@ -118,15 +121,18 @@ function initHouseEggs() {
   function signal(duration, button) {
     if (rescueActive) return;
     const now = performance.now();
-    if (now - lastSignal > 1900) entered = '';
-    lastSignal = now;
-    entered += duration >= 360 ? '-' : '.';
-    while (!sos.startsWith(entered)) entered = entered.slice(1);
-    if (entered === sos) {
-      entered = '';
+    if (duration >= 360) {
+      taps = 0;
+      return;
+    }
+    if (button !== tapWindow || now - lastTap > 850) taps = 0;
+    tapWindow = button;
+    lastTap = now;
+    taps++;
+    if (taps === 3) {
+      taps = 0;
       launchRescue();
-    } else if (duration < 360 && now - lastWindowScene > 750) {
-      lastWindowScene = now;
+    } else if (taps === 1) {
       playWindowScene(button);
     }
   }
@@ -188,7 +194,7 @@ function initHouseEggs() {
   }
   document.addEventListener('calendar-language', localize);
   document.addEventListener('visibilitychange', () => {
-    entered = '';
+    taps = 0;
     clearScene();
   });
   localize();

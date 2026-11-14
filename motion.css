@@ -401,3 +401,122 @@
 @media (prefers-reduced-motion: reduce) {
   .holiday-egg, .holiday-egg * { animation: none !important; }
 }
+
+.egg-rose-stars {
+  left: 38.38%;
+  top: 49.23%;
+  width: clamp(100px, 20%, 158px);
+  color: #f4c095;
+  transform: translate(-50%, -50%);
+  animation: holiday-appear 3.55s ease-in-out both;
+}
+.rose-crown {
+  transform-origin: center;
+  animation: rose-crown-turn 3.55s ease-in-out both;
+}
+.rose-ray {
+  fill: currentColor;
+  stroke: #071e22;
+  stroke-width: 1.2;
+  animation: rose-ray-rise .8s ease-out var(--star-delay, 0ms) both;
+}
+.egg-winter-stars { inset: 0; animation: holiday-appear 4.1s ease-in-out both; }
+.egg-winter-stars svg { height: 100%; }
+.winter-star {
+  fill: #fff0da;
+  stroke: #071e22;
+  stroke-width: 1.35;
+  animation: winter-star-drift 2.9s ease-in-out var(--star-delay) both;
+}
+.egg-winter-stars svg > g:nth-child(3n) .winter-star { fill: #ee2e31; stroke: #f4c095; }
+@keyframes rose-crown-turn { from { transform: rotate(-38deg); } to { transform: rotate(30deg); } }
+@keyframes rose-ray-rise {
+  from { opacity: 0; transform: scale(.25); }
+  65% { opacity: 1; transform: scale(1.22); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes winter-star-drift {
+  from { opacity: 0; transform: translate(24px, 25px) scale(.32); }
+  38%, 66% { opacity: 1; }
+  48% { transform: translate(0, 0) rotate(-14deg); }
+  to { opacity: 0; transform: translate(-14px, -29px) rotate(28deg) scale(.7); }
+}
+
+.weather-controls {
+  gap: 10px;
+  min-height: 29px;
+  padding: 2px 8px 2px 7px;
+  border: 1px solid #679289b0;
+  border-left: 3px solid #ee2e31;
+  background: #071e22f5;
+  box-shadow: 2px 2px 0 #1d7874a0;
+  color: #f4c095;
+  backdrop-filter: none;
+}
+.weather-controls .ambience-toggle { font-size: 8px; white-space: nowrap; }
+.weather-controls .ambience-toggle input {
+  appearance: none;
+  display: grid;
+  place-content: center;
+  width: 13px;
+  height: 13px;
+  background: #142f31;
+  border: 1px solid #679289;
+}
+.weather-controls .ambience-toggle input:checked { background: #ee2e31; border-color: #f4c095; }
+.weather-controls .ambience-toggle input:checked::before {
+  content: "";
+  width: 6px;
+  height: 9px;
+  background: #fff0da;
+  clip-path: polygon(50% 0, 65% 36%, 100% 50%, 65% 63%, 50% 100%, 36% 63%, 0 50%, 36% 36%);
+}
+.weather-controls .range-control {
+  grid-template-columns: auto 63px 29px;
+  column-gap: 5px;
+  font-size: 8px;
+}
+.weather-controls .range-control input {
+  --snow-track: linear-gradient(to right, #1d7874 0 var(--snow-progress, 0%), #244342 var(--snow-progress, 0%) 100%);
+  appearance: none;
+  width: 63px;
+  height: 23px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+}
+.weather-controls input[type="range"]::-webkit-slider-runnable-track {
+  height: 7px;
+  border: 1px solid #679289;
+  background: var(--snow-track);
+}
+.weather-controls input[type="range"]::-moz-range-track {
+  height: 5px;
+  border: 1px solid #679289;
+  background: var(--snow-track);
+}
+.weather-controls input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 11px;
+  height: 11px;
+  margin-top: -3px;
+  border: 1px solid #f4c095;
+  border-radius: 0;
+  background: #ee2e31;
+  transform: rotate(45deg);
+}
+.weather-controls input[type="range"]::-moz-range-thumb {
+  width: 9px;
+  height: 9px;
+  border: 1px solid #f4c095;
+  border-radius: 0;
+  background: #ee2e31;
+  transform: rotate(45deg);
+}
+.weather-controls input:focus-visible { outline: 1px solid #fff0da; outline-offset: 2px; }
+.weather-controls .range-control output { color: #fff0da; white-space: nowrap; }
+@media (max-width: 700px) {
+  .weather-controls { gap: 6px; }
+  .weather-controls .range-control { grid-template-columns: auto 47px 25px; column-gap: 4px; }
+  .weather-controls .range-control input { width: 47px; }
+}

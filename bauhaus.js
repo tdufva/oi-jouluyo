@@ -4,7 +4,7 @@ function makeBookPerformer(who) {
     <g fill="none" stroke="#679289" stroke-width="1.5"><path d="M16 143h131m-114 5h87"/><path d="M19 140h22m76 0h24" opacity=".45"/></g>
     <g class="book-react dog-pose">
       <g class="book-choreography dog-body">
-        <g class="book-choreography book-dog-tail"><path d="m46 87-20-6-12-24-8 2 9 31 27 13z" fill="#ee2e31"/><path d="m10 59 6 15 7-4-7-13z" fill="#f4c095"/></g>
+        <g class="book-choreography book-dog-tail"><path d="M47 84q-13-2-18-11-3-5-1-11-9 4-15-1-5-5-2-9-9-6-3-14 2-6 10-5 9-6 16 2 10 3 10 14 4 13-5 22l13 5z" fill="#cd8c66"/><path d="M12 38q8-6 16 0m-5 8q8-4 13 2" fill="none" stroke="#f4c095" stroke-width="1.6"/></g>
         <g class="book-choreography dog-hind"><path d="m54 105 18 1-8 29 7 4H43l7-14z" fill="#679289"/><path d="M44 136h24v5H43z" fill="#f4c095"/></g>
         <path d="M38 82 60 65l51 6 10 17-10 30-67-4-12-13z" fill="#ee2e31" transform="translate(3 2)"/>
         <path d="M38 82 60 65l51 6 10 17-10 30-67-4-12-13z" fill="#f4c095"/>
@@ -14,20 +14,20 @@ function makeBookPerformer(who) {
         <path d="m93 75 11 1-1 35-12-1z" fill="#ee2e31"/>
         <g class="book-choreography dog-front"><path d="m96 103 16 1 4 32 9 3v3H100l-6-21z" fill="#1d7874"/><path d="m102 134 13 1 10 4v3h-24z" fill="#f4c095"/></g>
         <g class="book-react dog-face"><g class="book-choreography dog-head">
-          <path d="m91 71 10-33 26 2 12 16 22 4-2 20-31 9-25-3z" fill="#f4c095"/>
-          <path d="m130 59 31 1-2 20-28 6z" fill="#679289"/>
-          <path d="m153 60 9-1 1 8-8 4-4-5z" fill="#071e22"/>
-          <path d="M140 75h13m-34-22 10-3" fill="none" stroke-width="1.7"/>
-          <path d="m123 55 5 1-3 5-4-2z" fill="#071e22"/>
-          <g class="book-choreography dog-ear"><path d="m99 45-12-17 5-14 16 9 11 18-12 31-13-7z" fill="#ee2e31"/><path d="m94 25 10 4 6 15-9 15z" fill="#1d7874"/></g>
-          <path d="m100 76 21 7-4 10-22-8z" fill="#ee2e31"/><path d="m107 86-4 13 9-5 4 4 3-9z" fill="#f4c095"/>
+          <path d="M95 64q-7-8 0-16-3-10 6-15 1-9 10-10 7-8 15 0 11-1 15 9 9 2 9 12 8 6 3 16l-4 18-22 12-23-9z" fill="#e5ab7b"/>
+          <path d="M132 58q5-8 12-3 7-4 15 3 6 2 4 8 3 5-3 10-3 8-13 6-5 5-14 1-7-5-6-12-1-8 5-13z" fill="#ffe3bd"/>
+          <path d="m155 60 8-1 1 6-6 4-5-4z" fill="#071e22"/>
+          <path d="M150 75q5 2 8-2m-28-26q5-3 10 1m-22-15q6-5 11-1" fill="none" stroke-width="1.55"/>
+          <circle cx="135" cy="53" r="3.2" fill="#071e22" stroke="none"/><circle cx="136" cy="52" r=".9" fill="#fff0da" stroke="none"/>
+          <g class="book-choreography dog-ear"><path d="M109 39q-12-3-17 8-6 8-5 22-2 10 6 14 4 7 13 2 6 2 9-7 1-11-1-21 4-12-5-18z" fill="#a9624c"/><path d="M102 45q-6 9-5 17m4-8q-4 10-1 19m7-21q2 13-2 23" fill="none" stroke="#f4c095" stroke-width="1.35" opacity=".8"/></g>
+          <path d="m111 79 20 3-4 10-20-4z" fill="#ee2e31"/><path d="m115 88-4 13 9-5 4 4 3-9z" fill="#f4c095"/>
         </g></g>
       </g>
     </g>` : `
     <g fill="none" stroke="#679289" stroke-width="1.5"><path d="M24 143h132m-106 5h86"/><path d="M24 139h18m97 0h17" opacity=".45"/></g>
     <g class="book-react dog-pose">
       <g class="book-choreography dog-body">
-        <g class="book-choreography book-dog-tail"><path d="m126 76 13-11 10-28 12-7 3 10-6 30-23 24z" fill="#f4c095"/><path d="m148 41 13-11 3 10-3 10z" fill="#ee2e31"/></g>
+        <g class="book-choreography book-dog-tail"><path d="M126 81q9-3 12-12-4-4-2-11-5-5-1-11 2-5 8-5 4-7 12-4 9-1 11 8 6 6 0 14-1 7-9 9-3 15-22 24z" fill="#fff0da"/><path d="M145 44q9-3 13 4m-13 4q4-3 10 2" fill="none" stroke="#679289" stroke-width="1.5"/></g>
         <g class="book-choreography dog-hind"><path d="m115 105 18-4-2 34 11 5h-26l-9-18z" fill="#ee2e31"/><path d="m118 135 14-2 10 7h-25z" fill="#f4c095"/></g>
         <path d="m50 77 31-14 25 3a29 29 0 0 1 22 45l-27 7-35-8-15-15z" fill="#ee2e31" transform="translate(3 2)"/>
         <path d="m50 77 31-14 25 3a29 29 0 0 1 22 45l-27 7-35-8-15-15z" fill="#f4c095"/>
@@ -37,13 +37,13 @@ function makeBookPerformer(who) {
         <path d="m103 76 14 5m-15 1 16 6m-16 0 15 6" fill="none" stroke="#f4c095" stroke-width="1.4"/>
         <g class="book-choreography dog-front"><path d="m70 102 16 6-4 30-19 3-5-4 10-9z" fill="#679289"/><path d="m64 133 17 2v5l-19 2-4-5z" fill="#f4c095"/></g>
         <g class="book-react dog-face"><g class="book-choreography dog-head">
-          <path d="m33 43 18-11 27 13 7 27-13 17-23-6-10-13-21-3-4-14z" fill="#f4c095"/>
-          <path d="m26 53 16 2 10 20-13-5-21-3-4-14z" fill="#679289"/>
-          <path d="m14 52 10 1 1 6-10 4-5-6z" fill="#071e22"/>
-          <path d="m45 51 12-3m-29 16 8 2" fill="none" stroke-width="1.8"/>
-          <path d="M48 56h6l-2 6h-4z" fill="#071e22"/>
-          <g class="book-choreography dog-ear"><path d="m58 36 9-25 17 12-6 26-11 6z" fill="#1d7874"/><path d="m69 19 8 7-5 15-4-5z" fill="#ee2e31"/></g>
-          <path d="m54 75 23-5 4 12-22 8z" fill="#1d7874"/><path d="m62 86 9-3 5 10-12 8z" fill="#f4c095"/>
+          <path d="M28 53q-6-8 0-14-2-9 6-13 4-10 13-8 7-7 16 0 10-1 14 9 10 2 10 13 7 5 3 15 4 10-3 17 0 12-10 15l-25 1-16-10z" fill="#fff0da"/>
+          <path d="M16 55q5-6 11-3 7-6 15 1 8-1 11 6 6 4 3 12-3 10-15 11-6 5-12 0-10 1-13-8-8-5-4-12-2-6 4-8z" fill="#f4c095"/>
+          <path d="m12 59 10-2 3 6-5 6-8-3z" fill="#071e22"/>
+          <path d="M21 73q5 4 11 1m10-31q5-4 11-1m-8-14q5-5 10-1m3 4q6-4 10 0" fill="none" stroke-width="1.45"/>
+          <ellipse cx="46" cy="51" rx="3.3" ry="3.9" fill="#071e22" stroke="none"/><circle cx="45" cy="49.8" r=".9" fill="#fff0da" stroke="none"/>
+          <g class="book-choreography dog-ear"><path d="M65 35q8-6 15 1 8 7 9 20 5 7 0 14 1 8-7 11-8 6-14-2-6-1-6-10-3-8 0-16-3-10 3-18z" fill="#d4b897"/><path d="M72 40q7 3 9 14m-12-5q-2 9 3 15m2-12q6 6 6 14m-7-1q-1 6 5 8" fill="none" stroke="#fff0da" stroke-width="1.65"/></g>
+          <path d="m53 79 18-1 4 9-20 5z" fill="#1d7874"/><path d="m60 88 9-3 5 10-12 8z" fill="#ee2e31"/>
         </g></g>
       </g>
     </g>`;
