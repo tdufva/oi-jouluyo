@@ -20,135 +20,13 @@
 .book-figure:focus-visible { outline: 2px solid #f4c095; outline-offset: 2px; border-radius: 4px; }
 .book-figure-print { display: block; width: 100%; height: auto; overflow: visible; pointer-events: none; }
 .book-choreography {
+  --book-track: none;
   transform-box: view-box;
   animation: var(--book-track, none) var(--book-phrase-duration, 6s) cubic-bezier(.45,0,.23,1);
 }
-.book-tower { transform-origin: 78px 196px; }
-.book-prism { transform-origin: 91px 46px; }
-.book-tab { transform-origin: 33px 150px; }
-.book-inset { transform-origin: 82px 130px; }
-.book-fan, .book-leaf-left, .book-leaf-right { transform-origin: 87px 151px; }
-.book-orbit { transform-origin: 89px 151px; }
-.book-figure[data-phrase="steps"] .book-tower { --book-track: book-steps; }
-.book-figure[data-phrase="steps"] .book-prism { --book-track: book-counterstep; }
-.book-figure[data-phrase="steps"] .book-tab { --book-track: book-slide-tab; }
-.book-figure[data-phrase="turn"] .book-tower { --book-track: book-pivot; }
-.book-figure[data-phrase="turn"] .book-prism { --book-track: book-prism-turn; }
-.book-figure[data-phrase="turn"] .book-inset { --book-track: book-aperture; }
-.book-figure[data-phrase="fold"] .book-tower { --book-track: book-fold; }
-.book-figure[data-phrase="fold"] .book-prism { --book-track: book-prism-fold; }
-.book-figure[data-phrase="fold"] .book-tab { --book-track: book-slide-tab; }
-.book-figure[data-phrase="fold"] .book-inset { --book-track: book-aperture; }
-.book-figure[data-phrase="wave"] .book-fan { --book-track: book-wave-fan; }
-.book-figure[data-phrase="wave"] .book-orbit { --book-track: book-orbit-arc; }
-.book-figure[data-phrase="spiral"] .book-fan { --book-track: book-spiral-fan; }
-.book-figure[data-phrase="spiral"] .book-orbit { --book-track: book-orbit-turn; }
-.book-figure[data-phrase="flutter"] .book-fan { --book-track: book-flutter-fan; }
-.book-figure[data-phrase="flutter"] .book-orbit { --book-track: book-orbit-arc; }
-.book-figure[data-phrase="wave"] .book-leaf-left,
-.book-figure[data-phrase="spiral"] .book-leaf-right,
-.book-figure[data-phrase="flutter"] .book-leaf-left { --book-track: book-leaf-open; }
-.book-figure[data-phrase="wave"] .book-leaf-right,
-.book-figure[data-phrase="spiral"] .book-leaf-left,
-.book-figure[data-phrase="flutter"] .book-leaf-right { --book-track: book-leaf-answer; }
-/* Inner groups select their own motion instead of inheriting the parent's track. */
-.book-tab, .book-inset, .book-leaf-left, .book-leaf-right { --book-track: none; }
-.book-react { transform-box: view-box; transition: transform .42s cubic-bezier(.18,.8,.27,1); }
-.book-shutter { transform-origin: 82px 130px; }
-.book-fan-left, .book-fan-right { transform-origin: 87px 151px; }
-.book-figure-jussi[data-reaction] .book-index { transform: translate(-8px, -14px); }
-.book-figure-jussi[data-reaction] .book-shutter { transform: translateY(-8px) rotate(-12deg); }
-.book-figure-jussi[data-reaction="pages"] .book-index { transform: translate(-12px, -28px); }
-.book-figure-jussi[data-reaction="echoes"] .book-shutter { transform: translateY(-11px) rotate(38deg); }
-.book-figure-mariah[data-reaction] .book-fan-left { transform: rotate(-14deg); }
-.book-figure-mariah[data-reaction] .book-fan-right { transform: rotate(15deg); }
-.book-figure-mariah[data-force="full"] .book-fan-left { transform: rotate(-24deg); }
-.book-figure-mariah[data-force="full"] .book-fan-right { transform: rotate(22deg); }
-.book-figure-mariah[data-reaction="rain"] .book-fan-left { transform: rotate(12deg); }
-.book-figure-mariah[data-reaction="rain"] .book-fan-right { transform: rotate(-13deg); }
-@keyframes book-steps {
-  18% { transform: translate(-13px, -4px) rotate(-8deg); }
-  40%, 47% { transform: translate(10px, -12px) rotate(9deg); }
-  67% { transform: translate(15px, -2px) rotate(-5deg); }
-  83% { transform: translate(-4px, -5px) rotate(4deg); }
-}
-@keyframes book-counterstep {
-  23% { transform: translate(14px, -10px) rotate(26deg); }
-  43% { transform: translate(-14px, -15px) rotate(-36deg); }
-  62% { transform: translate(-5px, -22px) rotate(-70deg); }
-  80% { transform: translate(8px, -5px) rotate(14deg); }
-}
-@keyframes book-pivot {
-  19% { transform: rotate(-16deg) translate(-6px, -2px); }
-  43% { transform: rotate(12deg) scaleX(.7) translate(5px, -16px); }
-  60% { transform: rotate(17deg) translate(8px, -7px); }
-  82% { transform: rotate(-7deg); }
-}
-@keyframes book-prism-turn {
-  22% { transform: translate(-12px, -10px) rotate(-45deg); }
-  49% { transform: translate(5px, -24px) rotate(-177deg); }
-  72% { transform: translate(16px, -7px) rotate(-305deg); }
-  100% { transform: rotate(-360deg); }
-}
-@keyframes book-fold {
-  22% { transform: translate(-8px, -3px) skewY(-12deg); }
-  48%, 56% { transform: translate(9px, -6px) scale(.71, .91) skewY(12deg); }
-  77% { transform: translate(-3px, -12px) scale(1.06, 1.03) rotate(-6deg); }
-}
-@keyframes book-prism-fold {
-  24% { transform: translate(-7px, -7px) rotate(23deg); }
-  50%, 58% { transform: translate(12px, 5px) rotate(71deg) scaleX(.42); }
-  79% { transform: translate(-7px, -12px) rotate(-29deg); }
-}
-@keyframes book-slide-tab {
-  25% { transform: translate(-10px, -8px) rotate(-11deg); }
-  51% { transform: translate(4px, -18px) rotate(5deg); }
-  78% { transform: translate(-5px, 6px); }
-}
-@keyframes book-aperture {
-  24% { transform: rotate(-22deg) scaleY(.6); }
-  55%, 62% { transform: translateY(-7px) rotate(28deg); }
-  79% { transform: rotate(-10deg) scaleY(1.16); }
-}
-@keyframes book-wave-fan {
-  22% { transform: rotate(-18deg) scaleX(.8); }
-  51% { transform: rotate(16deg) scaleX(1.1); }
-  73% { transform: rotate(-10deg) scaleX(.89); }
-}
-@keyframes book-spiral-fan {
-  25% { transform: translateY(-9px) rotate(-23deg) scaleX(.75); }
-  51%, 57% { transform: translateY(-18px) rotate(21deg) scaleX(.57); }
-  80% { transform: translateY(-4px) rotate(12deg) scaleX(1.08); }
-}
-@keyframes book-flutter-fan {
-  20% { transform: rotate(11deg) scaleX(.7); }
-  39% { transform: rotate(-12deg) scaleX(1.06); }
-  56% { transform: rotate(8deg) scaleX(.79); }
-  76% { transform: translateY(-10px) rotate(-11deg) scaleX(1.07); }
-}
-@keyframes book-orbit-arc {
-  28% { transform: translateY(-7px) rotate(24deg); }
-  58% { transform: translateY(-12px) rotate(-25deg); }
-  76% { transform: rotate(10deg); }
-}
-@keyframes book-orbit-turn {
-  22% { transform: rotate(-20deg) scale(.94); }
-  51% { transform: translateY(-11px) rotate(28deg) scale(1.07); }
-  78% { transform: translate(-6px, 6px) rotate(-18deg) scale(.93); }
-}
-@keyframes book-leaf-open {
-  17% { transform: rotate(-17deg); }
-  38%, 45% { transform: rotate(-22deg); }
-  62% { transform: rotate(15deg) scaleX(.81); }
-  82% { transform: rotate(-8deg); }
-}
-@keyframes book-leaf-answer {
-  28% { transform: rotate(14deg); }
-  50% { transform: rotate(-13deg) scaleX(.82); }
-  72%, 79% { transform: rotate(20deg); }
-}
-.book-reaction { position: absolute; left: 52%; top: 31%; pointer-events: none; }
-.book-figure-jussi .book-reaction { left: 56%; top: 32%; }
+.book-reaction { position: absolute; left: 52%; top: 30%; pointer-events: none; }
+.book-figure-jussi .book-reaction { left: 78%; }
+.book-figure-mariah .book-reaction { left: 25%; }
 .book-reaction-piece, .book-reaction-mark {
   position: absolute;
   left: 0;
@@ -240,42 +118,39 @@
   animation: book-constellation-light .55s ease-out var(--star-in) both;
 }
 .book-constellation-center { fill: #fff0da; }
-.rose-window { display: none; }
-.roof > .book-constellation { z-index: 6; }
-@media (max-width: 1199px) {
-  .rose-window {
-    display: block;
-    position: absolute;
-    top: 49.23%;
-    left: 38.38%;
-    width: 13.8%;
-    height: 39.2%;
-    min-width: 44px;
-    min-height: 44px;
-    transform: translate(-50%, -50%);
-    padding: 0;
-    border: 0;
-    border-radius: 50%;
-    background: transparent;
-    color: #f4c095;
-    cursor: pointer;
-    touch-action: manipulation;
-    z-index: 7;
-  }
-  .rose-window:focus-visible { outline: 2px solid #fff0da; outline-offset: 2px; }
-  .rose-window span {
-    position: absolute;
-    right: -5px;
-    bottom: 1px;
-    display: grid;
-    width: 18px;
-    height: 18px;
-    place-items: center;
-    border: 1px solid #f4c095;
-    border-radius: 50%;
-    background: #071e22;
-    font: 13px/1 sans-serif;
-  }
+.roof > .book-constellation, .house-body > .book-constellation { z-index: 6; }
+.rose-window {
+  display: block;
+  position: absolute;
+  top: 49.23%;
+  left: 38.38%;
+  width: 13.8%;
+  height: 39.2%;
+  min-width: 44px;
+  min-height: 44px;
+  transform: translate(-50%, -50%);
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #f4c095;
+  cursor: pointer;
+  touch-action: manipulation;
+  z-index: 7;
+}
+.rose-window:focus-visible, #winter-window:focus-visible { outline: 2px solid #fff0da; outline-offset: 2px; }
+.rose-window > span, #winter-window > span:first-child {
+  position: absolute;
+  right: -5px;
+  bottom: 1px;
+  display: grid;
+  width: 18px;
+  height: 18px;
+  place-items: center;
+  border: 1px solid #f4c095;
+  border-radius: 50%;
+  background: #071e22;
+  font: 13px/1 sans-serif;
 }
 @keyframes book-constellation-linger {
   0%, 100% { opacity: 0; }
@@ -313,4 +188,216 @@
   #stage-performers .book-react { transform: none; transition: none; }
   #book-modal.revealing .modal-grid { animation: none; }
   .door-surface,.door-leaf { transition: none; }
+}
+
+/* The two dogs reuse the same six moving groups for all of their poses. */
+.book-react { transform-box: view-box; transition: transform .32s cubic-bezier(.18,.8,.27,1); }
+.dog-pose, .dog-body { transform-origin: 83px 140px; }
+.book-figure-jussi { --dog-side: 1; --dog-head-x: 103px; --dog-ear-x: 101px; --dog-front-x: 104px; --dog-hind-x: 59px; --dog-tail-x: 41px; }
+.book-figure-mariah { --dog-side: -1; --dog-head-x: 70px; --dog-ear-x: 68px; --dog-front-x: 75px; --dog-hind-x: 123px; --dog-tail-x: 134px; }
+.dog-face, .dog-head { transform-origin: var(--dog-head-x) 76px; }
+.dog-ear { transform-origin: var(--dog-ear-x) 43px; }
+.dog-front { transform-origin: var(--dog-front-x) 107px; }
+.dog-hind { transform-origin: var(--dog-hind-x) 110px; }
+.book-dog-tail { transform-origin: var(--dog-tail-x) 87px; }
+[data-phrase="sniff"] .dog-head, [data-phrase="stretch"] .dog-head { --book-track: dog-sniff; }
+[data-phrase="sniff"] .dog-body, [data-phrase="stretch"] .dog-body, [data-phrase="bow"] .dog-body { --book-track: dog-stretch; }
+[data-phrase="prance"] .dog-body, [data-phrase="hop"] .dog-body { --book-track: dog-prance; }
+[data-phrase="prance"] .dog-front, [data-phrase="hop"] .dog-front { --book-track: dog-step-front; }
+[data-phrase="prance"] .dog-hind, [data-phrase="hop"] .dog-hind { --book-track: dog-step-back; }
+[data-phrase="tilt"] .dog-head, [data-phrase="bow"] .dog-head { --book-track: dog-tilt; }
+[data-phrase="sit"] .dog-body { --book-track: dog-sit; }
+[data-phrase="sit"] .dog-hind, [data-phrase="stretch"] .dog-front { --book-track: dog-step-back; }
+[data-phrase="listen"] .dog-head { --book-track: dog-listen; }
+[data-phrase] .book-dog-tail { --book-track: dog-wag; }
+[data-phrase] .dog-ear { --book-track: dog-ear-twitch; }
+.book-figure[data-reaction] .dog-face { transform: rotate(calc(10deg * var(--dog-side))) translateY(-4px); }
+.book-figure[data-force="full"] .dog-pose { transform: translateY(-10px) rotate(calc(-5deg * var(--dog-side))); }
+.book-figure[data-reaction="biscuit"] .dog-face { transform: translate(calc(8px * var(--dog-side)), 8px) rotate(calc(14deg * var(--dog-side))); }
+.book-figure[data-reaction="paw"] .dog-pose { transform: rotate(calc(-12deg * var(--dog-side))) translateY(-6px); }
+.book-figure[data-reaction="bow"] .dog-pose { transform: rotate(calc(9deg * var(--dog-side))) translateY(5px); }
+@keyframes dog-sniff {
+  22%, 48% { transform: translate(calc(5px * var(--dog-side)), 9px) rotate(calc(17deg * var(--dog-side))); }
+  34% { transform: translate(calc(8px * var(--dog-side)), 6px) rotate(calc(10deg * var(--dog-side))); }
+  66% { transform: translate(calc(3px * var(--dog-side)), 4px) rotate(calc(8deg * var(--dog-side))); }
+}
+@keyframes dog-stretch {
+  30%, 53% { transform: rotate(calc(9deg * var(--dog-side))) scale(1.045, .92); }
+  73% { transform: translateY(-4px) rotate(calc(-3deg * var(--dog-side))); }
+}
+@keyframes dog-prance {
+  23% { transform: translate(calc(-5px * var(--dog-side)), -10px) rotate(calc(-6deg * var(--dog-side))); }
+  39% { transform: translate(calc(3px * var(--dog-side)), 1px); }
+  56% { transform: translate(calc(8px * var(--dog-side)), -13px) rotate(calc(5deg * var(--dog-side))); }
+  73% { transform: translate(calc(7px * var(--dog-side)), 0); }
+}
+@keyframes dog-step-front {
+  22%, 53% { transform: rotate(calc(-25deg * var(--dog-side))); }
+  37%, 68% { transform: rotate(calc(14deg * var(--dog-side))); }
+}
+@keyframes dog-step-back {
+  23%, 56% { transform: rotate(calc(20deg * var(--dog-side))); }
+  40%, 72% { transform: rotate(calc(-18deg * var(--dog-side))); }
+}
+@keyframes dog-tilt {
+  27%, 49% { transform: rotate(calc(-15deg * var(--dog-side))) translateY(-4px); }
+  69% { transform: rotate(calc(10deg * var(--dog-side))); }
+}
+@keyframes dog-sit {
+  29%, 62% { transform: translateY(3px) rotate(calc(-10deg * var(--dog-side))) scale(.98, .91); }
+  82% { transform: translateY(-3px); }
+}
+@keyframes dog-listen {
+  25%, 63% { transform: translateY(-6px) rotate(calc(-9deg * var(--dog-side))); }
+  44% { transform: translateY(-4px) rotate(calc(8deg * var(--dog-side))); }
+}
+@keyframes dog-wag {
+  17%, 39%, 62% { transform: rotate(calc(-14deg * var(--dog-side))); }
+  28%, 51%, 76% { transform: rotate(calc(16deg * var(--dog-side))); }
+}
+@keyframes dog-ear-twitch {
+  23%, 57% { transform: rotate(calc(16deg * var(--dog-side))); }
+  31%, 68% { transform: rotate(calc(-8deg * var(--dog-side))); }
+}
+@media (max-width: 1199px) {
+  #stage-performers {
+    position: relative;
+    display: block !important;
+    height: clamp(88px, 22vw, 128px);
+    bottom: auto;
+    margin: -7px auto -8px;
+    width: min(68%, 340px);
+    z-index: 3;
+  }
+  #stage-performers .book-figure { width: clamp(87px, 28vw, 144px); bottom: 0; }
+  #stage-performers .book-figure-jussi { left: 0; }
+  #stage-performers .book-figure-mariah { right: 0; }
+  #stage-performers .book-constellation { z-index: 1; }
+}
+
+/* Keep the scene controls in the artwork and the effects out of the hit targets. */
+.sky-star, .chimney-egg, .snow-tracks {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.scene > .sky-star { z-index: 4; }
+.sky-star:focus-visible, .chimney-egg:focus-visible, .snow-tracks:focus-visible {
+  outline: 2px solid #f4c095;
+  outline-offset: 2px;
+}
+.chimney-egg { position: absolute; z-index: 1; top: -17px; left: 50%; transform: translateX(-50%); }
+.snow-tracks {
+  position: absolute;
+  right: 8%;
+  top: 0;
+  transform: translateY(-38%);
+  color: #f4c095;
+  font: bold 17px/1 monospace;
+}
+.snow-tracks span { display: inline-block; transform: rotate(-13deg); }
+.rose-window, #winter-window { touch-action: none; user-select: none; -webkit-touch-callout: none; }
+.rose-window:active > span, #winter-window:active > span:first-child { background: #ee2e31; color: #fff0da; }
+#winter-window {
+  position: relative;
+  min-width: 0;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  color: #f4c095;
+  cursor: pointer;
+  pointer-events: auto;
+}
+#winter-window > span:first-child { right: 2px; bottom: 2px; }
+#winter-window .holiday-egg { left: 50%; top: 50%; width: 77%; height: 90%; border-radius: 2px; }
+.house { pointer-events: none; }
+.house .door, .house .rose-window { pointer-events: auto; }
+.scene > .chimney i, .scene > .chimney::after { pointer-events: none; }
+.holiday-egg {
+  position: absolute;
+  pointer-events: none;
+  z-index: 6;
+}
+.holiday-egg svg { display: block; width: 100%; height: auto; overflow: visible; }
+.egg-candles, .egg-baubles {
+  left: 38.38%;
+  top: 49.23%;
+  width: 10.5%;
+  height: 30%;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #071e22;
+  transform: translate(-50%, -50%);
+  animation: holiday-appear 3.65s ease-in-out both;
+}
+.egg-candles svg, .egg-baubles svg { height: 100%; }
+.egg-flames { animation: candle-flicker .8s ease-in-out infinite alternate; }
+.egg-baubles svg { transform-origin: 50% 13%; animation: bauble-swing 1.7s ease-in-out infinite alternate; }
+.egg-comet { width: clamp(43px, 7vw, 90px); top: 5%; left: 15%; animation: comet-across 3.45s ease-in-out both; }
+.egg-gift { width: clamp(52px, 7vw, 86px); top: 10%; left: 83%; animation: gift-lift 3.45s ease-in-out both; }
+.egg-tracks { width: clamp(85px, 15vw, 145px); right: 9%; bottom: -8px; animation: holiday-appear 3.5s ease-out both; }
+.egg-tracks use { animation: track-appear .46s ease-out both; }
+.egg-tracks use:nth-of-type(2) { animation-delay: .23s; }
+.egg-tracks use:nth-of-type(3) { animation-delay: .46s; }
+.egg-tracks use:nth-of-type(4) { animation-delay: .69s; }
+.egg-flare {
+  width: clamp(45px, 9vw, 91px);
+  left: 53%;
+  top: 7%;
+  animation: flare-up 2.1s cubic-bezier(.25,.6,.28,1) both;
+}
+.flare-trail { transform-box: fill-box; transform-origin: top; animation: flare-trail .36s ease-in-out infinite alternate; }
+.egg-rescue {
+  width: clamp(109px, 21vw, 216px);
+  top: -21%;
+  left: 35%;
+  animation: rescue-crossing 5.65s ease-in-out both;
+}
+.rescue-rotor { transform-box: fill-box; transform-origin: center; animation: rescue-rotor .26s linear infinite alternate; }
+.rescue-light { transform-box: fill-box; transform-origin: top center; animation: rescue-search 1.2s ease-in-out infinite alternate; }
+@keyframes holiday-appear { 0%, 100% { opacity: 0; } 15%, 78% { opacity: 1; } }
+@keyframes candle-flicker { from { opacity: .74; } to { opacity: 1; } }
+@keyframes bauble-swing { from { transform: rotate(-7deg); } to { transform: rotate(7deg); } }
+@keyframes track-appear { from { opacity: 0; } to { opacity: 1; } }
+@keyframes comet-across {
+  0% { opacity: 0; transform: translate(-38%, -22%) rotate(-10deg); }
+  22%, 68% { opacity: 1; }
+  60% { transform: translate(270%, -48%) rotate(7deg); }
+  100% { opacity: 0; transform: translate(430%, -90%) rotate(14deg); }
+}
+@keyframes gift-lift {
+  0%, 100% { opacity: 0; transform: translateY(48%) rotate(-18deg) scale(.6); }
+  30%, 69% { opacity: 1; transform: translateY(-35%) rotate(10deg); }
+  51% { transform: translateY(-46%) rotate(-6deg); }
+}
+@keyframes flare-up {
+  0% { opacity: 0; transform: translate(-80%, 45%) rotate(28deg) scale(.4); }
+  14% { opacity: 1; }
+  65%, 78% { opacity: 1; transform: translate(18%, -104%) rotate(7deg); }
+  100% { opacity: 0; transform: translate(24%, -112%) rotate(2deg) scale(1.1); }
+}
+@keyframes flare-trail { from { transform: scaleY(.65); } to { transform: scaleY(1); } }
+@keyframes rescue-crossing {
+  0% { opacity: 0; transform: translate(-175%, 16%) rotate(-7deg); }
+  15%, 81% { opacity: 1; }
+  36% { transform: translate(-26%, 1%) rotate(-2deg); }
+  58% { transform: translate(5%, 15%) rotate(4deg); }
+  74% { transform: translate(25%, 4%) rotate(-4deg); }
+  100% { opacity: 0; transform: translate(124%, -13%) rotate(-8deg); }
+}
+@keyframes rescue-rotor { from { transform: scaleX(.42); } to { transform: scaleX(1); } }
+@keyframes rescue-search { from { transform: skewX(-18deg); } to { transform: skewX(19deg); } }
+.scene-paused .holiday-egg { visibility: hidden; }
+@media (max-width: 700px) {
+  .scene > .sky-star { top: 31px; right: 0; }
+  .egg-rescue { top: -24%; }
+  .egg-comet { left: 8%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .holiday-egg, .holiday-egg * { animation: none !important; }
 }

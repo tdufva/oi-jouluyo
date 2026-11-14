@@ -34,7 +34,7 @@
   const stage=element('stage-performers'),grove=document.querySelector('.scene-grove');
   const modal=element('book-modal');
   initBookPerformers(stage,motion);
-  initRoseWindow(element('rose-window'));
+  initHouseEggs();
   const backgroundPaused=()=>document.hidden||modal.open;
   const syncChoreography=scheduleBookChoreography(stage,motion,backgroundPaused);
   if('IntersectionObserver' in window){

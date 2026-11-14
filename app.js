@@ -164,7 +164,7 @@ function render() {
     const entryLabel = day === 24 ? (lang === 'fi' ? 'Pääsisäänkäynti, pariovet. ' : 'Huvudingång, pardörrar. ') : '';
     const label = `${entryLabel}${day}. ${t.day}${unlocked ? '' : ', '+t.locked+' '+day+'. '+t.day}`;
     return `<button class="door ${day===24?'door-entrance':day===23?'door-bay':''} ${opened.includes(day)?'opened':''}" data-day="${day}" data-effect="${effectFor(day)}" aria-label="${escapeHTML(label)}" aria-haspopup="dialog" style="${effectStyle(day)}"><span class="door-enchantment" aria-hidden="true"></span><span class="door-light" aria-hidden="true"></span>${day===24?entranceArt():`<span class="door-surface">${coverArt(i)}<span class="door-shimmer" aria-hidden="true"></span><span class="door-number" aria-hidden="true">${String(day).padStart(2,'0')}</span></span>${day===23?'<span class="bay-rail" aria-hidden="true"></span>':''}`}<span class="door-sparks" aria-hidden="true"></span></button>`;
-  }).join('') + '<div class="facade-relief" aria-hidden="true"></div>';
+  }).join('') + '<button type="button" class="facade-relief" id="winter-window" aria-label="Jouluikkunan yllätykset"><span aria-hidden="true">✦</span></button>';
   document.querySelectorAll('.door').forEach(button => {
     button.onpointerenter = button.onmouseenter = button.onfocus = () => prepareDoor(button);
     button.onclick = () => {prepareDoor(button);openDoor(+button.dataset.day,button);};

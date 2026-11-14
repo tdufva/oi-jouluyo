@@ -1,71 +1,54 @@
 function makeBookPerformer(who) {
-  const jussi = who === 'jussi';
-  const art = jussi ? `
-    <path d="M28 221h112m-97 5h75" fill="none" stroke="#679289" stroke-width="1.5"/>
-    <path d="M49 215h69l15 6H34z" fill="#071e22" stroke="#679289" stroke-width="2"/>
-    <g class="book-choreography book-tower">
-      <path d="M35 71l78-14 19 11-5 114-76 22-18-9z" fill="#ee2e31" opacity=".55" transform="translate(3 2)"/>
-      <path d="m38 69 78-15 17 13-5 118-80 21-14-14z" fill="#f4c095" stroke="#071e22" stroke-width="2.5"/>
-      <path d="m42 72 74-15-4 115-74 24-9-13z" fill="#1d7874" stroke="#071e22" stroke-width="2.5"/>
-      <path d="m42 72 14-3-7 123-11 4-9-13z" fill="#679289"/>
-      <path d="m49 74-8 110m10-104-7 98m72-99 8-3m-9 8 9-3m-9 8 9-3m-12 80 10-3m-10 8 10-3" fill="none" stroke="#071e22" stroke-width="1.5"/>
-      <path d="m55 68 61-11-4 115-63 20z" fill="url(#riso-dots)" opacity=".38"/>
-      <path d="m56 151 48-15-1 14-47 16zm-1 22 35-12v7l-35 11z" fill="#f4c095"/>
-      <path d="m66 174-6 37 11-7 8 5-2-39z" fill="#ee2e31" stroke="#071e22" stroke-width="1.5"/>
-      <g class="book-react book-shutter"><g class="book-choreography book-inset">
-        <path d="M54 131a28 28 0 0 1 56 0z" fill="#071e22"/>
-        <path d="M57 130a25 25 0 0 1 50 0z" fill="#f4c095"/>
-        <path d="m82 105 22 24H82z" fill="#ee2e31"/>
-        <path d="M69 131h31m-26 5h20" stroke="#679289" stroke-width="1.6"/>
-      </g></g>
-    </g>
-    <g class="book-react book-index"><g class="book-choreography book-tab">
-      <path d="M24 92h18v68H24z" fill="#ee2e31" stroke="#071e22" stroke-width="2"/>
-      <path d="M28 99h4v55h-4z" fill="#f4c095"/>
-    </g></g>
-    <g class="book-choreography book-prism" stroke-linejoin="round">
-      <path d="M62 51 85 23l34 10-23 28z" fill="#ee2e31" transform="translate(3 2)"/>
-      <path d="m59 46 27-25 32 10-23 26z" fill="#f4c095" stroke="#071e22" stroke-width="2"/>
-      <path d="m59 46 36 11 23-26-2 16-24 22-29-9z" fill="#1d7874" stroke="#071e22" stroke-width="2"/>
-      <path d="m68 43 18-17 9 4-19 17zm29 15 15-15-1 5-15 14z" fill="#ee2e31"/>
-      <path d="m65 61 25 8-5 7-25-8z" fill="#679289" stroke="#071e22" stroke-width="1.5"/>
-      <path d="m121 25 5-8 7 5-5 8zM57 33l-9-3 4-6 9 3z" fill="#f4c095"/>
-      <path d="M106 20l10-8m13 42 9-9m-89 3 6 3" fill="none" stroke="#679289" stroke-width="1.5"/>
+  const left = who === 'jussi';
+  const art = left ? `
+    <g fill="none" stroke="#679289" stroke-width="1.5"><path d="M16 143h131m-114 5h87"/><path d="M19 140h22m76 0h24" opacity=".45"/></g>
+    <g class="book-react dog-pose">
+      <g class="book-choreography dog-body">
+        <g class="book-choreography book-dog-tail"><path d="m46 87-20-6-12-24-8 2 9 31 27 13z" fill="#ee2e31"/><path d="m10 59 6 15 7-4-7-13z" fill="#f4c095"/></g>
+        <g class="book-choreography dog-hind"><path d="m54 105 18 1-8 29 7 4H43l7-14z" fill="#679289"/><path d="M44 136h24v5H43z" fill="#f4c095"/></g>
+        <path d="M38 82 60 65l51 6 10 17-10 30-67-4-12-13z" fill="#ee2e31" transform="translate(3 2)"/>
+        <path d="M38 82 60 65l51 6 10 17-10 30-67-4-12-13z" fill="#f4c095"/>
+        <path d="m37 84 18-11 51 4 2 32-64-3-9-8z" fill="#1d7874"/>
+        <path d="m44 82 17-5 29 4-1 21-43-2z" fill="url(#riso-dots)" opacity=".42" stroke="none"/>
+        <path d="m48 92 33 3m-32 3 23 2" fill="none" stroke="#f4c095" stroke-width="1.5"/>
+        <path d="m93 75 11 1-1 35-12-1z" fill="#ee2e31"/>
+        <g class="book-choreography dog-front"><path d="m96 103 16 1 4 32 9 3v3H100l-6-21z" fill="#1d7874"/><path d="m102 134 13 1 10 4v3h-24z" fill="#f4c095"/></g>
+        <g class="book-react dog-face"><g class="book-choreography dog-head">
+          <path d="m91 71 10-33 26 2 12 16 22 4-2 20-31 9-25-3z" fill="#f4c095"/>
+          <path d="m130 59 31 1-2 20-28 6z" fill="#679289"/>
+          <path d="m153 60 9-1 1 8-8 4-4-5z" fill="#071e22"/>
+          <path d="M140 75h13m-34-22 10-3" fill="none" stroke-width="1.7"/>
+          <path d="m123 55 5 1-3 5-4-2z" fill="#071e22"/>
+          <g class="book-choreography dog-ear"><path d="m99 45-12-17 5-14 16 9 11 18-12 31-13-7z" fill="#ee2e31"/><path d="m94 25 10 4 6 15-9 15z" fill="#1d7874"/></g>
+          <path d="m100 76 21 7-4 10-22-8z" fill="#ee2e31"/><path d="m107 86-4 13 9-5 4 4 3-9z" fill="#f4c095"/>
+        </g></g>
+      </g>
     </g>` : `
-    <path d="M30 221h113m-96 5h77" fill="none" stroke="#679289" stroke-width="1.5"/>
-    <path d="M48 215h78l13 6H32z" fill="#071e22" stroke="#679289" stroke-width="2"/>
-    <path d="M91 127 54 214h74z" fill="#1d7874" stroke="#071e22" stroke-width="2.5"/>
-    <path d="m87 165-10 49h17l3-53z" fill="#f4c095"/>
-    <g class="book-choreography book-fan">
-      <path d="M22 135a66 66 0 0 1 132-3" fill="none" stroke="#679289" stroke-width="1.4" stroke-dasharray="10 5 2 6"/>
-      <path d="m83 164-65-27 4-53 27 13 39 50z" fill="#071e22"/>
-      <g class="book-react book-fan-left"><g class="book-choreography book-leaf-left">
-        <path d="m85 157-66-23 5-56 33 11 34 57z" fill="#f4c095" stroke="#071e22" stroke-width="2.4"/>
-        <path d="m84 153-57-23 2-42 27 10 31 47z" fill="#ee2e31"/>
-        <path d="m31 108 33 13m-32-5 39 16m-40-7 42 17" fill="none" stroke="#f4c095" stroke-width="1.8"/>
-        <path d="m85 150-56-21 1-40 26 10z" fill="url(#riso-dots)" opacity=".3"/>
-      </g></g>
-      <g class="book-react book-fan-right"><g class="book-choreography book-leaf-right">
-        <path d="m87 158 42-15 25-66-34 12-35 49z" fill="#ee2e31" transform="translate(2 2)" opacity=".72"/>
-        <path d="m86 158 45-15 21-68-36 11-33 56z" fill="#f4c095" stroke="#071e22" stroke-width="2.4"/>
-        <path d="m88 151 35-12 18-53-23 8-33 50z" fill="#1d7874"/>
-        <path d="m126 99-18 33m24-33-18 30m23-31-18 28" fill="none" stroke="#f4c095" stroke-width="1.8"/>
-      </g></g>
-      <path d="M85 150 68 85 92 65l19 24-20 64z" fill="#ee2e31" stroke="#071e22" stroke-width="2.2"/>
-      <path d="m84 138 9-58 7 12-13 53z" fill="#f4c095"/>
-      <circle cx="87" cy="151" r="12" fill="#071e22" stroke="#f4c095" stroke-width="2"/><circle cx="87" cy="151" r="3.4" fill="#ee2e31"/>
-      <path d="m87 158 13 34 10-17 8 3-21-25z" fill="#ee2e31" stroke="#071e22" stroke-width="1.5"/>
-    </g>
-    <g class="book-choreography book-orbit">
-      <circle cx="89" cy="49" r="26" fill="none" stroke="#f4c095" stroke-width="1.4"/>
-      <path d="M89 23a26 26 0 0 1 0 52V23Z" fill="#1d7874"/>
-      <path d="M89 31a18 18 0 0 0 0 36V31Z" fill="#ee2e31"/>
-      <path d="M89 34a15 15 0 0 1 0 30V34Z" fill="#f4c095"/>
-      <circle cx="114" cy="43" r="6" fill="#ee2e31" stroke="#071e22" stroke-width="1.5"/>
-      <path d="m68 21 8 2-4 7-8-1z" fill="#f4c095"/>
+    <g fill="none" stroke="#679289" stroke-width="1.5"><path d="M24 143h132m-106 5h86"/><path d="M24 139h18m97 0h17" opacity=".45"/></g>
+    <g class="book-react dog-pose">
+      <g class="book-choreography dog-body">
+        <g class="book-choreography book-dog-tail"><path d="m126 76 13-11 10-28 12-7 3 10-6 30-23 24z" fill="#f4c095"/><path d="m148 41 13-11 3 10-3 10z" fill="#ee2e31"/></g>
+        <g class="book-choreography dog-hind"><path d="m115 105 18-4-2 34 11 5h-26l-9-18z" fill="#ee2e31"/><path d="m118 135 14-2 10 7h-25z" fill="#f4c095"/></g>
+        <path d="m50 77 31-14 25 3a29 29 0 0 1 22 45l-27 7-35-8-15-15z" fill="#ee2e31" transform="translate(3 2)"/>
+        <path d="m50 77 31-14 25 3a29 29 0 0 1 22 45l-27 7-35-8-15-15z" fill="#f4c095"/>
+        <path d="m66 78 32-10a25 25 0 0 1 26 39l-25 8-27-7z" fill="#ee2e31"/>
+        <path d="M94 72a20 20 0 0 1 17 29L94 110Z" fill="#1d7874"/>
+        <path d="m75 82 18-7v34l-17-4z" fill="#679289"/>
+        <path d="m103 76 14 5m-15 1 16 6m-16 0 15 6" fill="none" stroke="#f4c095" stroke-width="1.4"/>
+        <g class="book-choreography dog-front"><path d="m70 102 16 6-4 30-19 3-5-4 10-9z" fill="#679289"/><path d="m64 133 17 2v5l-19 2-4-5z" fill="#f4c095"/></g>
+        <g class="book-react dog-face"><g class="book-choreography dog-head">
+          <path d="m33 43 18-11 27 13 7 27-13 17-23-6-10-13-21-3-4-14z" fill="#f4c095"/>
+          <path d="m26 53 16 2 10 20-13-5-21-3-4-14z" fill="#679289"/>
+          <path d="m14 52 10 1 1 6-10 4-5-6z" fill="#071e22"/>
+          <path d="m45 51 12-3m-29 16 8 2" fill="none" stroke-width="1.8"/>
+          <path d="M48 56h6l-2 6h-4z" fill="#071e22"/>
+          <g class="book-choreography dog-ear"><path d="m58 36 9-25 17 12-6 26-11 6z" fill="#1d7874"/><path d="m69 19 8 7-5 15-4-5z" fill="#ee2e31"/></g>
+          <path d="m54 75 23-5 4 12-22 8z" fill="#1d7874"/><path d="m62 86 9-3 5 10-12 8z" fill="#f4c095"/>
+        </g></g>
+      </g>
     </g>`;
   return `<button type="button" class="book-figure book-figure-${who}">
-    <svg class="book-figure-print" viewBox="0 0 170 235" aria-hidden="true">${art}</svg>
+    <svg class="book-figure-print" viewBox="0 0 170 152" aria-hidden="true" stroke="#071e22" stroke-width="2" stroke-linejoin="round">${art}</svg>
     <span class="book-reaction" aria-hidden="true"></span>
   </button>`;
 }
@@ -94,44 +77,14 @@ function drawBookConstellation(stage, points, duration, starScale = 1) {
   return stage.firstElementChild;
 }
 
-function initRoseWindow(button) {
-  const roof = button.parentElement;
-  const status = roof.querySelector('#rose-window-status');
-  const duration = 4400;
-  let constellation;
-  let timer;
-  function reset() {
-    clearTimeout(timer);
-    constellation?.remove();
-    status.textContent = '';
-  }
-  function localize() {
-    button.setAttribute('aria-label', document.documentElement.lang === 'sv' ? 'Tänd stjärnbilden i rosettfönstret' : 'Sytytä ruusuikkunan tähtikuvio');
-  }
-  button.addEventListener('click', () => {
-    reset();
-    const { width, height } = roof.getBoundingClientRect();
-    const points = [[284 / 740, 128 / 260], [.23, .76], [.12, 1.04], [.31, 1.17], [.51, .9], [.65, 1.16], [.85, 1.04], [.91, .74], [.73, .57]]
-      .map(([x, y]) => [Math.round(width * x), Math.round(height * y)]);
-    constellation = drawBookConstellation(roof, points, duration, .72);
-    status.textContent = document.documentElement.lang === 'sv' ? 'En stjärnbild tändes på husets fasad.' : 'Talon julkisivulla syttyi tähtikuvio.';
-    timer = setTimeout(reset, duration);
-  });
-  window.addEventListener('resize', reset);
-  document.addEventListener('visibilitychange', reset);
-  document.addEventListener('calendar-language', localize);
-  localize();
-}
-
 function scheduleBookChoreography(stage, motion, backgroundPaused) {
-  const wide = window.matchMedia('(min-width: 1200px)');
   const dancers = [
-    { figure: stage.querySelector('.book-figure-jussi'), phrases: ['steps', 'turn', 'fold'] },
-    { figure: stage.querySelector('.book-figure-mariah'), phrases: ['wave', 'spiral', 'flutter'] },
+    { figure: stage.querySelector('.book-figure-jussi'), phrases: ['sniff', 'prance', 'tilt', 'sit', 'listen'] },
+    { figure: stage.querySelector('.book-figure-mariah'), phrases: ['bow', 'hop', 'listen', 'stretch', 'sit'] },
   ];
   for (const dancer of dancers) dancer.last = Math.floor(Math.random() * dancer.phrases.length);
   let timer;
-  const canDance = () => wide.matches && !motion.matches && !backgroundPaused() && stage.dataset.inView !== 'false';
+  const canDance = () => !motion.matches && !backgroundPaused() && stage.dataset.inView !== 'false';
 
   function startPhrase() {
     let longest = 0;
@@ -159,7 +112,6 @@ function scheduleBookChoreography(stage, motion, backgroundPaused) {
     for (const { figure } of dancers) delete figure.dataset.phrase;
   }
 
-  wide.addEventListener('change', sync);
   motion.addEventListener('change', sync);
   return sync;
 }
@@ -172,6 +124,8 @@ function initBookPerformers(stage, motion) {
     ring: '<circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/>',
     dot: '<circle cx="12" cy="12" r="5" fill="currentColor"/>',
     prism: '<path d="M3 21 11 2l11 19Z" fill="currentColor"/><path d="M11 2v19H3Z" fill="#071e22" opacity=".48"/>',
+    paw: '<path d="M5 17q0-2 3-4l4-4 4 4q4 2 4 5 0 5-8 3-7 2-7-4Z" fill="currentColor"/><g fill="currentColor"><circle cx="4" cy="9" r="2.3"/><circle cx="9" cy="5" r="2.5"/><circle cx="15" cy="5" r="2.5"/><circle cx="20" cy="9" r="2.3"/></g>',
+    biscuit: '<path d="M5 9a4 4 0 1 1 3-6l8 8a4 4 0 1 1 5 5 4 4 0 1 1-5 5L7 12a4 4 0 0 1-2-3Z" fill="currentColor"/>',
   };
   const recipes = {
     stars: { shapes: ['star', 'diamond', 'dot'], spread: 112, lift: 28, turn: .23, symbol: 'star' },
@@ -180,14 +134,17 @@ function initBookPerformers(stage, motion) {
     orbit: { shapes: ['dot', 'star', 'ring'], spread: 102, lift: 19, turn: 1.35, symbol: 'ring' },
     prisms: { shapes: ['prism', 'diamond', 'prism'], spread: 84, lift: 57, turn: -.8, symbol: 'prism' },
     rain: { shapes: ['star', 'star', 'diamond'], spread: 88, lift: -62, turn: .58, symbol: 'star' },
+    paw: { shapes: ['paw', 'dot', 'star'], spread: 86, lift: 18, turn: .22, symbol: 'paw' },
+    biscuit: { shapes: ['biscuit', 'diamond', 'dot'], spread: 70, lift: 35, turn: -.4, symbol: 'biscuit' },
+    bow: { shapes: ['star', 'paw', 'prism'], spread: 92, lift: 70, turn: .65, symbol: 'star' },
   };
   const palettes = {
     jussi: ['#f4c095', '#fff0da', '#8cb4a9', '#ee2e31'],
     mariah: ['#fff0da', '#ee2e31', '#f4c095', '#8cb4a9'],
   };
   const figures = [
-    { who: 'jussi', name: 'Jussi Björling', glints: ['stars', 'pages'], shows: ['stars', 'pages', 'echoes'] },
-    { who: 'mariah', name: 'Mariah Carey', glints: ['orbit', 'prisms'], shows: ['orbit', 'prisms', 'rain'] },
+    { who: 'jussi', names: ['Kirjakoira Jussi', 'Bokhunden Jussi'], glints: ['stars', 'paw'], shows: ['paw', 'pages', 'biscuit', 'echoes'] },
+    { who: 'mariah', names: ['Kirjakoira Mariah', 'Bokhunden Mariah'], glints: ['orbit', 'biscuit'], shows: ['bow', 'orbit', 'prisms', 'rain'] },
   ];
   stage.innerHTML = figures.map(({ who }) => makeBookPerformer(who)).join('') +
     '<span id="book-duet-status" class="book-assistive" role="status"></span>';
@@ -218,14 +175,15 @@ function initBookPerformers(stage, motion) {
       };
       const start = origin(first);
       const end = origin(button);
+      const riseScale = Math.min(1, stageBounds.width / 470);
       const points = [[0, 0], [.12, 42], [.26, 101], [.37, 62], [.5, 142], [.64, 92], [.75, 118], [.89, 45], [1, 0]]
         .map(([fraction, rise]) => [
           Math.round(start.x + (end.x - start.x) * fraction),
-          Math.round(start.y + (end.y - start.y) * fraction - rise),
+          Math.round(start.y + (end.y - start.y) * fraction - rise * riseScale),
         ]);
-      constellation = drawBookConstellation(stage, points, duetDuration);
+      constellation = drawBookConstellation(stage, points, duetDuration, Math.max(.56, riseScale));
       stage.dataset.duet = 'together';
-      status.textContent = document.documentElement.lang === 'sv' ? 'En stjärnbild tändes mellan bokfigurerna.' : 'Kirjahahmojen väliin syttyi tähtikuvio.';
+      status.textContent = document.documentElement.lang === 'sv' ? 'En stjärnbild tändes mellan bokhundarna.' : 'Kirjakoirien väliin syttyi tähtikuvio.';
       duetTimer = setTimeout(resetDuet, duetDuration);
       return;
     }
@@ -237,7 +195,7 @@ function initBookPerformers(stage, motion) {
   window.addEventListener('resize', resetDuet);
   document.addEventListener('visibilitychange', resetDuet);
 
-  for (const { who, name, glints, shows } of figures) {
+  for (const { who, names, glints, shows } of figures) {
     const button = stage.querySelector('.book-figure-' + who);
     const layer = button.querySelector('.book-reaction');
     let glint = 0;
@@ -247,7 +205,7 @@ function initBookPerformers(stage, motion) {
       clearTimeout(cleanup);
       const recipe = recipes[mode];
       const still = motion.matches;
-      const count = full ? 19 : 9;
+      const count = full ? 16 : 7;
       const scale = full ? 1 : .52;
       const colors = palettes[who];
       const symbol = `<svg class="book-reaction-mark" viewBox="0 0 24 24">${sparks[recipe.symbol]}</svg>`;
@@ -280,7 +238,9 @@ function initBookPerformers(stage, motion) {
       react(glints[glint++ % glints.length], false);
     }
     function localize() {
-      const action = document.documentElement.lang === 'sv' ? 'Visa en överraskning' : 'Näytä yllätys';
+      const swedish = document.documentElement.lang === 'sv';
+      const name = names[swedish ? 1 : 0];
+      const action = swedish ? 'Visa en överraskning' : 'Näytä yllätys';
       button.setAttribute('aria-label', `${name}. ${action}.`);
     }
     button.addEventListener('pointerenter', event => {
