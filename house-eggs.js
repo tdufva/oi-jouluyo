@@ -29,13 +29,74 @@ function initHouseEggs() {
       <path d="M99 62h16v5h-5v5h-6v-5h-5z" fill="#ee2e31"/><path d="M115 39V23M95 85l-6 13m59-13 7 13m-76 0h89l9-5" fill="none" stroke="#071e22" stroke-width="4" stroke-linecap="round"/>
       <path class="rescue-rotor" d="M46 23h139m-113-5h91" stroke="#fff0da" stroke-width="2" stroke-linecap="round"/><path d="M192 52h13m-10 11h25m-17 14h25" stroke="#679289" stroke-width="1.5" stroke-linecap="round"/>
     </svg>`,
+    choir: `<svg viewBox="0 0 287 156">
+      <path class="choir-arch" d="M28 140V96a115 89 0 0 1 230 0v44Z" fill="#071e22" stroke="#679289" stroke-width="2"/>
+      <path d="M10 140h267m-236 7h204M51 137v-29a93 77 0 0 1 185 0v29" fill="none" stroke="#f4c095" stroke-width="1.6"/>
+      ${['#1d7874', '#679289', '#ee2e31', '#1d7874', '#a66353'].map((coat, i) => `<g transform="translate(${42 + i * 43} ${i === 2 ? 64 : i % 2 ? 76 : 84})">
+        <g class="choir-singer" style="--choir-delay:${i * -152}ms">
+          <path d="M-3 55 4 29l18-6 11 8 9 24Z" fill="${coat}" stroke="#071e22" stroke-width="2"/>
+          <path d="M5 13 10 3l13-2 10 11-4 14-13 5-10-7Z" fill="${i % 2 ? '#cf946d' : '#f4c095'}" stroke="#071e22" stroke-width="2"/>
+          <path d="m9 12 3-2m12 0 4 2" stroke="#071e22" stroke-linecap="round" stroke-width="1.8"/>
+          <ellipse class="choir-mouth" cx="20" cy="20" rx="3.4" ry="5.1" fill="#071e22"/>
+          <path d="m4 36 15 5 16-6-2 13-14 7-13-5Z" fill="#f4c095" stroke="#071e22" stroke-width="2"/>
+          <path d="M19 41v14" stroke="#071e22" stroke-width="1.5"/>
+        </g>
+      </g>`).join('')}
+      <g class="choir-notes" fill="#f4c095"><path d="M93 39v12q-8-3-8 2 0 5 10 1V40l7 2v-4Zm50-14v15q-8-3-8 2 0 6 10 1V29l8-2v10q-8-2-8 3 0 5 10 1V22Zm51 12v12q-8-3-8 2 0 5 10 1V38l7 2v-4Z"/><path d="M65 51h9m-4-4v9m147-9h12m-6-6v12" stroke="#679289" stroke-width="1.5"/></g>
+    </svg>`,
+    ladder: `<svg viewBox="0 0 170 212">
+      <g class="ladder-frame" fill="none" stroke-linecap="round">
+        <path d="M73 199 102 34m7 165 28-165M85 145l36 0M91 112h36M97 79h36M102 47h34m-57 132h36" stroke="#071e22" stroke-width="7"/>
+        <path d="M73 199 102 34m7 165 28-165M85 145h36M91 112h36M97 79h36M102 47h34m-57 132h36" stroke="#f4c095" stroke-width="3.7"/>
+        <path d="M106 35h33l11-9M66 200h52" stroke="#ee2e31" stroke-width="2"/>
+      </g>
+      <g class="ladder-climber">
+        <path d="m7 22 17-15 13 12-5 17L16 42Z" fill="#ee2e31" stroke="#071e22" stroke-width="2"/>
+        <path d="m10 22 8 1m10-6 18 1m-27 17-6 20H4m22-22 9 14 10-4" fill="none" stroke="#f4c095" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="m24-8 10 2 2 11-12 6-8-10Z" fill="#f4c095" stroke="#071e22" stroke-width="2"/>
+        <path d="m17 0 7-17 15 10-4 7Z" fill="#679289" stroke="#071e22" stroke-width="2"/>
+        <circle cx="30" cy="1" r="1.5" fill="#071e22"/>
+      </g>
+    </svg>`,
+    freedom: `<svg viewBox="0 0 325 165">
+      <path class="freedom-dawn" d="M46 140a117 99 0 0 1 234 0Z" fill="#f4c095"/>
+      <path d="M18 140h290m-253 8h199" fill="none" stroke="#679289" stroke-width="1.5"/>
+      ${['#679289', '#ee2e31', '#f4c095', '#1d7874'].map((coat, i) => `<g transform="translate(${74 + i * 46} ${i % 2 ? 56 : 65})">
+        <g class="freedom-figure" style="--freedom-x:${i < 2 ? -17 + i * 10 : 7 + (i - 2) * 10}px;--freedom-delay:${i * 90}ms">
+          <path d="m11 46-2 25m20-25 7 25M2 73h12m18 0h11" fill="none" stroke="#071e22" stroke-width="5" stroke-linecap="round"/>
+          <path d="m5 27 12-7 18 6 5 25H0Z" fill="${coat}" stroke="#071e22" stroke-width="2"/>
+          <path d="M11 9 16 0l14 2 6 8-7 13-13-1Z" fill="${i % 2 ? '#b97759' : '#f4c095'}" stroke="#071e22" stroke-width="2"/>
+          <path class="freedom-hands" d="M0 26-12 7m52 19L51 3" fill="none" stroke="#071e22" stroke-width="3.5" stroke-linecap="round"/>
+        </g>
+      </g>`).join('')}
+      <g class="freedom-chain" fill="none" stroke="#fff0da" stroke-width="3">
+        <g class="freedom-chain-left"><ellipse cx="82" cy="122" rx="13" ry="6"/><ellipse cx="105" cy="122" rx="13" ry="6"/><ellipse cx="128" cy="122" rx="13" ry="6"/><path d="M153 117c-10-3-15 0-15 5s7 7 15 5"/></g>
+        <g class="freedom-chain-right"><path d="M173 117c10-3 15 0 15 5s-7 7-15 5"/><ellipse cx="197" cy="122" rx="13" ry="6"/><ellipse cx="220" cy="122" rx="13" ry="6"/><ellipse cx="243" cy="122" rx="13" ry="6"/></g>
+        <ellipse class="freedom-chain-joint" cx="163" cy="122" rx="13" ry="6"/>
+        <path class="freedom-spark" d="m162 104 1 10m-10-10 5 10m14-10-5 10m-5 16v9" stroke="#ee2e31" stroke-width="2" stroke-linecap="round"/>
+      </g>
+    </svg>`,
+    meteors: `<svg viewBox="0 0 960 650" preserveAspectRatio="xMidYMid slice">
+      ${[[860, 56, 0, 1], [573, 78, 320, .72], [1000, 128, 610, .85], [737, 6, 940, 1.2], [918, 196, 1320, .75], [536, 42, 1640, .58], [1040, 90, 1980, 1.2], [780, 142, 2290, .69], [692, 83, 2680, .95], [973, 231, 2920, .65]].map(([x, y, delay, size], i) => `<g transform="translate(${x} ${y}) scale(${size})">
+        <g class="meteor-streak" style="--meteor-delay:${delay}ms">
+          <path d="m0 0 139-78L23-2 10 9Z" fill="${i % 3 === 0 ? '#ee2e31' : '#679289'}" opacity=".75"/>
+          <path d="m10 1 104-65M25 3l60-34" stroke="#f4c095" stroke-width="1.6" opacity=".84"/>
+          <path d="M0-7 10-1 6 8-4 6-9 0Z" fill="#f4c095"/><path d="m-2-4 5 3-5 4-3-3Z" fill="#fff0da"/>
+        </g>
+      </g>`).join('')}
+    </svg>`,
   };
 
+  const house = roof.closest('.house');
   const hotspots = [
-    { button: document.getElementById('sky-star'), art: 'comet', label: ['Tähden yllätys', 'Stjärnans överraskning'], message: ['Joulutähti lensi katon yli.', 'En julstjärna flög över taket.'] },
-    { button: document.getElementById('chimney-egg'), art: 'gift', label: ['Savupiipun yllätys', 'Skorstenens överraskning'], message: ['Savupiipusta ilmestyi lahjapaketti.', 'Ett paket dök upp ur skorstenen.'] },
-    { button: document.getElementById('snow-tracks'), art: 'tracks', label: ['Tassunjäljet lumessa', 'Tassavtryck i snön'], message: ['Lumeen ilmestyi tassunjälkiä.', 'Tassavtryck dök upp i snön.'] },
-  ];
+    { id: 'sky-star', art: 'comet', mount: roof, label: ['Tähden yllätys', 'Stjärnans överraskning'], message: ['Joulutähti lensi katon yli.', 'En julstjärna flög över taket.'] },
+    { id: 'chimney-egg', art: 'gift', mount: roof, label: ['Savupiipun yllätys', 'Skorstenens överraskning'], message: ['Savupiipusta ilmestyi lahjapaketti.', 'Ett paket dök upp ur skorstenen.'] },
+    { id: 'snow-tracks', art: 'tracks', mount: document.querySelector('.ground'), label: ['Tassunjäljet lumessa', 'Tassavtryck i snön'], message: ['Lumeen ilmestyi tassunjälkiä.', 'Tassavtryck dök upp i snön.'] },
+    { id: 'choir-egg', art: 'choir', mount: roof, duration: 9600, label: ['Katon pikkuikkunat, yllätys', 'Takets små fönster, överraskning'], message: ['Katon pikkuikkunoihin ilmestyi laulava kuoro.', 'En sjungande kör dök upp i takets små fönster.'] },
+    { id: 'ladder-egg', art: 'ladder', mount: roof, duration: 5800, label: ['Kattoporras, yllätys', 'Taktrappan, överraskning'], message: ['Hahmo hyppäsi tikapuille ja kiipesi katolle.', 'En figur hoppade upp på stegen och klättrade till taket.'] },
+    { id: 'freedom-egg', art: 'freedom', mount: house, duration: 6500, label: ['Kahle, yllätys', 'Kedjan, överraskning'], message: ['Kahleet katkesivat ja orjuutetut ihmiset astuivat vapaina valoon.', 'Kedjorna brast och de förslavade människorna steg fria ut i ljuset.'] },
+    { id: 'meteor-egg', art: 'meteors', mount: document.body, duration: 6200, label: ['Punainen tähti, yllätys', 'Den röda stjärnan, överraskning'], message: ['Taivas pimeni hetkeksi, kun meteoriparvi lensi yli.', 'Himlen mörknade en stund när en meteorsvärm drog förbi.'] },
+  ].map(spot => ({ ...spot, button: document.getElementById(spot.id) }));
   const lang = () => document.documentElement.lang === 'sv' ? 1 : 0;
   const windowScenes = ['stars', 'candles', 'baubles'];
   const starShape = '<path d="M0-9 2.5-2.5 9 0 2.5 2.5 0 9-2.5 2.5-9 0-2.5-2.5Z"/>';
@@ -48,9 +109,14 @@ function initHouseEggs() {
   let taps = 0;
   let lastTap = -Infinity;
   let boundWinterWindow;
+  let choirAudio;
 
   function clearScene() {
     clearTimeout(sceneTimer);
+    if (choirAudio) {
+      choirAudio.pause();
+      choirAudio.currentTime = 0;
+    }
     scene?.remove();
     scene = undefined;
     rescueActive = false;
@@ -175,11 +241,25 @@ function initHouseEggs() {
   }
   bindWindow(windowButton);
 
-  for (const { button, art, message } of hotspots) {
+  for (const { button, art, mount, duration = 3600, message } of hotspots) {
     button.addEventListener('click', () => {
       if (rescueActive) return;
-      showArt(art === 'tracks' ? button.parentElement : roof, art, 3600);
+      if (art === 'choir' && scene?.classList.contains('egg-choir')) {
+        clearScene();
+        status.textContent = ['Kuoro hiljeni.', 'Kören tystnade.'][lang()];
+        return;
+      }
+      showArt(mount, art, duration);
       status.textContent = message[lang()];
+      if (art === 'choir') {
+        choirAudio ??= new Audio('assets/holiday-choir.wav');
+        scene.append(choirAudio);
+        const performance = scene;
+        choirAudio.play().catch(error => {
+          if (error.name === 'AbortError' || scene !== performance) return;
+          status.textContent = ['Kuoro näkyy, mutta ääntä ei saatu toistettua.', 'Kören visas, men ljudet kunde inte spelas upp.'][lang()];
+        });
+      }
     });
   }
   function localize() {
@@ -197,5 +277,9 @@ function initHouseEggs() {
     taps = 0;
     clearScene();
   });
+  const modal = document.getElementById('book-modal');
+  new MutationObserver(() => {
+    if (modal.open && scene?.classList.contains('egg-choir')) clearScene();
+  }).observe(modal, { attributes: true, attributeFilter: ['open'] });
   localize();
 }

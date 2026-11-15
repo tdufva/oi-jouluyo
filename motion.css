@@ -520,3 +520,145 @@
   .weather-controls .range-control { grid-template-columns: auto 47px 25px; column-gap: 4px; }
   .weather-controls .range-control input { width: 47px; }
 }
+
+.scene > .meteor-star, .roof-egg, .freedom-egg {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  pointer-events: auto;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.scene > .meteor-star { z-index: 4; }
+.roof-egg, .freedom-egg {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  color: #f4c095;
+}
+.roof-egg {
+  transform: translate(-50%, -50%);
+  z-index: 7;
+  font: 14px/1 monospace;
+}
+.ladder-egg { left: 17%; top: 65%; }
+.choir-egg { left: 89%; top: 58%; }
+.roof-egg > span {
+  display: grid;
+  place-content: center;
+  width: 18px;
+  height: 18px;
+  background: #071e22;
+  border: 1px solid #679289;
+  border-radius: 50%;
+  opacity: .82;
+}
+.freedom-egg { left: 8%; top: 0; transform: translateY(-38%); }
+.freedom-egg svg { display: block; opacity: .8; }
+.meteor-star:focus-visible, .roof-egg:focus-visible, .freedom-egg:focus-visible {
+  outline: 2px solid #f4c095;
+  outline-offset: 2px;
+}
+.egg-choir {
+  width: clamp(151px, 38%, 308px);
+  right: 0;
+  top: 17%;
+  animation: holiday-appear 9.4s ease-in-out both;
+}
+.choir-arch { opacity: .94; }
+.choir-singer { animation: choir-breathe 1.35s ease-in-out var(--choir-delay) infinite alternate; }
+.choir-mouth {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: choir-vowel .74s ease-in-out var(--choir-delay) infinite alternate;
+}
+.choir-notes { animation: choir-raise-notes 2.25s ease-in-out infinite; }
+.egg-ladder {
+  width: clamp(95px, 22%, 178px);
+  left: 3%;
+  top: 27%;
+  animation: holiday-appear 5.65s ease-in-out both;
+}
+.ladder-climber {
+  transform: translate(88px, 14px);
+  animation: ladder-climb 5.65s ease-in-out both;
+}
+.egg-freedom {
+  width: clamp(245px, 58%, 465px);
+  left: 50%;
+  bottom: -20px;
+  transform: translateX(-50%);
+  animation: holiday-appear 6.35s ease-in-out both;
+}
+.freedom-dawn {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  opacity: .55;
+  animation: freedom-light 6.35s ease-out both;
+}
+.freedom-figure {
+  transform: translateX(var(--freedom-x));
+  animation: freedom-step 5.8s ease-in-out var(--freedom-delay) both;
+}
+.freedom-hands { animation: freedom-reach 5.8s ease-in-out both; }
+.freedom-chain-left, .freedom-chain-right { transform-box: fill-box; transform-origin: center; opacity: .48; }
+.freedom-chain-left { transform: translate(-23px, 13px) rotate(-14deg); animation: chain-fall-left 6.35s ease-in-out both; }
+.freedom-chain-right { transform: translate(23px, 13px) rotate(14deg); animation: chain-fall-right 6.35s ease-in-out both; }
+.freedom-chain-joint { opacity: 0; animation: chain-give 6.35s ease-in-out both; }
+.freedom-spark { opacity: .45; animation: chain-spark 6.35s ease-in-out both; }
+.egg-meteors {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  overflow: hidden;
+  background: linear-gradient(180deg, #030d14f2 0%, #06131ad9 37%, #06131a50 78%, #06131a12);
+  animation: sky-darken 6.1s ease-in-out both;
+}
+.egg-meteors svg { width: 100%; height: 100%; }
+.meteor-streak {
+  opacity: .78;
+  transform: translate(-115px, 85px);
+  animation: meteor-fall 2.5s cubic-bezier(.3,.08,.65,1) var(--meteor-delay) both;
+}
+@keyframes choir-breathe { to { transform: translateY(-3px); } }
+@keyframes choir-vowel { from { transform: scale(.9, .34); } to { transform: scale(1, 1.2); } }
+@keyframes choir-raise-notes {
+  0%, 100% { opacity: .2; transform: translateY(5px); }
+  52% { opacity: 1; transform: translateY(-9px); }
+}
+@keyframes ladder-climb {
+  0%, 9% { opacity: 0; transform: translate(11px, 162px) rotate(8deg); }
+  21% { opacity: 1; transform: translate(30px, 112px) rotate(-17deg); }
+  30%, 37% { opacity: 1; transform: translate(74px, 118px) rotate(4deg); }
+  47%, 52% { transform: translate(80px, 87px) rotate(-6deg); }
+  62%, 66% { transform: translate(86px, 54px) rotate(4deg); }
+  77%, 81% { opacity: 1; transform: translate(93px, 20px) rotate(-5deg); }
+  100% { opacity: 0; transform: translate(130px, -6px) rotate(8deg); }
+}
+@keyframes freedom-light {
+  0%, 27% { opacity: .08; transform: scale(.57, .75); }
+  67%, 100% { opacity: .8; transform: scale(1); }
+}
+@keyframes freedom-step {
+  0%, 27% { transform: translateY(4px) rotate(4deg); }
+  61% { transform: translateX(var(--freedom-x)) translateY(-7px); }
+  100% { transform: translateX(var(--freedom-x)); }
+}
+@keyframes freedom-reach { 0%, 29% { transform: translateY(7px); } 62%, 100% { transform: translateY(-2px); } }
+@keyframes chain-fall-left { 0%, 30% { opacity: 1; transform: none; } 75%, 100% { opacity: .48; transform: translate(-23px, 13px) rotate(-14deg); } }
+@keyframes chain-fall-right { 0%, 30% { opacity: 1; transform: none; } 75%, 100% { opacity: .48; transform: translate(23px, 13px) rotate(14deg); } }
+@keyframes chain-give { 0%, 27% { opacity: 1; } 38%, 100% { opacity: 0; } }
+@keyframes chain-spark { 0%, 24%, 66%, 100% { opacity: 0; } 38% { opacity: 1; } }
+@keyframes sky-darken { 0%, 100% { opacity: 0; } 18%, 75% { opacity: 1; } }
+@keyframes meteor-fall {
+  0% { opacity: 0; transform: translate(210px, -135px); }
+  22%, 60% { opacity: 1; }
+  100% { opacity: 0; transform: translate(-680px, 400px); }
+}
+@media (max-width: 700px) {
+  .egg-choir { top: 16%; }
+  .egg-ladder { left: 1%; top: 30%; }
+  .egg-freedom { bottom: -13px; }
+}
