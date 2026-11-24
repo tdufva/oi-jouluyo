@@ -153,6 +153,11 @@ function render() {
   document.documentElement.lang = lang;
   document.title = lang === 'fi' ? 'Oi jouluyö — 24 kirjaa kohti valoa' : 'O helga natt — 24 böcker mot ljuset';
   for (const [id,key] of Object.entries({'heading':'heading','description':'description','date-note':'date','preview-label':'preview','footer-copy':'footer','back-top':'top'})) { const target = $(id); if (target) target.innerHTML = t[key]; }
+  const archiveLink = $('archive-link');
+  if (archiveLink) {
+    archiveLink.textContent = lang === 'sv' ? 'Podcastarkiv' : 'Podcastarkisto';
+    archiveLink.href = `avsnitt/?lang=${lang}`;
+  }
   document.querySelector('.calendar-section').setAttribute('aria-label', lang === 'fi' ? 'Joulukalenteri' : 'Julkalender');
   document.querySelectorAll('.lang').forEach(b => {
     b.classList.toggle('active', b.dataset.lang === lang);
@@ -257,7 +262,7 @@ function makeDoorStory(day, title, art) {
 function bindDoorSharing(day, title) {
   const t = copy[lang];
   const calendarTitle = lang === 'sv' ? 'O helga natt' : 'Oi jouluyö';
-  const link = new URL('https://tdufva.github.io/oi-jouluyo/');
+  const link = new URL('./', location.href);
   link.searchParams.set('luukku', day);
   link.searchParams.set('lang', lang);
   const url = link.href;

@@ -13,3 +13,6 @@ __pycache__/
 /design-study.html
 /performance-benchmark.html
 /assets/fonts/SOURCES.md
+
+# Private Squarespace export, podcast masters and migration logs
+/.migration/
