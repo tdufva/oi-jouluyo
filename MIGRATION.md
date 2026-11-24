@@ -1,6 +1,6 @@
 # O, helga blog. migration
 
-The new calendar remains the home page. The earlier podcast is a static archive at `avsnitt/`, with 77 episode pages at their original URL paths. Archive navigation, search and filters support Finnish and Swedish; the original episode texts retain their original languages.
+The new calendar is the home page at https://ohelga.blog/. The earlier podcast is a static archive at `avsnitt/`, with 77 episode pages at their original URL paths. Archive navigation, search and filters support Finnish and Swedish; the original episode texts retain their original languages.
 
 ## Imported material
 
@@ -18,11 +18,15 @@ The original XML, RSS and all 77 M4A audio files are backed up in `.migration/oh
 
 ## Audio and podcast subscriptions
 
-The selected destination is **RedCircle's free Core plan**. Import the existing show rather than creating a second show:
+All **77 episodes were imported into RedCircle on 24 November 2026**, with their original GUIDs preserved. All 77 audio URLs and all 78 show/episode artwork URLs use RedCircle servers. The new public feed is:
+
+`https://feeds.redcircle.com/84f56904-c061-4877-be4c-c527ec8fa5a5`
+
+The original feed is:
 
 `https://www.ohelga.blog/avsnitt?format=rss`
 
-Until that import has completed and been checked, the archive plays the existing Squarespace audio and links to the existing RSS feed. The local audio backup is not a public audio host.
+The archive now plays RedCircle audio and links to the RedCircle RSS feed. The original M4A files remain backed up locally. Three sample RedCircle audio files returned HTTP 206 with valid MP3 data.
 
 After the RedCircle import, download its new RSS as `.migration/ohelga/redcircle-feed.xml`, then regenerate the archive:
 
@@ -37,19 +41,19 @@ python3 scripts/check-archive.py
 
 The importer refuses a replacement feed that is missing any original episode GUID or HTTPS audio URL. Check cover images, episode counts and playback before proceeding. Existing Apple Podcasts listing: `https://podcasts.apple.com/podcast/id1655826352`.
 
-In Squarespace's blog settings, use **Feeds → Podcasting → Change Feed → Moving from Squarespace** to point the original RSS feed to the verified RedCircle feed. Verify the old URL returns an HTTP 301 redirect and the new feed contains every episode with its original GUID. Check the existing Apple Podcasts listing has adopted the new feed; do not submit a duplicate show.
+The original feed now returns an **HTTP 301** redirect to RedCircle. This was saved in the O, helga blog. site's **Avsnitt → Blog Settings → Feeds → Podcasting → Change Feed → Moving from Squarespace** setting. RedCircle's Verify Redirect step reported success. The new feed contains the `itunes:new-feed-url` tag and all 77 original GUIDs. Apple Podcasts and other directories will adopt the new URL as they refresh. Do not submit a duplicate show.
 
-Keep that redirect working for at least four weeks, as required by Apple's migration guidance. Do not cancel Squarespace before the audio, cover art and feed migration are complete.
+Keep that redirect working for at least 30 days, **through 24 December 2026**. Do not cancel Squarespace before the audio, cover art and feed migration are complete.
 
 ## Hover domain configuration
 
-Hover currently manages DNS as well as registration. The existing website records are four apex A records (`198.185.159.144`, `198.185.159.145`, `198.49.23.144`, `198.49.23.145`) and `www` CNAME `ext-cust.squarespace.com`.
+Hover manages DNS as well as registration. Before migration the website used four apex A records (`198.185.159.144`, `198.185.159.145`, `198.49.23.144`, `198.49.23.145`) and `www` CNAME `ext-cust.squarespace.com`.
 
-For GitHub Pages the apex A records become `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`; the eventual `www` CNAME is `tdufva.github.io`. The repository's custom domain must be configured before pointing DNS at GitHub, and HTTPS must be checked afterwards.
+On 24 November 2026 the apex A records were changed to `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`; the eventual `www` CNAME is `tdufva.github.io`. The repository's custom domain must be configured before pointing DNS at GitHub, and HTTPS must be checked afterwards.
 
 The MX record and `mail` CNAME belong to Hover email and must be retained.
 
-For a staged move, `ohelga.blog` can serve the new site while `www.ohelga.blog` continues serving Squarespace and its podcast redirect. Move `www` after the feed migration window, unless an HTTP redirect service has first been put in place for the original feed address.
+`ohelga.blog` now points to GitHub Pages while `www.ohelga.blog` continues serving Squarespace and its podcast redirect. Move `www` after the feed migration window, unless an HTTP redirect service has first been put in place for the original feed address.
 
 GitHub Pages cannot distinguish `/avsnitt?format=rss` from `/avsnitt` using its static routing. Consequently, simply moving `www` to GitHub would return HTML to subscribers using the original RSS address. DNS records cannot provide that HTTP redirect.
 

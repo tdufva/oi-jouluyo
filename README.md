@@ -2,9 +2,9 @@
 
 Kaksikielinen kirjallinen joulukalenteri, jossa jugendtalon 24 luukkua avautuvat joulukuun päivinä. Sisäänkäynnin pariovet ovat luukku 24.
 
-- [Joulukalenteri](https://tdufva.github.io/oi-jouluyo/)
-- [Luukkujen muokkauslomake](https://tdufva.github.io/oi-jouluyo/muokkaa.html)
-- [Podcastarkisto 2022–2025](https://tdufva.github.io/oi-jouluyo/avsnitt/)
+- [Joulukalenteri](https://ohelga.blog/)
+- [Luukkujen muokkauslomake](https://ohelga.blog/muokkaa.html)
+- [Podcastarkisto 2022–2025](https://ohelga.blog/avsnitt/)
 
 Podcastarkistossa on 77 jaksoa alkuperäisissä osoitepoluissaan. [Siirto-ohje](MIGRATION.md) kertoo RedCircle-äänitiedostoista, RSS-tilaajien säilyttämisestä ja Hover-verkkotunnuksen asetuksista.
 

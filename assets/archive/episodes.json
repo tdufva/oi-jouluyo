@@ -1,6 +1,6 @@
 {
   "title": "O, helga podcast.",
-  "feed": "https://www.ohelga.blog/avsnitt?format=rss",
+  "feed": "https://feeds.redcircle.com/84f56904-c061-4877-be4c-c527ec8fa5a5",
   "originalFeed": "https://www.ohelga.blog/avsnitt?format=rss",
   "episodes": [
     {
@@ -11,8 +11,8 @@
       "year": 2025,
       "date": "2025-12-24",
       "duration": "21:36",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/6953dcf03a40620706518b3e/1767103755311/24_Ilmanmusiikkia.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/554ab8eb-ba10-4b6e-acfc-ed5131f6e0bb/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:69457e5cd2c43033fc0d474c",
@@ -22,8 +22,8 @@
       "year": 2025,
       "date": "2025-12-23",
       "duration": "8:38",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/6953dccbb18ff062f8c9f31a/1767103703709/23_Ilmanmusiikkia.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/1a3808b8-4b11-4a4a-9aab-cb25b6e4bee0/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:69457cae0e2be31898d89034",
@@ -33,8 +33,8 @@
       "year": 2025,
       "date": "2025-12-22",
       "duration": "9:35",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/6953dc91dd86ec61b52a6632/1767103646878/22_Ilmanmusiikkia.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/445bdbab-6cef-4062-aa09-0a3ef45a9ac1/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:694578eff6482851dc06fd6c",
@@ -44,8 +44,8 @@
       "year": 2025,
       "date": "2025-12-21",
       "duration": "8:52",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/6953dc76899f2a0509228106/1767103618685/21_Ilmanmusiikkia.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/ba20dc19-9c51-4c05-a97b-16353054781d/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:69405e685dcfec52b55d5e33",
@@ -55,8 +55,8 @@
       "year": 2025,
       "date": "2025-12-20",
       "duration": "12:19",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/6953dc0143467e5d3693287b/1767103509751/20_Ilmanmusiikkia.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/d5e26aaa-36e3-4e62-ba86-4deff76cab7c/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:69405d79db1424424835cce3",
@@ -66,8 +66,8 @@
       "year": 2025,
       "date": "2025-12-19",
       "duration": "8:09",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/6953dbe7cc95c65f56e4f9a3/1767103475324/19_Ilmanmusiikkia.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/b9068016-d402-4ec5-9238-cffdc22036ad/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:69405c4abc9a3a491b51a784",
@@ -77,8 +77,8 @@
       "year": 2025,
       "date": "2025-12-18",
       "duration": "10:05",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/6953dbc60307240bbec7daba/1767103444296/18_Ilmanmusiikkia.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/877010bf-92ae-407d-bd64-bd0c73f9b225/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:693fc0e9f3c5ef59d4938794",
@@ -88,8 +88,8 @@
       "year": 2025,
       "date": "2025-12-17",
       "duration": "7:57",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/6953dbabd014206b8f538f39/1767103414037/17_Ilmanmusiikkia.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/63e6a362-2545-41a9-8fb6-111f8d0bec34/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:693e7c329b3a7a3ccf24c92e",
@@ -99,8 +99,8 @@
       "year": 2025,
       "date": "2025-12-16",
       "duration": "11:08",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/6953db85763343593ddb8443/1767103379936/16_Ilmanmusiikkia.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/6aca4381-3cd7-48ef-a492-c3b18f31ec99/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:693e7b52f88feb4a5988c803",
@@ -110,8 +110,8 @@
       "year": 2025,
       "date": "2025-12-15",
       "duration": "9:26",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/6953db60ad903770c4564c72/1767103341450/15_Ilmanmusiikkia.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/41a91ac7-60c7-47c6-aede-abac3d251d59/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:69359d26bdb14d4952c0001f",
@@ -121,8 +121,8 @@
       "year": 2025,
       "date": "2025-12-14",
       "duration": "10:07",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/6953db3ff7d6474204f5a453/1767103309241/14_Ilmanmusiikkia.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/7cad1b33-44e9-4a1e-b748-8b289020820d/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:69359bcf23025740fb7e8d87",
@@ -132,8 +132,8 @@
       "year": 2025,
       "date": "2025-12-13",
       "duration": "11:39",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/6953db14e1bda83d01012631/1767103267922/13_Ilmanmusiikkia.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/f7aadc20-ef14-4d5d-8354-37d9bfde91d0/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:693566e44d39993ff334f813",
@@ -143,8 +143,8 @@
       "year": 2025,
       "date": "2025-12-12",
       "duration": "9:04",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/6953daf2b8033b1c16fe8e7c/1767103231274/12_Ilmanmusiikkia.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/861b816c-78ac-4307-b63b-bf5ff03b9243/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:693564980a2d49746935d265",
@@ -154,8 +154,8 @@
       "year": 2025,
       "date": "2025-12-11",
       "duration": "9:48",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/6953dad2bbab69674192076a/1767103198360/11_Ilmanmusiikkia.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/c35a32a4-147b-4915-bb4c-8e96b729b3ce/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:693563430a2d49746935bc7a",
@@ -165,8 +165,8 @@
       "year": 2025,
       "date": "2025-12-10",
       "duration": "8:24",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/6953da8dcedaf17bc3fa33f6/1767103140384/10_Ilmanmusiikkia.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/02599ed4-b830-4fc6-b916-c43369161d69/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:6935623fce3d1e230293b7f7",
@@ -176,8 +176,8 @@
       "year": 2025,
       "date": "2025-12-09",
       "duration": "11:01",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/6953da6a43467e5d3692f2f6/1767103096543/9_Ilmanmusiikkia.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/c0a6ec92-b84d-438f-b91c-d73f1e70b93a/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:692c254e33c2585db870049d",
@@ -187,8 +187,8 @@
       "year": 2025,
       "date": "2025-12-08",
       "duration": "8:20",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/6953d4c2041d4432555ce867/1767101645075/Ilmanmusiikkia8grisch.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/42f542ec-c646-406e-a982-b35566395c50/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:692c24665ffe5d15bb84b5ab",
@@ -198,8 +198,8 @@
       "year": 2025,
       "date": "2025-12-07",
       "duration": "8:58",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/6953d496ea2d714613183f16/1767101602999/Ilmanmusiikkia7sigma.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/c5939e81-c130-4682-92c1-55100529e989/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:692c2331a73f3b5aa25b79af",
@@ -209,8 +209,8 @@
       "year": 2025,
       "date": "2025-12-06",
       "duration": "8:27",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/6953d45c041d4432555ccbab/1767101543796/Ilmanmusiikkia6dubbel.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/e7fd8dea-6be9-46bc-b6c9-b5847ace1489/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:692c2274706abb27a830dd54",
@@ -220,8 +220,8 @@
       "year": 2025,
       "date": "2025-12-05",
       "duration": "8:44",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/6953d42b3ab2794b065cf07a/1767101495764/Ilmanmusiikkia5farkkumuna.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/7ae1190a-b042-437b-b625-4f1d04e319ca/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:692c1791055d5160e98a66fd",
@@ -231,8 +231,8 @@
       "year": 2025,
       "date": "2025-12-04",
       "duration": "8:21",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/6953d4023a40620706503d81/1767101453519/Ilmanmusiikkia4coolcation.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/be4c0ddd-4451-40d9-8493-39fd5e1106f3/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:69295cc30efe383bc1894b2b",
@@ -242,8 +242,8 @@
       "year": 2025,
       "date": "2025-12-03",
       "duration": "9:43",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/6953d3d6a379c45538cddd09/1767101410422/Ilmanmusiikkia3milleniaali.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/46f9b5fc-b668-4d29-9cc3-fc1540be5818/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:69295b501ccccf6b6e7152e8",
@@ -253,8 +253,8 @@
       "year": 2025,
       "date": "2025-12-02",
       "duration": "9:07",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/6953d39dcb231009fd938130/1767101354604/Ilmanmusiikkia2avocadoskanner.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/4f8162bf-fe11-4481-b6e9-0b78f7227e7f/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:692959d7f539d35a99ee276d",
@@ -264,8 +264,8 @@
       "year": 2025,
       "date": "2025-12-01",
       "duration": "8:49",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/6953d361819b30409ede8e3d/1767101297966/Ilmanmusiikkia1Chad.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/979d24b8-92c3-4db6-baf7-a621bb06d714/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:6925d8aa08be9a65169f03ad",
@@ -275,8 +275,8 @@
       "year": 2025,
       "date": "2025-11-29",
       "duration": "1:33",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/6925d8d7314cde2f6213945c/1764088028086/ohelga2025intro.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/42ec46b0-0d21-4e18-b652-8c4f24ee8da4/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:674b20b739df647712bf8943",
@@ -286,8 +286,8 @@
       "year": 2024,
       "date": "2024-11-30",
       "duration": "2:33",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/674b222bfa1ab8733a52f155/1764087978291/OhelgaIntro2024.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/b82d42e7-fe8c-4ba2-b8dc-292ff72474b0/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:6581643b3b58354f9e1bb71e",
@@ -297,8 +297,8 @@
       "year": 2023,
       "date": "2023-12-24",
       "duration": "12:08",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/6582b0b275277e4dc1720b54/1703063779061/24_bjorling.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/f8f1d324-ee1e-4653-a6ae-aff0be0d29cc/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:658163fceac7460ad594b141",
@@ -308,8 +308,8 @@
       "year": 2023,
       "date": "2023-12-23",
       "duration": "12:33",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/6582af963fecca2770db7378/1703063463771/23_Carey.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/25a0755f-4d22-4078-965f-3665131983fb/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:658161cc8e4e16377d852cbc",
@@ -319,8 +319,8 @@
       "year": 2023,
       "date": "2023-12-22",
       "duration": "10:46",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/658161f73b58354f9e1b60f7/1702978556961/22_Williams.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/5ffaea4e-0673-4a66-a117-31cdea3d1ea4/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:658160c4fe95a97e4f0a2730",
@@ -330,8 +330,8 @@
       "year": 2023,
       "date": "2023-12-21",
       "duration": "9:51",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/6581610007610118da9caee0/1702977996610/21_silvidanza.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/19351a1e-f247-4e28-bb77-2e5676247d15/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:65815dbcfe95a97e4f09cd63",
@@ -341,8 +341,8 @@
       "year": 2023,
       "date": "2023-12-20",
       "duration": "10:27",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/65815eddc1014543e5aad0d1/1702977732855/20_endo+rivera.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/b5443c54-79cc-4171-8c70-91a16b4b8328/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:65814628e8a1387dd3dd7257",
@@ -352,8 +352,8 @@
       "year": 2023,
       "date": "2023-12-19",
       "duration": "8:45",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/658146e638a5194c8e1edc64/1702976956101/19_daniSylvia.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/cd10a37c-32e0-489e-a5c5-7bdac8716cc8/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:657fd16d6ea0ed374dc0aebe",
@@ -363,8 +363,8 @@
       "year": 2023,
       "date": "2023-12-18",
       "duration": "9:43",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/657fd1e4621759203489166f/1702970920203/18_sohyang.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/6a6056bd-f310-476d-8b18-edd3c34f5c11/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:65772fcbaadbc6690f19ed68",
@@ -374,8 +374,8 @@
       "year": 2023,
       "date": "2023-12-17",
       "duration": "8:32",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/6577308461d85b33c61fe410/1702875501854/17_mouskouri.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/a34c735b-563f-4d18-a2a1-c016cd3a235e/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:65772d45cd9a875c2d8c8981",
@@ -385,8 +385,8 @@
       "year": 2023,
       "date": "2023-12-16",
       "duration": "7:55",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/65772de5e73c52406e2c6e69/1702309835319/16_yohio.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/230898ce-929e-4cc2-8b4c-d9907b78e39d/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:657478cd62edb91666b4c9da",
@@ -396,8 +396,8 @@
       "year": 2023,
       "date": "2023-12-15",
       "duration": "10:10",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/65747941ab580d48cba3e499/1702309189859/15_sjo%CC%88gren.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/363c1f8d-5e05-40f4-9dfb-3e806ab46b0d/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:65747724ed869f282de11954",
@@ -407,8 +407,8 @@
       "year": 2023,
       "date": "2023-12-14",
       "duration": "7:34",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/657477cb0fa0b92d9bf55f06/1702131917315/14_supremes.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/d23059ef-d1e3-4e9c-a40b-653651096d4e/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:657475dcbd2f9403a1ba08fc",
@@ -418,8 +418,8 @@
       "year": 2023,
       "date": "2023-12-13",
       "duration": "9:11",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/657476540f09ce3511b8facf/1702131492819/13_sissel_1.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/cf7efa1a-d480-47b6-a5f2-c2fe8069002b/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:657473ac1c0ad97dc91b7c63",
@@ -429,8 +429,8 @@
       "year": 2023,
       "date": "2023-12-12",
       "duration": "7:53",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/657474ee4e18b92513f593c0/1702131164745/12+pattilabelle.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/363fa343-0080-47ce-b10e-f43737953d9b/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:656768a28f6cc40e7b242b1c",
@@ -440,8 +440,8 @@
       "year": 2023,
       "date": "2023-12-11",
       "duration": "9:55",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/656769151cf6573d80d1a48c/1702130604702/11+nese+media.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/ba0f7f3c-533d-47e2-8a60-11ad1b3a0941/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:65676702d0aa9330a1ef8bde",
@@ -451,8 +451,8 @@
       "year": 2023,
       "date": "2023-12-10",
       "duration": "8:54",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/656767a14233673deb2da001/1701275810674/10_ILTA.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/1b158f2b-e0bc-4489-a7b2-aa53607b3fac/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:6567654e55778f7ce432cc84",
@@ -462,8 +462,8 @@
       "year": 2023,
       "date": "2023-12-09",
       "duration": "8:45",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/656765d8710fac46f41e8c15/1701275394166/9_Chris_Isaak.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/72c04575-0380-435d-9fca-84085eb72bfb/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:656762c055778f7ce4320cf5",
@@ -473,8 +473,8 @@
       "year": 2023,
       "date": "2023-12-08",
       "duration": "8:50",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/656762fb5e7e6d777228876d/1701274958714/8_Mahalia_Jackson.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/45fe00ca-84a0-417d-a79d-f7f40bc56f20/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:65676016c7ec99210088eb8c",
@@ -484,8 +484,8 @@
       "year": 2023,
       "date": "2023-12-07",
       "duration": "11:31",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/6567610f94f8c01366d37d0d/1701274304984/7_Perelli.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/626db3f3-19a9-4648-b8fa-453b3fd042a9/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:65675eaa2df20561daea3430",
@@ -495,8 +495,8 @@
       "year": 2023,
       "date": "2023-12-06",
       "duration": "9:07",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/65675f03df174124ea70fd59/1701273622880/6_Kajsa_Balto.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/679fe6ed-1b53-43f0-aa72-b644623bb94e/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:65675d005ee6b72b89dde93b",
@@ -506,8 +506,8 @@
       "year": 2023,
       "date": "2023-12-05",
       "duration": "9:28",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/65675d550ff1683c7be7aac7/1701273258766/5_Peter_Jo%CC%88back.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/00545bc1-66fb-46f3-adef-98a2976e9c1d/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:656754de1a08162129ce820a",
@@ -517,8 +517,8 @@
       "year": 2023,
       "date": "2023-12-04",
       "duration": "9:19",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/656755571a08162129ce9da8/1701272832404/4_samarajoy.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/ff91a913-2274-462c-b986-e7869dcc4c61/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:656753521458f513bf64fcb8",
@@ -528,8 +528,8 @@
       "year": 2023,
       "date": "2023-12-03",
       "duration": "8:35",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/6567540d1a83974e20c23cae/1701270750256/3_AnttiTuisku_ohelga2023.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/a80efd8f-6dd1-45ca-a818-5b0a4f6195d9/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:6566200d44317d4e6c406930",
@@ -539,8 +539,8 @@
       "year": 2023,
       "date": "2023-12-02",
       "duration": "9:42",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/65674fe51036a059af5ec9bc/1701270354744/2_HogtOchLag_ohelga2023.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/7e984b82-1d46-42a6-9711-fc2ed28a19ad/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:6565e63026915872624557aa",
@@ -550,8 +550,8 @@
       "year": 2023,
       "date": "2023-12-01",
       "duration": "10:12",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/65674c0b8047796e16cfdbe4/1701268501764/1_FriarAlessandro_ohelga2023.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/7e9f58c1-57b9-4178-b77c-8fdfbfb1ad78/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:6565e5ade2362455ebda87b3",
@@ -561,8 +561,8 @@
       "year": 2023,
       "date": "2023-11-29",
       "duration": "1:09",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/6565e5dd44317d4e6c327fe5/1701176880697/Intro_Suomi_Ohelga2023.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/2b85f1ac-5a12-4e90-96a8-2c23cd1bae14/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:6565e32a319bf92e4e24a8cd",
@@ -572,8 +572,8 @@
       "year": 2023,
       "date": "2023-11-28",
       "duration": "1:09",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/6565e41b43ba840398a46c0e/1701176749748/Intro_Svenska_Ohelga2023.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/49c7a160-4252-4160-b036-9831903ef730/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:6385063bd9aa9d1e6d749142",
@@ -583,8 +583,8 @@
       "year": 2022,
       "date": "2022-12-24",
       "duration": "13:16",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/63a5f9ed73fa20232afeb48f/1671821846657/24.Jussi.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/06adc690-206d-4f1e-ab23-affa55170ed8/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:6384f019dbe8455668fe6347",
@@ -594,8 +594,8 @@
       "year": 2022,
       "date": "2022-12-23",
       "duration": "10:35",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/639ca119b379034a364acf16/1671821519784/23+Mariah.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/aaa12056-98c9-4f8f-a430-783847a51fce/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:6384f0167e103318bf6a6eef",
@@ -605,8 +605,8 @@
       "year": 2022,
       "date": "2022-12-22",
       "duration": "10:20",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/639ca03466e35d247f49da39/1671209037084/22+Loa.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/20e25466-54ed-40a2-bad9-03d5c929cbc6/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:6384ede9d0d2541bcd217c2f",
@@ -616,8 +616,8 @@
       "year": 2022,
       "date": "2022-12-21",
       "duration": "8:09",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/639c9ea9fffc0234c71cbf1a/1671208637494/21+TVQX.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/0180f3ac-6564-4629-9408-f8c4099f2d00/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:6384ecfcdbe8455668fdc417",
@@ -627,8 +627,8 @@
       "year": 2022,
       "date": "2022-12-20",
       "duration": "11:48",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/639c9d13247ee5067a44c7a8/1671208233241/20+Tage.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/fda4c62c-468d-4df5-83fc-6189b335e8d8/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:6384ecf87679a46493f64d08",
@@ -638,8 +638,8 @@
       "year": 2022,
       "date": "2022-12-19",
       "duration": "10:16",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/639c91e4bb410277898ff4b6/1671205375340/19+Postmodern.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/4ebf9fc4-9052-4ed4-be52-a9090aa90c82/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:6384ecf5b9941d0aa2e7d3c8",
@@ -649,8 +649,8 @@
       "year": 2022,
       "date": "2022-12-18",
       "duration": "8:06",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/639c906fdec76a4c529ac760/1671204996857/18++Ko%CC%88rberg.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/460e21cf-9dfb-4182-8cfb-7721079d41a3/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:6384ecf221635d43d0775c29",
@@ -660,8 +660,8 @@
       "year": 2022,
       "date": "2022-12-17",
       "duration": "11:06",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/639c8f617c5bab18f64b36ae/1671204738182/17+Aalto.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/8f6e7628-9300-4532-8ee7-279dfecfa6c9/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:6384ecee1d0e3c4bebd94f55",
@@ -671,8 +671,8 @@
       "year": 2022,
       "date": "2022-12-16",
       "duration": "10:10",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/6398986285b3db76f5bdeb3c/1670944887589/16+Sillanpaa.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/9980cbac-c3ae-48b6-9165-97fc8fee7fe2/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:6384ecebfea9e744064a47b5",
@@ -682,8 +682,8 @@
       "year": 2022,
       "date": "2022-12-15",
       "duration": "7:54",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/6398978d411be81882cad64a/1670944671170/15+Mauldin.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/4db4fee4-a8aa-4c4f-bc84-0031a076231f/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:6384c510bcba5f526301d196",
@@ -693,8 +693,8 @@
       "year": 2022,
       "date": "2022-12-14",
       "duration": "9:35",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/6398968090bc1476c6bec83b/1670944404242/14+Dion.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/343f0ff5-95e0-44b2-aa6a-9b082dc67cfc/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:638397a966ef155fd6f362d0",
@@ -704,8 +704,8 @@
       "year": 2022,
       "date": "2022-12-13",
       "duration": "11:17",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/6396f4119d2b4f6eedea3548/1670837292861/13+Saijonmaa.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/94a0d6cd-36a5-4329-9049-d11007566fb2/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:638397a466ef155fd6f362ac",
@@ -715,8 +715,8 @@
       "year": 2022,
       "date": "2022-12-12",
       "duration": "10:26",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/63944a6cf5f2fe1f23e6d163/1670662784558/12.Crosby.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/91367079-4372-4625-930c-1f9b71563931/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:6383979b8cd7a15662e11658",
@@ -726,8 +726,8 @@
       "year": 2022,
       "date": "2022-12-11",
       "duration": "9:27",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/639449dd7b90ed3cfdbf1e2d/1670662647338/11+Torikka.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/0eced6df-16e7-4fac-a0d3-6dfdcbf9c36e/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:63839461a04b4d6b6460f090",
@@ -737,8 +737,8 @@
       "year": 2022,
       "date": "2022-12-10",
       "duration": "9:07",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/63921ebe71131d00d21d68e3/1670520527811/10+Baez.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/d238d654-a372-4171-88ed-3980fba8c6cc/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:6383924b82e98a54b0def7f4",
@@ -748,8 +748,8 @@
       "year": 2022,
       "date": "2022-12-09",
       "duration": "10:07",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/63921d94f1a3212cf0293804/1670520232337/9+Mattila+.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/439495d4-adb5-481f-98ea-eb34a8f9b588/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:638390531c8a9f38f1a46087",
@@ -759,8 +759,8 @@
       "year": 2022,
       "date": "2022-12-08",
       "duration": "12:08",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/638b5eff97865a59f6198f0a/1670078243962/8+Cole.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/7142b6b5-7e10-45b8-9c1c-c41d9fb8e98a/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:63838ec58671157ecfcc8bf8",
@@ -770,8 +770,8 @@
       "year": 2022,
       "date": "2022-12-07",
       "duration": "9:29",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/638b5d3006b6c730987eb746/1670077770538/7+FORK.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/3b7d730a-dde4-4f30-8246-1e694cfb30a7/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:63838d4c27b35315f2a8a132",
@@ -781,8 +781,8 @@
       "year": 2022,
       "date": "2022-12-06",
       "duration": "10:04",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/638b5af98faed9512e481368/1670077204854/6+Niskanen.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/4e882d75-4a2e-4c40-b7e9-768374188c1e/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:63838978cd9fa026f9113263",
@@ -792,8 +792,8 @@
       "year": 2022,
       "date": "2022-12-05",
       "duration": "13:13",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/638b58e09be6e4474ddfc4fe/1670076706413/5+Voutilainen.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/ed55f86b-576b-4aad-80e4-1062d902ed8b/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:637f6c49d0d2541bcd9d7ec3",
@@ -803,8 +803,8 @@
       "year": 2022,
       "date": "2022-12-04",
       "duration": "10:08",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/638af10edfd574311604a511/1670050085693/4+Carola.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/fad504a0-b596-4cca-b019-5676f31d05ad/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:637f21154d65543b9a3be4f0",
@@ -814,8 +814,8 @@
       "year": 2022,
       "date": "2022-12-03",
       "duration": "10:34",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/6389ffce0c3ed752dac1d21d/1669988358514/3+Backstreet.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/ee850961-f87a-42bf-ab78-4b1bdc103aac/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:637e67844a02e4169af9e158",
@@ -825,8 +825,8 @@
       "year": 2022,
       "date": "2022-12-02",
       "duration": "10:04",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/637e7dea7d4e5637c739ec84/1669295177194/2+Thill.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/8ae24d25-d2a1-4975-992f-194756dd7162/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:637e666127b35315f233a872",
@@ -836,8 +836,8 @@
       "year": 2022,
       "date": "2022-12-01",
       "duration": "10:43",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/637e715e4aea254bc996a7c1/1669275925330/1+Pavarotti.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/05ab43ab-be5d-4740-b44d-68c003cbb077/stream.mp3",
+      "audioType": "audio/mpeg"
     },
     {
       "guid": "6368cec1e0990a0f0cd5bc0f:6368cfd63d117758dc4dd420:637bb94def326e0e2785f5a4",
@@ -847,8 +847,8 @@
       "year": 2022,
       "date": "2022-11-22",
       "duration": "0:48",
-      "audio": "https://static1.squarespace.com/static/6368cec1e0990a0f0cd5bc0f/t/637bba2f725c7e7acbdb70f0/1669228129043/0+IntroJakso.m4a",
-      "audioType": "audio/x-m4a"
+      "audio": "https://audio3.redcircle.com/episodes/9f9dd5ae-0bf2-4572-a3bb-e903ba183d2a/stream.mp3",
+      "audioType": "audio/mpeg"
     }
   ]
 }
