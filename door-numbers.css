@@ -1,0 +1,20 @@
+/* Number plates: the same ink palette, with an individual printed tilt. */
+.house .door:not(.door-entrance) .door-number {
+  top: 6px; left: 6px; min-width: 42px; height: 42px; padding: 3px 5px;
+  font-size: 24px; line-height: 1; font-weight: 700; font-style: normal;
+  letter-spacing: -.07em; color: #071e22; background: #f4c095;
+  border: 1.5px solid #071e22; border-radius: 2px;
+  box-shadow: 2px 2px 0 #071e22;
+  transform: rotate(calc((var(--variant,12) - 12) * .23deg));
+}
+.house .door:nth-child(6n + 1):not(.door-entrance) .door-number { border-radius: 45% 2px 2px 2px; border-left: 4px solid #ee2e31; }
+.house .door:nth-child(6n + 2):not(.door-entrance) .door-number { border-radius: 50% 50% 2px 2px; box-shadow: 2px 3px 0 #ee2e31; font-weight: 400; }
+.house .door:nth-child(6n + 3):not(.door-entrance) .door-number { border-radius: 50%; background: #679289; letter-spacing: -.1em; }
+.house .door:nth-child(6n + 4):not(.door-entrance) .door-number { border-radius: 2px 8px 2px 2px; font-style: italic; border-bottom: 4px solid #1d7874; }
+.house .door:nth-child(6n + 5):not(.door-entrance) .door-number { border-radius: 3px 3px 13px 3px; border-top: 3px solid #ee2e31; font-weight: 400; }
+.house .door:nth-child(6n):not(.door-entrance) .door-number { border-radius: 25% 3px 42% 3px; background: #f4c095; box-shadow: -2px 2px 0 #1d7874; font-style: italic; }
+.house .door-entrance .entrance-number { width: 46px; height: 46px; font-size: 26px; letter-spacing: -.08em; border-radius: 45% 45% 3px 3px; box-shadow: 2px 3px 0 #1d7874; }
+@media(max-width:700px) {
+  .house .door:not(.door-entrance) .door-number { top: 4px; left: 4px; min-width: 33px; height: 33px; padding: 2px 3px; font-size: 18px; border-width: 1px; }
+  .house .door-entrance .entrance-number { width: 34px; height: 34px; font-size: 19px; border-width: 1.5px; }
+}

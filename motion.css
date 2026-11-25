@@ -190,89 +190,96 @@
   .door-surface,.door-leaf { transition: none; }
 }
 
-/* The two dogs reuse the same six moving groups for all of their poses. */
-.book-react { transform-box: view-box; transition: transform .32s cubic-bezier(.18,.8,.27,1); }
-.dog-pose, .dog-body { transform-origin: 83px 140px; }
-.book-figure-jussi { --dog-side: 1; --dog-head-x: 103px; --dog-ear-x: 101px; --dog-front-x: 104px; --dog-hind-x: 59px; --dog-tail-x: 41px; }
-.book-figure-mariah { --dog-side: -1; --dog-head-x: 70px; --dog-ear-x: 68px; --dog-front-x: 75px; --dog-hind-x: 123px; --dog-tail-x: 134px; }
-.dog-face, .dog-head { transform-origin: var(--dog-head-x) 76px; }
-.dog-ear { transform-origin: var(--dog-ear-x) 43px; }
-.dog-front { transform-origin: var(--dog-front-x) 107px; }
-.dog-hind { transform-origin: var(--dog-hind-x) 110px; }
-.book-dog-tail { transform-origin: var(--dog-tail-x) 87px; }
-[data-phrase="sniff"] .dog-head, [data-phrase="stretch"] .dog-head { --book-track: dog-sniff; }
-[data-phrase="sniff"] .dog-body, [data-phrase="stretch"] .dog-body, [data-phrase="bow"] .dog-body { --book-track: dog-stretch; }
-[data-phrase="prance"] .dog-body, [data-phrase="hop"] .dog-body { --book-track: dog-prance; }
-[data-phrase="prance"] .dog-front, [data-phrase="hop"] .dog-front { --book-track: dog-step-front; }
-[data-phrase="prance"] .dog-hind, [data-phrase="hop"] .dog-hind { --book-track: dog-step-back; }
-[data-phrase="tilt"] .dog-head, [data-phrase="bow"] .dog-head { --book-track: dog-tilt; }
-[data-phrase="sit"] .dog-body { --book-track: dog-sit; }
-[data-phrase="sit"] .dog-hind, [data-phrase="stretch"] .dog-front { --book-track: dog-step-back; }
-[data-phrase="listen"] .dog-head { --book-track: dog-listen; }
-[data-phrase] .book-dog-tail { --book-track: dog-wag; }
-[data-phrase] .dog-ear { --book-track: dog-ear-twitch; }
-.book-figure[data-reaction] .dog-face { transform: rotate(calc(10deg * var(--dog-side))) translateY(-4px); }
-.book-figure[data-force="full"] .dog-pose { transform: translateY(-10px) rotate(calc(-5deg * var(--dog-side))); }
-.book-figure[data-reaction="biscuit"] .dog-face { transform: translate(calc(8px * var(--dog-side)), 8px) rotate(calc(14deg * var(--dog-side))); }
-.book-figure[data-reaction="paw"] .dog-pose { transform: rotate(calc(-12deg * var(--dog-side))) translateY(-6px); }
-.book-figure[data-reaction="bow"] .dog-pose { transform: rotate(calc(9deg * var(--dog-side))) translateY(5px); }
-@keyframes dog-sniff {
-  22%, 48% { transform: translate(calc(5px * var(--dog-side)), 9px) rotate(calc(17deg * var(--dog-side))); }
-  34% { transform: translate(calc(8px * var(--dog-side)), 6px) rotate(calc(10deg * var(--dog-side))); }
-  66% { transform: translate(calc(3px * var(--dog-side)), 4px) rotate(calc(8deg * var(--dog-side))); }
+/* Two different Klee-like dogs. Pose changes reuse the same small SVG rig. */
+.book-figure {
+  --dog-leg-shadow: #9c6b52;
+  --torso-x: 0px; --torso-y: 0px; --torso-angle: 0deg; --torso-width: 1; --torso-height: 1;
+  --head-x: 0px; --head-y: 0px; --head-angle: 0deg;
+  --front-x: 0px; --front-y: 0px; --front-angle: 0deg;
+  --hind-x: 0px; --hind-y: 0px; --hind-angle: 0deg;
+  --tail-x: 0px; --tail-y: 0px; --tail-rest: 0deg;
+  --wag-angle: 9deg; --wag-speed: 2.2s; --dog-side: 1; --stride: .39s;
 }
-@keyframes dog-stretch {
-  30%, 53% { transform: rotate(calc(9deg * var(--dog-side))) scale(1.045, .92); }
-  73% { transform: translateY(-4px) rotate(calc(-3deg * var(--dog-side))); }
-}
-@keyframes dog-prance {
-  23% { transform: translate(calc(-5px * var(--dog-side)), -10px) rotate(calc(-6deg * var(--dog-side))); }
-  39% { transform: translate(calc(3px * var(--dog-side)), 1px); }
-  56% { transform: translate(calc(8px * var(--dog-side)), -13px) rotate(calc(5deg * var(--dog-side))); }
-  73% { transform: translate(calc(7px * var(--dog-side)), 0); }
-}
-@keyframes dog-step-front {
-  22%, 53% { transform: rotate(calc(-25deg * var(--dog-side))); }
-  37%, 68% { transform: rotate(calc(14deg * var(--dog-side))); }
-}
-@keyframes dog-step-back {
-  23%, 56% { transform: rotate(calc(20deg * var(--dog-side))); }
-  40%, 72% { transform: rotate(calc(-18deg * var(--dog-side))); }
-}
-@keyframes dog-tilt {
-  27%, 49% { transform: rotate(calc(-15deg * var(--dog-side))) translateY(-4px); }
-  69% { transform: rotate(calc(10deg * var(--dog-side))); }
-}
-@keyframes dog-sit {
-  29%, 62% { transform: translateY(3px) rotate(calc(-10deg * var(--dog-side))) scale(.98, .91); }
-  82% { transform: translateY(-3px); }
-}
-@keyframes dog-listen {
-  25%, 63% { transform: translateY(-6px) rotate(calc(-9deg * var(--dog-side))); }
-  44% { transform: translateY(-4px) rotate(calc(8deg * var(--dog-side))); }
-}
-@keyframes dog-wag {
-  17%, 39%, 62% { transform: rotate(calc(-14deg * var(--dog-side))); }
-  28%, 51%, 76% { transform: rotate(calc(16deg * var(--dog-side))); }
-}
-@keyframes dog-ear-twitch {
-  23%, 57% { transform: rotate(calc(16deg * var(--dog-side))); }
-  31%, 68% { transform: rotate(calc(-8deg * var(--dog-side))); }
-}
-@media (max-width: 1199px) {
-  #stage-performers {
-    position: relative;
-    display: block !important;
-    height: clamp(88px, 22vw, 128px);
-    bottom: auto;
-    margin: -7px auto -8px;
-    width: min(68%, 340px);
-    z-index: 3;
-  }
-  #stage-performers .book-figure { width: clamp(87px, 28vw, 144px); bottom: 0; }
+.book-figure-mariah { --dog-leg-shadow: #b2c3ac; --dog-side: -1; --wag-speed: 3.1s; --stride: .46s; }
+.dog-part { transform-box: view-box; transition: transform .85s cubic-bezier(.4,0,.2,1), opacity .5s; }
+.book-figure .dog-motion { transform-box: view-box; }
+.dog-fur { fill: none; stroke-width: 1.3; opacity: .8; }
+.dog-torso { transform-origin: 88px 109px; transform: translate(var(--torso-x),var(--torso-y)) rotate(var(--torso-angle)) scale(var(--torso-width),var(--torso-height)); }
+.dog-breath { transform-origin: 88px 117px; }
+.dog-head { transform-origin: 119px 81px; transform: translate(var(--head-x),var(--head-y)) rotate(var(--head-angle)); }
+.dog-front { transform-origin: 113px 109px; transform: translate(var(--front-x),var(--front-y)) rotate(var(--front-angle)); }
+.dog-hind { transform-origin: 56px 112px; transform: translate(var(--hind-x),var(--hind-y)) rotate(var(--hind-angle)); }
+.dog-front-far,.dog-hind-far { opacity: .76; }
+.dog-ear { transform-origin: 112px 43px; transform: rotate(var(--ear-angle,0deg)); }
+.dog-tail-anchor { transform: translate(var(--tail-x),var(--tail-y)); }
+.book-figure .dog-tail { transform-origin: 44px 97px; animation: dog-tail-wag var(--wag-speed) ease-in-out infinite; }
+.dog-eyes-open { transform-origin: 139px 55px; animation: dog-blink 9.7s linear infinite; }
+.book-figure-mariah .dog-eyes-open { animation-duration: 12.3s; animation-delay: -4s; }
+.dog-brow { transform-origin: 137px 47px; transform: rotate(-9deg); }
+.dog-eyes-closed,.dog-mouth-howl,.dog-tongue { opacity: 0; transition: opacity .35s; }
+.dog-mouth-smile,.dog-eyes-open { transition: opacity .35s; }
+.dog-dream,.dog-howl-rings,.dog-pee { opacity: 0; pointer-events: none; transition: opacity .6s; }
+.dog-dream text { font: 700 18px var(--font-ui,monospace); fill: #f4c095; stroke: none; }
+.book-figure-mariah .dog-dream { transform: translateX(-90px); }
+.book-figure-mariah .dog-howl-rings { transform: translateX(-120px); }
+.book-figure[data-emotion="happy"],.book-figure[data-emotion="excited"] { --wag-angle: 28deg; --wag-speed: .47s; --ear-angle: -8deg; }
+.book-figure[data-emotion="happy"] .dog-brow { transform: translateY(-2px) rotate(-16deg); }
+.book-figure[data-emotion="happy"] .dog-tongue,.book-figure[data-emotion="excited"] .dog-tongue { opacity: 1; }
+.book-figure[data-emotion="drowsy"] .dog-brow { transform: translateY(3px) rotate(7deg); }
+.book-figure[data-emotion="curious"] .dog-pupil { transform: translate(1px,-.5px); }
+.book-figure[data-activity="happy"] { --head-y: -3px; --head-angle: -7deg; }
+.book-figure[data-activity="sit"] { --torso-x: -8px; --torso-y: 9px; --torso-angle: -18deg; --torso-width: .83; --hind-x: -5px; --hind-y: 17px; --hind-angle: -67deg; --tail-x: -11px; --tail-y: 15px; --head-x: -9px; --head-angle: -7deg; --wag-speed: 2.9s; }
+.book-figure[data-activity="lie"],.book-figure[data-activity="sleep"] { --torso-y: 35px; --torso-height: .7; --head-x: -2px; --head-y: 52px; --head-angle: 7deg; --front-x: 8px; --front-y: 31px; --front-angle: -65deg; --hind-x: 2px; --hind-y: 35px; --hind-angle: 79deg; --tail-y: 34px; --tail-rest: -18deg; --wag-angle: 5deg; --wag-speed: 4s; --ear-angle: 9deg; }
+.book-figure[data-activity="sleep"] { --head-y: 56px; --head-angle: 12deg; --wag-angle: 0deg; }
+.book-figure[data-activity="sleep"] .dog-eyes-open,.book-figure[data-activity="sleep"] .dog-mouth-smile { opacity: 0; }
+.book-figure[data-activity="sleep"] .dog-eyes-closed,.book-figure[data-activity="sleep"] .dog-dream { opacity: 1; }
+.book-figure[data-activity="sleep"] .dog-tail { animation: none; transform: rotate(-19deg); }
+.book-figure[data-activity="sleep"] .dog-breath { animation: dog-sleep-breath 3.8s ease-in-out infinite; }
+.book-figure[data-activity="sleep"] .dog-dream .dog-motion { animation: dog-dream-rise 3.6s ease-in-out infinite; }
+.book-figure[data-activity="sleep"] .dog-dream :nth-child(2) { animation-delay: -1.2s; }
+.book-figure[data-activity="sleep"] .dog-dream :nth-child(3) { animation-delay: -2.4s; }
+.book-figure[data-activity="sniff"] { --head-x: 4px; --head-y: 25px; --head-angle: 26deg; --ear-angle: 8deg; --wag-angle: 6deg; }
+.book-figure[data-activity="sniff"] .dog-head-life { transform-origin: 135px 70px; animation: dog-nose-search 2.7s ease-in-out infinite; }
+.book-figure[data-activity="stretch"] { --torso-y: 7px; --torso-angle: 15deg; --head-x: 10px; --head-y: 30px; --head-angle: 18deg; --front-x: 10px; --front-y: 26px; --front-angle: -65deg; --hind-angle: 8deg; --tail-y: -6px; --tail-rest: -9deg; }
+.book-figure[data-activity="pee"] { --hind-x: 6px; --hind-y: -3px; --hind-angle: -72deg; --tail-rest: 17deg; --head-angle: 9deg; --ear-angle: 8deg; --wag-angle: 2deg; }
+.book-figure[data-activity="pee"] .dog-hind-far { transform: none; }
+.book-figure[data-activity="pee"] .dog-pee { opacity: .8; }
+.book-figure[data-activity="pee"] .dog-stream { animation: dog-stream .85s linear infinite; }
+.book-figure[data-activity="howl"] { --head-y: -8px; --head-angle: -37deg; --ear-angle: 15deg; --wag-speed: 3.4s; --wag-angle: 5deg; }
+.book-figure[data-activity="howl"] .dog-mouth-smile { opacity: 0; }
+.book-figure[data-activity="howl"] .dog-mouth-howl,.book-figure[data-activity="howl"] .dog-howl-rings { opacity: 1; }
+.book-figure[data-activity="howl"] .dog-howl-rings .dog-motion { transform-origin: 151px 23px; animation: dog-howl-wave 1.8s ease-out infinite; }
+.book-figure[data-activity="howl"] .dog-howl-rings :nth-child(2) { animation-delay: -.9s; }
+.book-figure[data-activity="howl"] .dog-brow { transform: rotate(-18deg); }
+.book-figure[data-activity="run"] { --wag-speed: .35s; --wag-angle: 20deg; --head-angle: -8deg; --ear-angle: -14deg; }
+.book-figure[data-activity="run"] .dog-locomotion { animation: dog-patrol var(--dog-activity-duration,4.4s) cubic-bezier(.4,0,.3,1) both; }
+.book-figure[data-activity="run"] .dog-front { animation: dog-front-stride var(--stride) ease-in-out infinite; }
+.book-figure[data-activity="run"] .dog-hind { animation: dog-hind-stride var(--stride) ease-in-out infinite; }
+.book-figure[data-activity="run"] .dog-front-far { animation-delay: calc(var(--stride) * -.5); }
+.book-figure[data-activity="run"] .dog-hind-far { animation-delay: calc(var(--stride) * -.5); }
+.book-figure[data-activity="run"] .dog-breath { animation: dog-trot-body var(--stride) ease-in-out infinite; }
+.scene-paused #stage-performers .dog-motion,#stage-performers[data-in-view="false"] .dog-motion,.scene-paused #stage-performers .dog-front,.scene-paused #stage-performers .dog-hind,#stage-performers[data-in-view="false"] .dog-front,#stage-performers[data-in-view="false"] .dog-hind { animation-play-state: paused !important; }
+@keyframes dog-tail-wag { 0%,100% { transform: rotate(calc(var(--tail-rest) - var(--wag-angle))); } 50% { transform: rotate(calc(var(--tail-rest) + var(--wag-angle))); } }
+@keyframes dog-blink { 0%,90%,94%,100% { transform: scaleY(1); } 91%,93% { transform: scaleY(.12); } }
+@keyframes dog-sleep-breath { 0%,100% { transform: scaleY(.99); } 50% { transform: scaleY(1.04); } }
+@keyframes dog-dream-rise { 0%,100% { transform: translateY(0); opacity: .25; } 55% { transform: translateY(-7px); opacity: 1; } }
+@keyframes dog-nose-search { 0%,100% { transform: translateX(0) rotate(-2deg); } 50% { transform: translateX(3px) rotate(3deg); } }
+@keyframes dog-stream { to { stroke-dashoffset: -16; } }
+@keyframes dog-howl-wave { from { transform: translateY(4px) scale(.75); opacity: .9; } to { transform: translateY(-6px) scale(1.25); opacity: 0; } }
+@keyframes dog-patrol { 0%,100% { transform: translateX(0); } 35% { transform: translateX(calc(20px * var(--dog-side))); } 72% { transform: translateX(calc(-7px * var(--dog-side))); } }
+@keyframes dog-front-stride { 0%,100% { transform: rotate(-22deg); } 50% { transform: rotate(19deg); } }
+@keyframes dog-hind-stride { 0%,100% { transform: rotate(18deg); } 50% { transform: rotate(-21deg); } }
+@keyframes dog-trot-body { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-1.3px); } }
+@media (max-width:1199px) {
+  #stage-performers { position: relative; display: block !important; height: clamp(88px,22vw,128px); bottom: auto; margin: -7px auto -8px; width: min(72%,360px); z-index: 3; }
+  #stage-performers .book-figure { width: clamp(87px,28vw,144px); bottom: 0; }
   #stage-performers .book-figure-jussi { left: 0; }
   #stage-performers .book-figure-mariah { right: 0; }
   #stage-performers .book-constellation { z-index: 1; }
+}
+@media (prefers-reduced-motion:reduce) {
+  #stage-performers .dog-motion,#stage-performers .dog-front,#stage-performers .dog-hind { animation: none !important; }
+  #stage-performers .dog-part { transition: none; }
 }
 
 /* Keep the scene controls in the artwork and the effects out of the hit targets. */

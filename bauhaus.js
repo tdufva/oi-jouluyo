@@ -1,58 +1,51 @@
 function makeBookPerformer(who) {
-  const left = who === 'jussi';
-  const art = left ? `
-    <path d="M26 144q32-2 64-1l43 1" fill="none" stroke="#679289" stroke-width="1.5"/>
-    <g class="book-react dog-pose"><g class="book-choreography dog-body">
-      <g class="book-choreography book-dog-tail">
-        <path d="M48 85Q33 83 28 73q-7 2-9-4-7 0-7-7-6-5-1-10-3-7 4-9 3-7 10-3 8-2 10 6 7 3 5 12 5 5 2 12l9 6Z" fill="#be835e"/>
-        <path d="M17 53q4-4 7-1m2 8q5-3 8 1" fill="none" stroke="#6b5748" stroke-width="1.3"/>
-      </g>
-      <path class="book-choreography dog-hind" d="M55 105l13 2-6 23 7 5-3 6-21-1 4-12Z" fill="#be835e"/>
-      <path d="M46 81q3-9 12-8 5-7 14-3 8-5 16 0 11-2 17 5 12 5 14 16 4 11-5 19-7 8-18 6-8 4-15 0-10 3-17-2-14 1-20-9-8-11 2-24Z" fill="#dba072"/>
-      <path d="M47 94q19 15 41 9l23-9q2 11-6 16-20 9-41 1-12-2-17-17Z" fill="#a86d54" opacity=".48" stroke="none"/>
-      <path d="M55 91q5-5 10-1m6-10q6-4 12 0m-9 18q7-4 13 1" fill="none" stroke="#704e3d" stroke-width="1.45"/>
-      <path class="book-choreography dog-front" d="M97 104q7-2 13 1l2 27 8 4 1 5-22 1-4-8Z" fill="#e7ac79"/>
-      <g class="book-react dog-face"><g class="book-choreography dog-head">
-        <path d="M103 74q-6-5-5-13-6-7 0-13-1-9 8-12 3-8 11-6 7-7 15-1 9-1 13 7 8 1 9 9 8 3 7 10 7 3 5 9 1 8-8 11-9 6-19 2-9 7-20 3Z" fill="#e7ac79"/>
-        <path d="M138 59q5-9 13-7 10-2 15 5 4 5 0 10 1 7-7 9-10 5-21-1-5-7 0-16Z" fill="#f4d3a5" stroke="none"/>
-        <path d="M163 56q6-1 5 4l-4 4-5-4q0-3 4-4Z" fill="#293130" stroke="none"/>
-        <path d="M156 69q4 1 7-1m-36-30q5-4 9 0" fill="none" stroke-width="1.45"/>
-        <circle cx="139" cy="49" r="2.3" fill="#293130" stroke="none"/>
-        <g class="book-choreography dog-ear">
-          <path d="M113 40q-8-5-15 0-7 5-5 13-6 6-4 13-3 8 2 13 2 8 11 6 9 1 12-8 4-5 2-14 5-6 1-12 2-7-4-11Z" fill="#ab6f55"/>
-          <path d="M104 47q-5 7-3 15m-2 7q-2 6 0 8" fill="none" stroke="#e8b689" stroke-width="1.6"/>
-        </g>
-        <path d="m111 81 21-2-2 6-18 4Z" fill="#678c80" stroke-width="1.2"/>
+  const angular = who === 'jussi';
+  const body = angular
+    ? '<path d="M43 91l9-8 10 3 8-7 12 4 10-3 12 10 15 3 3 22-14 9-17-4-14 4-16-6-15 1-6-12Z" fill="#d69a70"/><path d="m52 92 25-4 7 29-22-3Z" fill="#b77158" stroke="none"/><path d="m88 88 18 5 6 19-19 6Z" fill="#f4c095" stroke="none"/><path d="m48 98 7-3m13 1 5-4m9 13 6-4m12-6 6 2" class="dog-fur"/>'
+    : '<path d="M39 100q-2-11 7-15 3-9 13-6 7-8 16-3 10-5 18 1 12-2 17 8 12 2 12 13 6 9-1 17-5 10-17 8-8 5-18 0-11 4-19-1-12 4-18-5-12-2-10-17Z" fill="#f4dfbf"/><path d="M47 96q3-15 19-12l10 33q-21 5-29-8Z" fill="#679289" stroke="none"/><path d="m83 88 7-2m8 9 7 2m-27 13 6 2m18-6 6-3" class="dog-fur"/>';
+  const head = angular
+    ? '<path d="m108 70-2-18 9-9 2-11 11 5 9-7 9 13 10 3 6 15 13 3-1 16-16 8-17-3-14 6-15-9Z" fill="#e8b68a"/><path d="m142 62 19-2 14 6-2 12-16 7-18-8Z" fill="#f8d9ae" stroke="none"/><path d="m126 37 6 8m5-9 4 7m-22 35 6 4" class="dog-fur"/>'
+    : '<path d="M105 64q-7-7-2-15-3-10 6-15 1-10 12-10 6-9 16-4 10-3 16 6 12 1 14 12 8 5 6 15 7 8 1 16 1 11-11 14-9 9-20 4-11 5-19-3-12 0-16-11-7-2-3-9Z" fill="#fff0da"/><path d="M145 61q17-8 27 2 7 11-8 17-15 3-22-7Z" fill="#e8c9a4" stroke="none"/><path d="m116 34 5 2m17-11 3 5m12 8 5 3m-32 37 5 3" class="dog-fur"/>';
+  const ear = angular
+    ? '<path d="m115 43-14 5-8 32 7 15 14-11 7-27Z" fill="#825849"/><path d="m107 54-5 24 3 7" class="dog-fur" stroke="#f4c095"/>'
+    : '<path d="M111 40q-9-5-16 3-6 8-2 15-5 10 3 15 1 9 12 7 9-4 8-14 6-8 1-15 1-8-6-11Z" fill="#1d7874"/><path d="m100 48-2 10m4 7 3 6" class="dog-fur" stroke="#f4dfbf"/>';
+  const tail = angular
+    ? '<path d="M46 98Q24 90 24 73q-1-13 9-16l6 7-4 7-5-1q-3 12 10 17" fill="none" stroke="#bc7b5d" stroke-width="9"/><path d="m23 73-6-2m8-6-4-5m15-2 3-5" class="dog-fur"/>'
+    : '<path d="M44 98Q23 92 20 76q-10-5-5-13-6-10 3-15 1-10 12-8 7-7 13 1 11 1 11 11 6 7-2 14-2 12-14 10-4 9 7 14" fill="#fff0da"/><path d="M24 57q10-7 15 2m-16 8 7 1" class="dog-fur"/>';
+  const farLegs = '<g class="dog-part dog-hind dog-hind-far"><path d="m63 111-1 29 9 7H54l-2-9 3-27Z" fill="var(--dog-leg-shadow)"/></g><g class="dog-part dog-front dog-front-far"><path d="m112 111 2 28 11 8h-19l-4-36Z" fill="var(--dog-leg-shadow)"/></g>';
+  const front = angular ? 'm113 107 8 4-1 27 12 7-2 5h-23l-4-8 1-32Z' : 'M108 108q6-4 13 0l-2 29q12 3 10 10-7 4-22 1l-3-9Z';
+  const hind = angular ? 'm54 108 11 3-2 25 9 8-3 5H48l-3-8Z' : 'M47 109q8-6 16 1l-2 27q13 2 11 10-8 4-25 1l-5-10Z';
+  return `<button type="button" class="book-figure book-figure-${who}" data-activity="idle" data-emotion="curious">
+    <svg class="book-figure-print" viewBox="0 0 180 164" aria-hidden="true" stroke="#263331" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path class="dog-ground" d="M23 152q59-3 134 0" fill="none" stroke="#679289" stroke-width="1.2"/>
+      <g class="dog-locomotion dog-motion"><g ${angular ? '' : 'transform="translate(180 0) scale(-1 1)"'}>
+        ${farLegs}<g class="dog-part dog-tail-anchor"><g class="dog-motion dog-tail">${tail}</g></g>
+        <g class="dog-part dog-torso"><g class="dog-motion dog-breath">${body}</g></g>
+        <g class="dog-part dog-hind dog-hind-near"><path d="${hind}" fill="${angular ? '#ce926a' : '#f9e8ce'}"/><path d="m52 144 5 1m5 0 4 1" class="dog-fur"/></g>
+        <g class="dog-part dog-front dog-front-near"><path d="${front}" fill="${angular ? '#edb886' : '#fff0da'}"/><path d="m111 145 5 1m5 0 4 1" class="dog-fur"/></g>
+        <g class="dog-part dog-head"><g class="dog-motion dog-head-life">${head}
+          <path d="${angular ? 'm122 85 18 1-2 8-17-1Z' : 'm119 83 23 4-2 7-23-5Z'}" fill="${angular ? '#ee2e31' : '#1d7874'}"/>
+          <path d="m128 92 7 1-1 8-7-1Z" fill="#f4c095" stroke-width="1"/><path d="m130 94 2 0m-2 3 2 0" stroke-width=".7"/>
+          <path class="dog-brow dog-part" d="M132 46q5-4 10-1" fill="none"/>
+          <g class="dog-eyes-open dog-motion"><ellipse cx="139" cy="55" rx="4.4" ry="5.4" fill="#fff8e9" stroke-width="1.1"/><circle class="dog-pupil dog-part" cx="140" cy="55" r="2.4" fill="#071e22" stroke="none"/></g>
+          <path class="dog-eyes-closed" d="m134 56 4 2 5-3" fill="none" stroke-width="2.2"/>
+          <path d="m169 62 8 2-2 5-7 1-3-4Z" fill="#071e22" stroke="none"/>
+          <path class="dog-mouth-smile" d="M159 72q5 5 11-1" fill="none" stroke-width="1.5"/>
+          <ellipse class="dog-mouth-howl" cx="170" cy="74" rx="4.2" ry="6" fill="#071e22" stroke="none"/>
+          <path class="dog-tongue" d="M162 75v6q4 5 7-1l-1-6Z" fill="#ee6c62" stroke-width=".8"/>
+          <g class="dog-part dog-ear">${ear}</g>
+        </g></g>
+        <g class="dog-pee"><path d="M61 120q-23 4-34 27" fill="none" stroke="#f4c095" stroke-width="1.8" stroke-dasharray="2 6" class="dog-motion dog-stream"/><path d="m21 150 13 1m-9 3 5 0" stroke="#f4c095" stroke-width="1"/></g>
       </g></g>
-    </g></g>` : `
-    <path d="M32 144q29-1 56-1l52 1" fill="none" stroke="#679289" stroke-width="1.5"/>
-    <g class="book-react dog-pose"><g class="book-choreography dog-body">
-      <g class="book-choreography book-dog-tail">
-        <path d="M126 82q8-4 11-11-6-6-3-11-4-6 3-12 0-7 8-8 5-6 11-2 7-1 9 6 6 3 3 10 3 7-4 12-1 7-10 9-6 10-20 17Z" fill="#f3dfbb"/>
-        <path d="M146 50q7-4 11 2m-10 6q5-2 8 1" fill="none" stroke="#a39177" stroke-width="1.3"/>
-      </g>
-      <path class="book-choreography dog-hind" d="M115 105l14-2-1 24 9 9-1 5-22-1-5-11Z" fill="#d2b795"/>
-      <path d="M54 88q1-10 11-12 5-7 13-3 7-7 16-3 8-4 15 1 10-1 14 7 9 5 8 14 6 8 1 16-5 9-15 9-6 5-14 2-8 3-16-1-9 3-17-2-17-2-16-16-4-6 0-12Z" fill="#f3dfbb"/>
-      <path d="M64 100q24 15 63 1-4 14-22 15-16 2-29-5Z" fill="#c9ac8d" opacity=".52" stroke="none"/>
-      <path d="M81 87q5-4 11 0m5-6q6-4 12 0m4 13q7-4 12 0" fill="none" stroke="#9b8267" stroke-width="1.45"/>
-      <path class="book-choreography dog-front" d="M72 105q8-2 13 3l-3 23-5 10-19-1 2-6 9-5Z" fill="#f7e6cc"/>
-      <g class="book-react dog-face"><g class="book-choreography dog-head">
-        <path d="M24 64q-6-4-4-11-5-7 2-13-1-9 8-11 1-9 12-9 5-8 14-4 8-5 14 2 10 0 13 9 10 4 9 13 7 7 2 16 2 11-7 17-4 12-17 13-12 5-22-2-12 1-15-9-7-2-9-11Z" fill="#fff0da"/>
-        <path d="M19 57q4-6 11-4 7-4 15 1 8 3 8 10-1 8-10 12-10 4-19-2-7-6-5-17Z" fill="#e8ceaa" stroke="none"/>
-        <path d="M18 56q7-1 8 3l-3 4-6-2q-3-3 1-5Z" fill="#293130" stroke="none"/>
-        <path d="M23 68q5 4 10 2m6-29q5-3 9 0M42 28q5-4 10 0m4 3q4-3 8-1" fill="none" stroke-width="1.4"/>
-        <ellipse cx="43" cy="48" rx="2.5" ry="3.15" fill="#293130" stroke="none"/>
-        <g class="book-choreography dog-ear">
-          <path d="M70 36q9-7 16 0 8 4 9 13 6 7 2 14 2 7-5 12-5 8-13 4-8 0-11-8-6-5-3-13-3-7 1-13 0-6 4-9Z" fill="#cdb18e"/>
-          <path d="M76 43q5 2 6 8m2 4q5 5 2 12m-11-7q-1 7 4 11" fill="none" stroke="#fff0da" stroke-width="1.65"/>
-        </g>
-        <path d="m54 82 20 1-6 7-15-4Z" fill="#c47766" stroke-width="1.2"/>
-      </g></g>
-    </g></g>`;
-  return `<button type="button" class="book-figure book-figure-${who}">
-    <svg class="book-figure-print" viewBox="0 0 170 152" aria-hidden="true" stroke="#292e2a" stroke-width="2.15" stroke-linecap="round" stroke-linejoin="round">${art}</svg>
-    <span class="book-reaction" aria-hidden="true"></span>
+      <g class="dog-dream"><text x="113" y="48" class="dog-motion">z</text><text x="131" y="30" class="dog-motion">z</text><path class="dog-motion" d="m151 12 2 5 5 2-5 2-2 5-2-5-5-2 5-2Z" fill="#f4c095" stroke="none"/></g>
+      <g class="dog-howl-rings" fill="none" stroke="#f4c095"><path class="dog-motion" d="M143 19q9-9 20 0"/><path class="dog-motion" d="M138 11q15-13 31 0"/></g>
+    </svg><span class="book-reaction" aria-hidden="true"></span>
   </button>`;
+}
+
+const dogActivityControllers = new WeakMap();
+function performDogActivity(figure, activity, interaction = 'click') {
+  dogActivityControllers.get(figure)?.act(figure, activity, interaction);
 }
 
 function drawBookConstellation(stage, points, duration, starScale = 1) {
@@ -80,40 +73,62 @@ function drawBookConstellation(stage, points, duration, starScale = 1) {
 }
 
 function scheduleBookChoreography(stage, motion, backgroundPaused) {
-  const dancers = [
-    { figure: stage.querySelector('.book-figure-jussi'), phrases: ['sniff', 'prance', 'tilt', 'sit', 'listen'] },
-    { figure: stage.querySelector('.book-figure-mariah'), phrases: ['bow', 'hop', 'listen', 'stretch', 'sit'] },
+  const duration = { idle: 6800, sniff: 5800, sit: 9500, lie: 10500, sleep: 16000, stretch: 4300, run: 4400, pee: 4900, howl: 5600, happy: 3200 };
+  const emotions = { idle: 'curious', sniff: 'curious', sit: 'content', lie: 'drowsy', sleep: 'asleep', stretch: 'drowsy', run: 'excited', pee: 'concentrating', howl: 'proud', happy: 'happy' };
+  const dogs = [
+    { figure: stage.querySelector('.book-figure-jussi'), bag: ['sniff', 'idle', 'run', 'sit', 'sniff', 'howl', 'lie', 'pee'], initial: 'sniff' },
+    { figure: stage.querySelector('.book-figure-mariah'), bag: ['sit', 'lie', 'sleep', 'happy', 'idle', 'sniff', 'run', 'howl', 'sit', 'pee'], initial: 'sit' }
   ];
-  for (const dancer of dancers) dancer.last = Math.floor(Math.random() * dancer.phrases.length);
-  let timer;
-  const canDance = () => !motion.matches && !backgroundPaused() && stage.dataset.inView !== 'false';
-
-  function startPhrase() {
-    let longest = 0;
-    for (const dancer of dancers) {
-      const { figure, phrases } = dancer;
-      dancer.last = (dancer.last + 1 + Math.floor(Math.random() * (phrases.length - 1))) % phrases.length;
-      const duration = 4900 + Math.round(Math.random() * 2300);
-      figure.style.setProperty('--book-phrase-duration', `${duration}ms`);
-      figure.dataset.phrase = phrases[dancer.last];
-      longest = Math.max(longest, duration);
-    }
-    timer = setTimeout(() => {
-      for (const { figure } of dancers) delete figure.dataset.phrase;
-      timer = setTimeout(startPhrase, 900 + Math.random() * 1500);
-    }, longest);
+  let timer = 0;
+  const canRun = () => !motion.matches && !backgroundPaused() && stage.dataset.inView !== 'false';
+  function apply(dog, activity, interactive = false) {
+    const rests = { sit: 24000, lie: 32000, sleep: 65000 };
+    const span = interactive && rests[activity] ? rests[activity] : duration[activity] + (interactive ? 0 : Math.round(Math.random() * 1600));
+    dog.figure.dataset.activity = activity;
+    dog.figure.dataset.emotion = emotions[activity];
+    dog.figure.style.setProperty('--dog-activity-duration', `${span}ms`);
+    dog.until = performance.now() + span;
+    dog.last = activity;
+    dog.figure.dispatchEvent(new Event('dog-activity'));
   }
-
+  function next(dog) {
+    if (dog.last === 'sleep') return 'stretch';
+    if (dog.last === 'run' || dog.last === 'pee') return 'sniff';
+    if (dog.last === 'howl') return 'sit';
+    if (dog.last === 'lie' && Math.random() < .72) return 'sleep';
+    const choices = dog.bag.filter(action => action !== dog.last);
+    return choices[Math.floor(Math.random() * choices.length)];
+  }
+  function tick() {
+    timer = 0;
+    if (!canRun()) return;
+    const now = performance.now();
+    for (const dog of dogs) if (dog.until <= now) apply(dog, next(dog));
+    timer = setTimeout(tick, Math.max(100, Math.min(...dogs.map(dog => dog.until - performance.now()))));
+  }
+  const controller = {
+    act(figure, activity, interaction) {
+      const dog = dogs.find(item => item.figure === figure);
+      if (!dog || !Object.hasOwn(duration, activity)) return;
+      if (interaction === 'hover' && dog.until - performance.now() > duration[dog.last] - 900) return;
+      apply(dog, activity, true);
+      clearTimeout(timer);
+      timer = 0;
+      if (canRun()) tick();
+    }
+  };
+  for (const dog of dogs) {
+    dogActivityControllers.set(dog.figure, controller);
+    apply(dog, dog.initial);
+  }
   function sync() {
-    if (canDance()) {
-      if (!timer) startPhrase();
-      return;
+    if (canRun()) {
+      if (!timer) tick();
+    } else {
+      clearTimeout(timer);
+      timer = 0;
     }
-    clearTimeout(timer);
-    timer = undefined;
-    for (const { figure } of dancers) delete figure.dataset.phrase;
   }
-
   motion.addEventListener('change', sync);
   return sync;
 }
@@ -202,6 +217,8 @@ function initBookPerformers(stage, motion) {
     const layer = button.querySelector('.book-reaction');
     let glint = 0;
     let show = 0;
+    let activityStep = 0;
+    const activities = who === 'jussi' ? ['sit', 'lie', 'sleep', 'run', 'pee', 'howl', 'happy'] : ['lie', 'sleep', 'stretch', 'howl', 'run', 'pee', 'sit', 'happy'];
     let cleanup;
     function react(mode, full) {
       clearTimeout(cleanup);
@@ -237,13 +254,18 @@ function initBookPerformers(stage, motion) {
     }
     function peek() {
       if (button.dataset.force === 'full') return;
+      performDogActivity(button, 'happy', 'hover');
       react(glints[glint++ % glints.length], false);
     }
     function localize() {
       const swedish = document.documentElement.lang === 'sv';
       const name = names[swedish ? 1 : 0];
-      const action = swedish ? 'Visa en överraskning' : 'Näytä yllätys';
-      button.setAttribute('aria-label', `${name}. ${action}.`);
+      const descriptions = swedish
+        ? { idle: 'spanar', sniff: 'nosar', sit: 'sitter', lie: 'ligger', sleep: 'sover', stretch: 'sträcker på sig', run: 'springer', pee: 'kissar', howl: 'ylar', happy: 'viftar på svansen' }
+        : { idle: 'katselee ympärilleen', sniff: 'nuuskii', sit: 'istuu', lie: 'makaa', sleep: 'nukkuu', stretch: 'venyttelee', run: 'juoksee', pee: 'pissaa', howl: 'ulvoo', happy: 'heiluttaa häntäänsä' };
+      const activity = descriptions[button.dataset.activity] || descriptions.idle;
+      const action = swedish ? 'Tryck för en ny rörelse och en överraskning' : 'Paina: uusi liike ja yllätys';
+      button.setAttribute('aria-label', `${name} ${activity}. ${action}.`);
     }
     button.addEventListener('pointerenter', event => {
       if (event.pointerType !== 'touch') peek();
@@ -252,10 +274,12 @@ function initBookPerformers(stage, motion) {
       if (button.matches(':focus-visible')) peek();
     });
     button.addEventListener('click', () => {
+      performDogActivity(button, activities[activityStep++ % activities.length]);
       react(shows[show++ % shows.length], true);
       activateDuet(button);
     });
     document.addEventListener('calendar-language', localize);
+    button.addEventListener('dog-activity', localize);
     localize();
   }
 }
