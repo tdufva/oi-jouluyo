@@ -41,21 +41,21 @@ python3 scripts/check-archive.py
 
 The importer refuses a replacement feed that is missing any original episode GUID or HTTPS audio URL. Check cover images, episode counts and playback before proceeding. Existing Apple Podcasts listing: `https://podcasts.apple.com/podcast/id1655826352`.
 
-The original feed now returns an **HTTP 301** redirect to RedCircle. This was saved in the O, helga blog. site's **Avsnitt → Blog Settings → Feeds → Podcasting → Change Feed → Moving from Squarespace** setting. RedCircle's Verify Redirect step reported success. The new feed contains the `itunes:new-feed-url` tag and all 77 original GUIDs. Apple Podcasts and other directories will adopt the new URL as they refresh. Do not submit a duplicate show.
+The original feed now returns an **HTTP 301** redirect to RedCircle through the dedicated `www` redirect service. RedCircle's Verify Redirect step reported success, and the production redirect was checked again after moving `www`. The new feed contains the `itunes:new-feed-url` tag and all 77 original GUIDs. Apple Podcasts and other directories will adopt the new URL as they refresh. Do not submit a duplicate show.
 
-Keep that redirect working for at least 30 days, **through 24 December 2026**. Do not cancel Squarespace before the audio, cover art and feed migration are complete.
+Keep the old RSS URL permanently redirected to RedCircle. The `www` redirect service described below now preserves that URL independently of Squarespace; maintaining the redirect no longer requires Squarespace hosting. All archive images and audio have been copied to their new hosts. No Squarespace subscription was canceled automatically.
 
 ## Hover domain configuration
 
 Hover manages DNS as well as registration. Before migration the website used four apex A records (`198.185.159.144`, `198.185.159.145`, `198.49.23.144`, `198.49.23.145`) and `www` CNAME `ext-cust.squarespace.com`.
 
-On 24 November 2026 the apex A records were changed to `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`; the eventual `www` CNAME is `tdufva.github.io`. The repository's custom domain must be configured before pointing DNS at GitHub, and HTTPS must be checked afterwards.
+On 24 November 2026 the apex A records were changed to `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`. The `www` CNAME was subsequently changed to `custom-domains.chatgpt.site` for the dedicated website/RSS redirect service. The repository's custom domain must be configured before pointing DNS at GitHub, and HTTPS must be checked afterwards.
 
 The MX record and `mail` CNAME belong to Hover email and must be retained.
 
-`ohelga.blog` now points to GitHub Pages while `www.ohelga.blog` continues serving Squarespace and its podcast redirect. Move `www` after the feed migration window, unless an HTTP redirect service has first been put in place for the original feed address.
+`ohelga.blog` points to GitHub Pages. `www.ohelga.blog` uses a small Sites Worker: website requests redirect to the equivalent path on `https://ohelga.blog`, while `/avsnitt?format=rss` redirects directly to the RedCircle feed. This preserves podcast subscriptions while allowing the full website to leave Squarespace. The implementation, hosting identity and DNS records are documented in [infrastructure/www-redirect/README.md](infrastructure/www-redirect/README.md).
 
-GitHub Pages cannot distinguish `/avsnitt?format=rss` from `/avsnitt` using its static routing. Consequently, simply moving `www` to GitHub would return HTML to subscribers using the original RSS address. DNS records cannot provide that HTTP redirect.
+GitHub Pages cannot distinguish `/avsnitt?format=rss` from `/avsnitt` using its static routing. Consequently, pointing `www` directly at GitHub would return HTML to subscribers using the original RSS address. The redirect Worker supplies the required HTTP behavior. Keep the Sites service public and retain its custom domain and verification records.
 
 ## Recreating the import
 
