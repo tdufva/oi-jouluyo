@@ -10,12 +10,21 @@ Podcastarkistossa on 77 jaksoa alkuperäisissä osoitepoluissaan. [Siirto-ohje](
 
 ## Luukkujen muokkaaminen
 
-1. Avaa muokkauslomake ja valitse luukku. Täytä suomen- ja ruotsinkieliset kentät.
-2. Jos lisäät oman kuvan, valitse se lomakkeessa ja lataa sama tiedosto GitHubin `assets/luukut/`-kansioon lomakkeen linkistä. Voit myös liittää suoran HTTPS-kuvaosoitteen. Lisää kuvalle kuvaus molemmilla kielillä.
-3. Liitä YouTuben jakolinkki tai videon tunniste ja Apple Musicin jakolinkki. Kentät ovat valinnaisia. YouTube latautuu, kun kävijä painaa toistopainiketta.
-4. Paina **Kopioi sisältö** ja avaa **Muokkaa GitHubissa**. Korvaa tiedoston sisältö ja tallenna se painamalla **Commit changes**. Julkaisu päivittyy GitHub Pagesin seuraavassa julkaisussa.
+Kaksoisnapsauta projektikansiossa **Avaa luukkujen muokkaus.command**. Muokkain avautuu osoitteeseen [localhost:4174/muokkaa.html](http://localhost:4174/muokkaa.html). Vaihtoehtoisesti aja `python3 editor_server.py --open`. Pidä käynnistynyt pääteikkuna auki muokatessasi; Ctrl+C sulkee palvelimen.
 
-Voit muokata myös suoraan `luukut/01.json`–`luukut/24.json`-tiedostoja. Erota tekstin kappaleet tyhjällä rivillä. Muokkauslomakkeen esikatselulinkki avaa GitHubiin tallennetun version.
+1. Valitse luukku ja kirjoita otsikko, teema, teksti sekä kuvan kuvaus yhdellä kielellä, suomeksi tai ruotsiksi.
+2. Codex tunnistaa kielen ja kääntää toiseen kieleen 2,5 sekunnin kirjoitustauon jälkeen. Automaattikäännöksen voi kytkeä pois tai käynnistää painikkeesta. **Tarkista käännös** avaa muokattavan toisen kieliversion. Alkuperäistä tekstiä ei muuteta. Kielen voi myös määrätä käsin.
+3. Lisää kuva koneelta (JPG, PNG, WebP tai GIF, enintään 8 Mt), YouTube-linkki ja Apple Music -linkki. Kuva tallentuu Macille luonnoksen mukana. YouTube näkyy upotettuna toistopainikkeen jälkeen; Apple Music avautuu linkistä.
+4. Esikatselu päivittyy kirjoittaessa. FI/SV-painikkeilla näet molemmat kieliversiot.
+5. Paina **Julkaise luukku**. Kuva ja molemmat tekstit siirtyvät yhdessä GitHubiin, ja GitHub Pages päivittää sivuston julkaisun valmistuttua. Luonnoksen tallentaminen ei julkaise sisältöä.
+
+Muokkain käyttää Macin nykyisiä Codex- ja GitHub CLI -kirjautumisia. Käännös kuluttaa nykyisen Codex-tilisi käyttökiintiötä. Teksti lähetetään OpenAI:lle käännöstä varten; tunnuksia tai API-avaimia ei kopioida selainkoodiin tai GitHubiin. Codex suoritetaan eristetyssä tilapäiskansiossa ilman shelliä, projektiasetuksia, verkkohakua tai pysyvää keskustelua. Se palauttaa vain käännöksen JSON-muodossa.
+
+Luonnokset ja julkaisemattomat kuvat säilyvät tämän Macin `.editor-data/`-kansiossa, jonka Git ohittaa. Tekstistä tallentuu myös selainkohtainen varmuuskopio. Julkaisu tarkistaa luukun GitHub-version: toisen muokkaajan muutosten päälle ei kirjoiteta automaattisesti. Muokkain kuuntelee vain tämän koneen loopback-osoitetta, tarkistaa Originin ja istuntotunnisteen eikä tarjoa yksityisiä kansioita verkkosivuina.
+
+[Julkinen muokkauslomake](https://ohelga.blog/muokkaa.html) toimii ilman paikallista palvelinta kirjoittamiseen, esikatseluun ja selaimen luonnostallennukseen. Codex-käännös, kuvan lähetys ja suora julkaisu toimivat Mac-muokkaimessa. Lomakkeen lopusta löytyvät edelleen JSON-varmuuskopio ja aiempi GitHub-kopiointitapa. Myös suora muokkaus `luukut/01.json`–`luukut/24.json`-tiedostoihin toimii.
+
+Muokkaimen tarkistukset: `python3 scripts/check-editor.py` (ei oikeita GitHub-kirjoituksia tai käännöksiä).
 
 ## Talon pienet yllätykset
 

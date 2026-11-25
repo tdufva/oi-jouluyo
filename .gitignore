@@ -16,3 +16,6 @@ __pycache__/
 
 # Private Squarespace export, podcast masters and migration logs
 /.migration/
+
+# Private editor drafts and unpublished images stay on this Mac.
+/.editor-data/
