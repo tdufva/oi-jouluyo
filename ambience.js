@@ -22,6 +22,7 @@
     document.querySelectorAll('[data-atmosphere]').forEach(node=>node.textContent=text()[node.dataset.atmosphere]);
     element('snow-amount').setAttribute('aria-label',text().snow+' · '+text().amount);
     element('snow-speed').setAttribute('aria-label',text().snow+' · '+text().speed);
+    document.querySelector('.weather-controls').setAttribute('aria-label',text().snow);
     element('snow-amount-value').value=settings.amount+' %';
     element('snow-speed-value').value=settings.speed+' / 5';
   }
@@ -84,6 +85,7 @@
     frame=requestAnimationFrame(draw);
   }
   function syncSnow(){
+    document.querySelector('.weather-controls').dataset.snow=String(settings.snow);
     element('snow-amount').style.setProperty('--snow-progress', `${settings.amount}%`);
     element('snow-speed').style.setProperty('--snow-progress', `${(settings.speed - 1) * 25}%`);
     element('snow-amount-value').value=settings.amount+' %';

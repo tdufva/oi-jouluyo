@@ -449,83 +449,208 @@
   to { opacity: 0; transform: translate(-14px, -29px) rotate(28deg) scale(.7); }
 }
 
+/* Weather is part of the header composition, printed in the same five inks. */
+header {
+  display: grid;
+  z-index: 7;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  column-gap: clamp(20px, 3vw, 44px);
+  height: auto;
+  min-height: 110px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
 .weather-controls {
-  gap: 10px;
-  min-height: 29px;
-  padding: 2px 8px 2px 7px;
-  border: 1px solid #679289b0;
-  border-left: 3px solid #ee2e31;
-  background: #071e22f5;
-  box-shadow: 2px 2px 0 #1d7874a0;
+  position: static;
+  inset: auto;
+  z-index: auto;
+  justify-self: end;
+  display: grid;
+  grid-template-columns: 78px minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 16px;
+  width: min(100%, 368px);
+  min-height: 60px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
   color: #f4c095;
   backdrop-filter: none;
 }
-.weather-controls .ambience-toggle { font-size: 8px; white-space: nowrap; }
-.weather-controls .ambience-toggle input {
-  appearance: none;
-  display: grid;
-  place-content: center;
-  width: 13px;
-  height: 13px;
-  background: #142f31;
-  border: 1px solid #679289;
+.weather-controls .ambience-toggle {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+  min-height: 60px;
+  font-size: .75rem;
+  font-weight: 400;
+  line-height: 1.4;
+  white-space: nowrap;
 }
-.weather-controls .ambience-toggle input:checked { background: #ee2e31; border-color: #f4c095; }
-.weather-controls .ambience-toggle input:checked::before {
-  content: "";
-  width: 6px;
-  height: 9px;
-  background: #fff0da;
-  clip-path: polygon(50% 0, 65% 36%, 100% 50%, 65% 63%, 50% 100%, 36% 63%, 0 50%, 36% 36%);
+.weather-controls .ambience-toggle input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.weather-switch {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  color: #679289;
+  border: 1px solid #679289;
+  border-radius: 50% 0 50% 50%;
+  background: url('assets/riso-grain.svg'), #071e22;
+  box-shadow: 2px 1px 0 #1d7874;
+  pointer-events: none;
+}
+.weather-controls .ambience-toggle input:checked + .weather-switch {
+  color: #f4c095;
+  background-color: #ee2e31;
+  border-color: #ee2e31;
+  box-shadow: -2px 1px 0 #679289;
+}
+.weather-controls .ambience-toggle input:focus-visible + .weather-switch {
+  outline: 2px solid #f4c095;
+  outline-offset: 4px;
 }
 .weather-controls .range-control {
-  grid-template-columns: auto 63px 29px;
-  column-gap: 5px;
-  font-size: 8px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows: auto 36px;
+  align-items: center;
+  gap: 0 4px;
+  min-width: 0;
+  font-size: .75rem;
+  line-height: 1.4;
+  cursor: pointer;
+}
+.weather-controls .range-control output {
+  color: #f4c095;
+  font-size: .6875rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  text-align: right;
+}
+.snow-rail { position: relative; display: block; grid-column: 1 / -1; height: 36px; }
+.snow-rail::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  top: 27px;
+  height: 4px;
+  background: repeating-linear-gradient(90deg, #679289 0 1px, transparent 1px 25%);
+  border-right: 1px solid #679289;
+  opacity: .7;
+  pointer-events: none;
 }
 .weather-controls .range-control input {
-  --snow-track: linear-gradient(to right, #1d7874 0 var(--snow-progress, 0%), #244342 var(--snow-progress, 0%) 100%);
+  --snow-track: linear-gradient(to right, #f4c095 0 var(--snow-progress, 0%), #1d7874 var(--snow-progress, 0%) 100%);
+  position: relative;
+  display: block;
   appearance: none;
-  width: 63px;
-  height: 23px;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 36px;
   padding: 0;
+  margin: 0;
   background: transparent;
   border: 0;
+  border-radius: 0;
+  cursor: ew-resize;
 }
+/* Separate track/thumb rules are intentional: Safari and Firefox parse different pseudos. */
 .weather-controls input[type="range"]::-webkit-slider-runnable-track {
-  height: 7px;
-  border: 1px solid #679289;
-  background: var(--snow-track);
+  height: 5px;
+  border: 0;
+  background: url('assets/riso-grain.svg'), var(--snow-track);
+  box-shadow: 2px 2px 0 #67928955;
 }
 .weather-controls input[type="range"]::-moz-range-track {
   height: 5px;
-  border: 1px solid #679289;
-  background: var(--snow-track);
+  border: 0;
+  background: url('assets/riso-grain.svg'), var(--snow-track);
+  box-shadow: 2px 2px 0 #67928955;
 }
 .weather-controls input[type="range"]::-webkit-slider-thumb {
   appearance: none;
-  width: 11px;
-  height: 11px;
-  margin-top: -3px;
-  border: 1px solid #f4c095;
-  border-radius: 0;
-  background: #ee2e31;
-  transform: rotate(45deg);
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: -8px;
+  border: 2px solid #f4c095;
+  border-radius: 50%;
+  background: url('assets/riso-grain.svg'), #ee2e31;
+  box-shadow: -2px 1px 0 #1d7874, 2px 2px 0 #071e22;
 }
 .weather-controls input[type="range"]::-moz-range-thumb {
-  width: 9px;
-  height: 9px;
-  border: 1px solid #f4c095;
-  border-radius: 0;
-  background: #ee2e31;
-  transform: rotate(45deg);
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #f4c095;
+  border-radius: 50%;
+  background: url('assets/riso-grain.svg'), #ee2e31;
+  box-shadow: -2px 1px 0 #1d7874, 2px 2px 0 #071e22;
 }
-.weather-controls input:focus-visible { outline: 1px solid #fff0da; outline-offset: 2px; }
-.weather-controls .range-control output { color: #fff0da; white-space: nowrap; }
+.weather-controls #snow-speed::-webkit-slider-thumb {
+  border-radius: 1px;
+  border-color: #071e22;
+  background-color: #f4c095;
+  box-shadow: 3px 2px 0 #ee2e31;
+  transform: rotate(-9deg);
+}
+.weather-controls #snow-speed::-moz-range-thumb {
+  border-radius: 1px;
+  border-color: #071e22;
+  background-color: #f4c095;
+  box-shadow: 3px 2px 0 #ee2e31;
+  transform: rotate(-9deg);
+}
+.weather-controls .range-control input:focus-visible {
+  outline: 2px solid #679289;
+  outline-offset: 2px;
+}
+.weather-controls[data-snow="false"] .range-control { opacity: .4; cursor: default; }
+.weather-controls .range-control input:disabled { opacity: 1; cursor: default; }
+@media (hover: hover) {
+  .weather-controls .ambience-toggle:hover .weather-switch { outline: 1px solid #f4c095; outline-offset: 3px; }
+  .weather-controls .range-control:hover input:not(:disabled) { filter: brightness(1.15); }
+}
 @media (max-width: 700px) {
-  .weather-controls { gap: 6px; }
-  .weather-controls .range-control { grid-template-columns: auto 47px 25px; column-gap: 4px; }
-  .weather-controls .range-control input { width: 47px; }
+  header {
+    grid-template-columns: auto 1fr;
+    gap: 10px 18px;
+    min-height: 0;
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+  header nav { grid-column: 2; grid-row: 1; justify-self: end; }
+  .weather-controls {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: min(100%, 368px);
+    gap: 12px;
+    justify-self: end;
+  }
+  .weather-controls .range-control { grid-template-rows: auto 44px; }
+  .snow-rail, .weather-controls .range-control input { height: 44px; }
+  .snow-rail::before { top: 31px; }
+}
+@media (max-width: 380px) {
+  .weather-controls { grid-template-columns: 60px minmax(0, 1fr) minmax(0, 1fr); gap: 10px; }
+  .weather-controls .range-control { grid-template-columns: 1fr; grid-template-rows: auto 44px auto; }
+  .weather-controls .range-control output { grid-column: 1; grid-row: 3; }
+  .weather-controls .snow-rail { grid-row: 2; }
 }
 
 .scene > .meteor-star, .roof-egg, .freedom-egg {
